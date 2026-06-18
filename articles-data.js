@@ -4,6 +4,30 @@
 
 const ARTICLES = {
 
+  "mobile-money-ia-credit": {
+    cat: "cat-economie", catLabel: "Afrique — Économie & Tech",
+    img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80&auto=format&fit=crop",
+    title: "Argent mobile : l'Afrique franchit 1 400 milliards de dollars, et l'IA veut bancariser les invisibles",
+    excerpt: "En 2025, 1 400 milliards de dollars ont transité par l'argent mobile en Afrique subsaharienne — les deux tiers du total mondial. Prochaine frontière : l'intelligence artificielle, qui transforme l'historique des paiements en accès au crédit pour 57 % d'adultes encore non bancarisés.",
+    author: "Rédaction AfriPolitique", date: "19 juin 2026", read: "5 min",
+    body: [
+      "<p>Le chiffre a la force d'un symbole. En 2025, plus de <strong>1 400 milliards de dollars</strong> ont transité par les portefeuilles d'argent mobile en Afrique subsaharienne, selon le rapport <em>State of the Industry on Mobile Money 2026</em> de la GSMA. À elle seule, la région a concentré environ <strong>66 % de la valeur mondiale</strong> des transactions d'argent mobile, estimée à 2 100 milliards de dollars. L'Afrique n'est plus un terrain d'expérimentation de la finance numérique : elle en est le cœur battant.</p>",
+      "<p>La trajectoire donne le vertige. Il a fallu vingt ans au secteur pour franchir la barre des 1 000 milliards de dollars de transactions annuelles dans le monde — puis seulement quatre ans, entre 2021 et 2025, pour doubler ce montant. Le nombre de comptes actifs sur trente jours a bondi de 15 % en un an pour atteindre 593 millions à l'échelle mondiale, et l'Afrique subsaharienne comptait à elle seule 173 services d'argent mobile en activité.</p>",
+      "<h3>Une révolution née de l'exclusion</h3>",
+      "<p>Cette domination n'est pas un hasard : elle est née d'un manque. Près de <strong>57 % des adultes africains</strong> restent aujourd'hui sans compte bancaire classique. Là où les agences bancaires n'ont jamais pénétré, le téléphone portable a tout emporté. Au Kenya, berceau de M-Pesa, les transactions d'argent mobile représentent désormais près de <strong>60 % du PIB</strong> — un niveau sans équivalent sur la planète.</p>",
+      "<p>Portée par une démographie jeune, l'explosion du smartphone et des politiques publiques d'inclusion financière au Nigeria, au Kenya, en Tanzanie ou au Ghana, cette infrastructure est devenue le système nerveux de l'économie réelle : salaires, factures, commerce de détail, transferts de la diaspora. Tout passe désormais par le mobile.</p>",
+      "<h3>L'IA, nouveau banquier des invisibles</h3>",
+      "<p>Mais la prochaine bataille ne se joue plus sur le paiement — elle se joue sur le <strong>crédit</strong>. La GSMA et plusieurs études sectorielles estiment à <strong>330 milliards de dollars</strong> la demande de crédit non satisfaite sur le continent. C'est là qu'entre en scène l'intelligence artificielle.</p>",
+      "<p>Faute d'historique bancaire, des millions d'Africains étaient jusqu'ici « invisibles » pour les prêteurs. Les nouveaux modèles d'IA contournent l'obstacle en analysant des données alternatives : la fréquence des transactions d'argent mobile, les habitudes de recharge de crédit téléphonique, l'activité de commerce numérique, jusqu'à l'heure des opérations. À partir de centaines de points de données, un algorithme évalue en quelques secondes la solvabilité d'un commerçant ou d'un agriculteur qu'aucune banque n'aurait reçu.</p>",
+      "<p>Les résultats sont tangibles : dans les pays dotés d'un cadre réglementaire favorable au prêt mobile responsable, le taux d'inclusion financière a progressé de près de 20 % en cinq ans. Sur cette dynamique, les revenus de la fintech africaine pourraient être multipliés par treize d'ici 2030, pour approcher 65 milliards de dollars.</p>",
+      "<h3>Les zones d'ombre d'un miracle annoncé</h3>",
+      "<p>Le tableau n'est pourtant pas sans ombres. La GSMA elle-même relève qu'une large part des comptes ouverts restent inactifs : la possession d'un portefeuille ne vaut pas usage, ni inclusion réelle. Le crédit instantané dopé à l'IA soulève par ailleurs des risques bien identifiés — surendettement des ménages les plus fragiles, opacité des algorithmes, biais de notation, et protection encore balbutiante des données personnelles.</p>",
+      "<p>Surtout, une question politique affleure : qui contrôle les modèles et les données ? Tant que l'architecture de la notation de crédit dépendra de technologies et de serveurs étrangers, l'Afrique restera dépendante pour un levier devenu stratégique de son développement. D'où l'appel croissant à bâtir des modèles entraînés sur des données africaines et gouvernés par des régulateurs africains.</p>",
+      "<p>Les 1 400 milliards de dollars de 2025 ne sont donc pas un aboutissement, mais une base de départ. Le défi des prochaines années sera de transformer ces flux massifs en crédit utile, inclusif et souverain — pour que la révolution de l'argent mobile cesse d'être une prouesse statistique et devienne un véritable moteur d'émancipation économique.</p>"
+    ]
+  },
+
+
   "france-tchad-retour": {
     cat: "cat-politique", catLabel: "Afrique — Géopolitique",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Op%C3%A9ration_Barkhane_passage_en_revue_des_hommes_par_g%C3%A9n%C3%A9ral_fran%C3%A7ais_%C3%A0_N%27Djamena_en_2014.jpg/1920px-Op%C3%A9ration_Barkhane_passage_en_revue_des_hommes_par_g%C3%A9n%C3%A9ral_fran%C3%A7ais_%C3%A0_N%27Djamena_en_2014.jpg",
