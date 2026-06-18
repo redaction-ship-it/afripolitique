@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AfriPolitique — Actualités politiques africaines et mondiales</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://www.afripolitique.com/"/>
+  <meta property="og:title"       content="AfriPolitique — L'actualité politique africaine et mondiale"/>
+  <meta property="og:description" content="Décryptez les enjeux de pouvoir, de gouvernance et de relations internationales en Afrique et dans le monde."/>
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1626695436755-3e288720849c?w=1200&q=80&auto=format&fit=crop"/>
+  <meta name="twitter:card"       content="summary_large_image"/>
+  <meta name="twitter:site"       content="@AfriPolitique"/>
+  <meta name="twitter:title"      content="AfriPolitique — L'actualité politique africaine et mondiale"/>
+  <meta name="twitter:description" content="Décryptez les enjeux de pouvoir, de gouvernance et de relations internationales en Afrique."/>
+  <meta name="twitter:image"      content="https://images.unsplash.com/photo-1626695436755-3e288720849c?w=1200&q=80&auto=format&fit=crop"/>
+  <meta name="description"        content="AfriPolitique — Actualités politiques africaines et mondiales. Élections, diplomatie, sécurité, économie politique."/>
+
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 16px;
+      color: #1a1a1a;
+      background: #f5f5f0;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ═══════════════════════════════════════
+       VARIABLES
+    ═══════════════════════════════════════ */
+    :root {
+      --red:      #c8102e;
+      --red-dark: #a00d24;
+      --black:    #1a1a1a;
+      --gray:     #4a4a4a;
+      --light:    #f5f5f0;
+      --white:    #ffffff;
+      --border:   #e0e0d8;
+      --accent:   #f0ede6;
+      --blue:     #1a5276;
+      --green:    #1a7c4a;
+      --sans:     'Arial', 'Helvetica Neue', sans-serif;
+    }
+
+    /* ═══════════════════════════════════════
+       TOP BAR
+    ═══════════════════════════════════════ */
+    .topbar {
+      background: var(--black);
+      color: #ccc;
+      font-family: var(--sans);
+      font-size: .72rem;
+      padding: .4rem 0;
+      border-bottom: 1px solid #333;
+    }
+    .topbar-inner {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    }
+    .topbar-date { color: #aaa; white-space: nowrap; }
+    .topbar-ticker {
+      display: flex; gap: 0; overflow: hidden;
+      flex: 1; max-width: 700px;
+    }
+    .ticker-wrap {
+      overflow: hidden; white-space: nowrap; flex: 1;
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-inner:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .ticker-item { display: inline-block; padding: 0 2rem; }
+    .ticker-item::before { content: "●  "; color: var(--red); }
+    .topbar-links { display: flex; gap: 1rem; }
+    .topbar-links a { color: #aaa; font-size: .72rem; font-family: var(--sans); }
+    .topbar-links a:hover { color: var(--white); }
+
+    /* ═══════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════ */
+    .site-header {
+      background: var(--white);
+      border-bottom: 3px solid var(--red);
+      padding: 1rem 0 .75rem;
+    }
+    .header-inner {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: .75rem; }
+    .logo-flag {
+      width: 44px; height: 44px;
+      background: var(--red);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: var(--white);
+      letter-spacing: -.05em;
+      flex-shrink: 0;
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-name {
+      font-size: 1.85rem;
+      font-family: 'Georgia', serif;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -.02em;
+    }
+    .logo-name span { color: var(--red); }
+    .logo-tagline {
+      font-size: .68rem;
+      font-family: var(--sans);
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    .header-search {
+      display: flex; align-items: center;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .4rem 1rem;
+      gap: .5rem;
+      flex: 1; max-width: 340px;
+    }
+    .header-search input {
+      border: none; background: none;
+      font-family: var(--sans); font-size: .85rem;
+      color: var(--black); outline: none; width: 100%;
+    }
+    .header-search input::placeholder { color: #aaa; }
+    .search-icon { color: #aaa; font-size: .9rem; flex-shrink: 0; }
+    .header-cta { display: flex; gap: .6rem; align-items: center; }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: .5rem 1.1rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      border: 2px solid var(--red);
+      transition: background .15s;
+    }
+    .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--black);
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: .5rem 1.1rem;
+      border-radius: 3px;
+      border: 2px solid var(--black);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      transition: background .15s, color .15s;
+    }
+    .btn-secondary:hover { background: var(--black); color: var(--white); }
+
+    /* ═══════════════════════════════════════
+       MEGA NAVIGATION
+    ═══════════════════════════════════════ */
+    .main-nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+    .nav-inner {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: flex; align-items: stretch;
+    }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: .3rem;
+      padding: .85rem 1rem;
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--black);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: color .15s, border-color .15s;
+      cursor: pointer;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+    .nav-link .arrow { font-size: .6rem; margin-top: .1rem; transition: transform .2s; }
+    .nav-item:hover .arrow { transform: rotate(180deg); }
+    .nav-link.breaking-link {
+      color: var(--red);
+      border-left: 3px solid var(--red);
+      padding-left: .8rem;
+    }
+    /* Mega menu */
+    .mega-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--red);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+      padding: 1.5rem;
+      min-width: 520px;
+      z-index: 300;
+    }
+    .nav-item:hover .mega-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .mega-col h4 {
+      font-family: var(--sans);
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--red);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: .4rem;
+      margin-bottom: .5rem;
+    }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li a {
+      display: block;
+      font-family: var(--sans);
+      font-size: .82rem;
+      color: var(--gray);
+      padding: .25rem 0;
+      transition: color .15s, padding-left .15s;
+    }
+    .mega-col ul li a:hover { color: var(--red); padding-left: .3rem; }
+    .nav-mobile-btn {
+      display: none;
+      margin-left: auto;
+      padding: .85rem 1rem;
+      font-size: 1.2rem;
+      color: var(--black);
+      cursor: pointer;
+    }
+
+    /* ═══════════════════════════════════════
+       BREAKING NEWS BANNER
+    ═══════════════════════════════════════ */
+    .breaking-bar {
+      background: var(--red);
+      color: var(--white);
+      display: flex; align-items: center; gap: .75rem;
+      padding: .55rem 0;
+    }
+    .breaking-bar-inner {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .breaking-tag {
+      background: var(--white);
+      color: var(--red);
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding: .2rem .5rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .breaking-text {
+      font-family: var(--sans);
+      font-size: .83rem;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    .breaking-more {
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+      margin-left: auto;
+      white-space: nowrap;
+      text-decoration: underline;
+    }
+
+    /* ═══════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════ */
+    .page-wrap { max-width: 1240px; margin: auto; padding: 1.5rem 1rem; }
+    .main-layout { display: grid; grid-template-columns: 1fr 300px; gap: 2rem; }
+    @media(max-width: 960px) { .main-layout { grid-template-columns: 1fr; } }
+
+    /* ═══════════════════════════════════════
+       HERO — UNE
+    ═══════════════════════════════════════ */
+    .une-section { margin-bottom: 2rem; }
+    .une-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto;
+      gap: .75rem;
+    }
+    @media(max-width: 700px) { .une-grid { grid-template-columns: 1fr; } }
+
+    /* Article à la Une - grand */
+    .hero-card {
+      grid-row: 1 / 3;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      background: var(--black);
+      min-height: 420px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .hero-card img {
+      position: absolute; inset: 0;
+      opacity: .65;
+      transition: opacity .3s, transform .4s;
+    }
+    .hero-card:hover img { opacity: .5; transform: scale(1.02); }
+    .hero-card-body {
+      position: relative; z-index: 2;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 60%, transparent 100%);
+    }
+    .hero-card-body .cat-tag { margin-bottom: .5rem; }
+    .hero-title-main {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+    .hero-title-main:hover { text-decoration: underline; }
+    .hero-excerpt-main {
+      font-size: .88rem;
+      color: rgba(255,255,255,.8);
+      margin-bottom: .6rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .article-byline {
+      font-family: var(--sans);
+      font-size: .72rem;
+      color: rgba(255,255,255,.7);
+      display: flex; gap: .75rem; flex-wrap: wrap; align-items: center;
+    }
+    .article-byline.dark { color: var(--gray); }
+
+    /* Petites cartes côté droit */
+    .side-card {
+      display: grid; grid-template-columns: 120px 1fr; gap: .75rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .side-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.1); }
+    .side-card-img {
+      min-height: 110px;
+      overflow: hidden;
+      position: relative;
+    }
+    .side-card-body {
+      padding: .75rem .75rem .75rem 0;
+      display: flex; flex-direction: column; gap: .35rem;
+    }
+    .side-title {
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--black);
+    }
+    .side-title:hover { color: var(--red); }
+    .side-excerpt {
+      font-size: .78rem;
+      color: var(--gray);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    /* ═══════════════════════════════════════
+       CATEGORY TAGS
+    ═══════════════════════════════════════ */
+    .cat-tag {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      padding: .18rem .5rem;
+      border-radius: 2px;
+    }
+    .cat-politique  { background: var(--red);   color: #fff; }
+    .cat-election   { background: #1a7c4a;       color: #fff; }
+    .cat-diplo      { background: #1a5276;       color: #fff; }
+    .cat-securite   { background: #7d3c98;       color: #fff; }
+    .cat-economie   { background: #b7770d;       color: #fff; }
+    .cat-monde      { background: #2e4057;       color: #fff; }
+    .cat-opinion    { background: var(--black);  color: #fff; }
+
+    /* ═══════════════════════════════════════
+       SECTION HEADERS
+    ═══════════════════════════════════════ */
+    .section-head {
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: .5rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-head h2 {
+      font-family: var(--sans);
+      font-size: .85rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .section-head h2 .bar {
+      width: 4px; height: 1.1rem;
+      background: var(--red);
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .section-head a {
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .section-head a:hover { text-decoration: underline; }
+
+    /* ═══════════════════════════════════════
+       ARTICLE GRID 3-COL
+    ═══════════════════════════════════════ */
+    .articles-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    @media(max-width: 820px) { .articles-3col { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 540px) { .articles-3col { grid-template-columns: 1fr; } }
+
+    .art-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .art-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); transform: translateY(-2px); }
+    .art-card-img {
+      height: 170px; overflow: hidden; position: relative; background: #ddd;
+    }
+    .art-card-img img { transition: transform .4s; }
+    .art-card:hover .art-card-img img { transform: scale(1.04); }
+    .art-card-body {
+      padding: 1rem;
+      display: flex; flex-direction: column; gap: .4rem; flex: 1;
+    }
+    .art-card-title {
+      font-size: .95rem; font-weight: 700; line-height: 1.3;
+      color: var(--black);
+    }
+    .art-card-title:hover { color: var(--red); }
+    .art-card-excerpt {
+      font-size: .8rem; color: var(--gray);
+      display: -webkit-box; -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; overflow: hidden;
+      flex: 1;
+    }
+    .art-card-footer {
+      border-top: 1px solid var(--border);
+      padding-top: .6rem; margin-top: auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    /* ═══════════════════════════════════════
+       SHARE BAR
+    ═══════════════════════════════════════ */
+    .share-bar {
+      display: flex; gap: .35rem; align-items: center; flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+    .share-lbl {
+      font-family: var(--sans); font-size: .65rem;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: #aaa; margin-right: .15rem;
+    }
+    .s-btn {
+      display: inline-flex; align-items: center; gap: .25rem;
+      padding: .2rem .55rem;
+      border-radius: 3px;
+      font-family: var(--sans); font-size: .68rem; font-weight: 700;
+      transition: opacity .15s;
+    }
+    .s-btn:hover { opacity: .85; }
+    .s-fb { background: #1877f2; color: #fff; }
+    .s-tw { background: #000; color: #fff; }
+    .s-wa { background: #25d366; color: #fff; }
+    .s-lk { background: #0a66c2; color: #fff; }
+
+    /* ═══════════════════════════════════════
+       LIST ARTICLES (Monde)
+    ═══════════════════════════════════════ */
+    .art-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; }
+    .art-list-item {
+      display: grid; grid-template-columns: 130px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      overflow: hidden;
+      transition: background .15s;
+    }
+    .art-list-item:first-child { border-top: 1px solid var(--border); }
+    .art-list-item:hover { background: #fafaf8; }
+    .art-list-img { min-height: 100px; overflow: hidden; position: relative; }
+    .art-list-body {
+      padding: .85rem 1rem;
+      display: flex; flex-direction: column; gap: .3rem;
+    }
+    .art-list-title {
+      font-size: .92rem; font-weight: 700; line-height: 1.3;
+      color: var(--black);
+    }
+    .art-list-title:hover { color: var(--red); }
+    .art-list-excerpt { font-size: .78rem; color: var(--gray); }
+    .art-list-meta { font-family: var(--sans); font-size: .68rem; color: #aaa; margin-top: auto; }
+
+    /* ═══════════════════════════════════════
+       OPINION / ANALYSE
+    ═══════════════════════════════════════ */
+    .opinion-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem; margin-bottom: 2rem;
+    }
+    @media(max-width: 620px) { .opinion-grid { grid-template-columns: 1fr; } }
+    .opinion-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      padding: 1.2rem;
+      border-radius: 0 0 3px 3px;
+    }
+    .op-quote { font-size: 2.5rem; color: var(--red); line-height: .8; margin-bottom: .5rem; }
+    .op-text {
+      font-size: .9rem; line-height: 1.6; font-style: italic;
+      color: var(--black); margin-bottom: .8rem;
+    }
+    .op-author { display: flex; align-items: center; gap: .6rem; }
+    .op-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--light); border: 2px solid var(--red);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .op-name { font-family: var(--sans); font-size: .8rem; font-weight: 700; }
+    .op-role { font-family: var(--sans); font-size: .7rem; color: var(--gray); }
+
+    /* ═══════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════ */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+    .widget {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .widget-head {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: .72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding: .65rem 1rem;
+    }
+    .widget-head.red { background: var(--red); }
+    .widget-body { padding: 1rem; }
+
+    /* Trending */
+    .trending-list { display: flex; flex-direction: column; gap: .75rem; }
+    .trend-item { display: flex; gap: .75rem; align-items: flex-start; }
+    .trend-num {
+      font-size: 1.6rem; font-weight: 900;
+      color: #e0ddd6; line-height: 1;
+      font-family: 'Georgia', serif;
+      flex-shrink: 0; width: 26px;
+    }
+    .trend-title {
+      font-size: .85rem; font-weight: 700; line-height: 1.25;
+      color: var(--black);
+    }
+    .trend-title:hover { color: var(--red); }
+    .trend-cat { font-family: var(--sans); font-size: .68rem; color: #aaa; }
+
+    /* Pays */
+    .country-list { display: flex; flex-direction: column; }
+    .country-item {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .55rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: .83rem; font-family: var(--sans);
+      cursor: pointer; transition: background .12s;
+    }
+    .country-item:last-child { border-bottom: none; }
+    .country-item:hover { background: var(--light); }
+    .country-flag { font-size: 1.2rem; }
+    .country-count {
+      margin-left: auto;
+      background: var(--light);
+      border: 1px solid var(--border);
+      font-size: .65rem; padding: .12rem .4rem;
+      border-radius: 10px; font-family: var(--sans);
+      color: var(--gray);
+    }
+
+    /* Newsletter */
+    .nl-desc { font-family: var(--sans); font-size: .82rem; color: var(--gray); margin-bottom: .75rem; line-height: 1.5; }
+    .nl-form { display: flex; flex-direction: column; gap: .5rem; }
+    .nl-form input {
+      border: 1px solid var(--border); border-radius: 3px;
+      padding: .55rem .75rem; font-family: var(--sans); font-size: .85rem;
+      color: var(--black); outline: none;
+    }
+    .nl-form input:focus { border-color: var(--red); }
+    .nl-form button {
+      background: var(--red); color: var(--white);
+      font-family: var(--sans); font-size: .8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em;
+      padding: .6rem; border-radius: 3px;
+      transition: background .15s;
+    }
+    .nl-form button:hover { background: var(--red-dark); }
+
+    /* Agenda */
+    .agenda-list { display: flex; flex-direction: column; gap: .75rem; }
+    .agenda-item { display: flex; gap: .75rem; align-items: flex-start; }
+    .agenda-date {
+      background: var(--red); color: var(--white);
+      font-family: var(--sans); font-size: .68rem; font-weight: 700;
+      text-align: center; line-height: 1.2;
+      padding: .3rem .4rem; border-radius: 3px;
+      min-width: 40px; flex-shrink: 0;
+    }
+    .agenda-title { font-size: .85rem; font-weight: 600; line-height: 1.3; }
+    .agenda-lieu { font-family: var(--sans); font-size: .7rem; color: var(--gray); }
+
+    /* Pub widget */
+    .pub-widget {
+      background: linear-gradient(135deg, #1a2035, #2a1a0d);
+      color: white; text-align: center;
+      padding: 1.5rem 1rem;
+      border-radius: 3px;
+    }
+    .pub-widget p { font-family: var(--sans); font-size: .75rem; color: rgba(255,255,255,.6); margin-bottom: .5rem; }
+    .pub-widget h3 { font-size: 1.1rem; color: #c9a84c; margin-bottom: .25rem; }
+    .pub-widget span { font-family: var(--sans); font-size: .8rem; color: rgba(255,255,255,.8); }
+
+    /* ═══════════════════════════════════════
+       STATISTIQUES
+    ═══════════════════════════════════════ */
+    .stats-strip {
+      background: var(--black);
+      color: var(--white);
+      margin: 1.5rem 0;
+    }
+    .stats-inner {
+      max-width: 1240px; margin: auto; padding: 1.25rem 1rem;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      text-align: center; gap: 1rem;
+    }
+    @media(max-width: 600px) { .stats-inner { grid-template-columns: repeat(2,1fr); } }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--red); font-family: 'Georgia', serif; }
+    .stat-lbl { font-family: var(--sans); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: #aaa; margin-top: .15rem; }
+
+    /* ═══════════════════════════════════════
+       NEWSLETTER FULL WIDTH
+    ═══════════════════════════════════════ */
+    .nl-band {
+      background: var(--red);
+      padding: 2rem 0;
+      margin: 1.5rem 0;
+    }
+    .nl-band-inner {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .nl-band-text { flex: 1; }
+    .nl-band-text h3 { font-size: 1.3rem; color: var(--white); margin-bottom: .3rem; }
+    .nl-band-text p { font-family: var(--sans); font-size: .85rem; color: rgba(255,255,255,.85); }
+    .nl-band-form { display: flex; gap: .5rem; flex: 1; min-width: 280px; }
+    .nl-band-form input {
+      flex: 1; border: none; border-radius: 3px;
+      padding: .65rem 1rem; font-family: var(--sans); font-size: .9rem; outline: none;
+    }
+    .nl-band-form button {
+      background: var(--black); color: var(--white);
+      font-family: var(--sans); font-weight: 700; font-size: .82rem;
+      text-transform: uppercase; letter-spacing: .06em;
+      padding: .65rem 1.3rem; border-radius: 3px;
+      transition: background .15s;
+    }
+    .nl-band-form button:hover { background: #333; }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--black);
+      color: #ccc;
+      padding: 3rem 0 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-top {
+      max-width: 1240px; margin: auto; padding: 0 1rem;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem; margin-bottom: 2rem;
+      border-bottom: 1px solid #333; padding-bottom: 2rem;
+    }
+    @media(max-width: 800px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 480px) { .footer-top { grid-template-columns: 1fr; } }
+    .footer-brand .f-logo { font-size: 1.5rem; font-family: 'Georgia', serif; font-weight: 700; color: var(--white); margin-bottom: .5rem; }
+    .footer-brand .f-logo span { color: var(--red); }
+    .footer-brand p { font-family: var(--sans); font-size: .8rem; color: #999; line-height: 1.6; margin-bottom: 1rem; }
+    .footer-brand .f-email { font-family: var(--sans); font-size: .8rem; color: var(--red); }
+    .social-row { display: flex; gap: .4rem; margin-top: .75rem; }
+    .soc-btn {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #2a2a2a; border: 1px solid #444;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .82rem; transition: background .15s;
+    }
+    .soc-btn:hover { background: var(--red); border-color: var(--red); }
+    .f-col h4 {
+      font-family: var(--sans); font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--white); margin-bottom: .75rem;
+      border-bottom: 1px solid #333; padding-bottom: .4rem;
+    }
+    .f-col ul { list-style: none; display: flex; flex-direction: column; gap: .35rem; }
+    .f-col ul li a { font-family: var(--sans); font-size: .8rem; color: #999; transition: color .12s; }
+    .f-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1240px; margin: auto; padding: 1rem 1rem 0;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem;
+    }
+    .footer-bottom p { font-family: var(--sans); font-size: .72rem; color: #666; }
+    .footer-legal { display: flex; gap: 1rem; }
+    .footer-legal a { font-family: var(--sans); font-size: .72rem; color: #666; }
+    .footer-legal a:hover { color: #aaa; }
+
+    /* ═══════════════════════════════════════
+       MOBILE NAV
+    ═══════════════════════════════════════ */
+    #mobile-nav {
+      display: none;
+      position: fixed; inset: 0; z-index: 500;
+      background: var(--white);
+      overflow-y: auto;
+      padding: 1.5rem 1rem;
+    }
+    #mobile-nav.open { display: block; }
+    .mobile-nav-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .mobile-close { font-size: 1.5rem; cursor: pointer; color: var(--black); }
+    .mobile-nav-links { display: flex; flex-direction: column; }
+    .mobile-nav-links a {
+      padding: .85rem 0;
+      font-family: var(--sans); font-size: 1rem; font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      color: var(--black); text-transform: uppercase; letter-spacing: .05em;
+    }
+    .mobile-nav-links a:hover { color: var(--red); }
+
+    /* ═══════════════════════════════════════
+       MISC
+    ═══════════════════════════════════════ */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 1.75rem 0; }
+    .read-more {
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-family: var(--sans); font-size: .75rem; font-weight: 700;
+      color: var(--red); text-transform: uppercase; letter-spacing: .06em;
+    }
+    .read-more:hover { text-decoration: underline; }
+    @media(max-width: 700px) {
+      .nav-inner .nav-item { display: none; }
+      .nav-mobile-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ MOBILE NAV ═══ -->
+<div id="mobile-nav">
+  <div class="mobile-nav-header">
+    <span style="font-family:'Georgia',serif;font-size:1.3rem;font-weight:700">Afri<span style="color:var(--red)">Politique</span></span>
+    <span class="mobile-close" onclick="document.getElementById('mobile-nav').classList.remove('open')">✕</span>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="#">Accueil</a>
+    <a href="#" style="color:var(--red)">🔴 Flash Info</a>
+    <a href="#">Afrique</a>
+    <a href="#">Monde</a>
+    <a href="#">Élections</a>
+    <a href="#">Diplomatie</a>
+    <a href="#">Économie politique</a>
+    <a href="#">Sécurité</a>
+    <a href="#">Opinions</a>
+    <a href="#">Vidéos</a>
+  </div>
+</div>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-date">📅 Jeudi 4 juin 2026</span>
+    <div class="topbar-ticker">
+      <div class="ticker-wrap">
+        <div class="ticker-inner">
+          <span class="ticker-item">Sommet UA : plan de sécurité commun pour le Sahel</span>
+          <span class="ticker-item">Mali : nouveau gouvernement de transition formé</span>
+          <span class="ticker-item">ONU : vote sur la réforme du Conseil de sécurité</span>
+          <span class="ticker-item">Nigeria : crise constitutionnelle au Parlement</span>
+        </div>
+      </div>
+    </div>
+    <div class="topbar-links">
+      <a href="abonner.html">Newsletter</a>
+      <a href="#">Podcasts</a>
+      <a href="#">Vidéos</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-flag">AP</div>
+      <div class="logo-text">
+        <div class="logo-name">Afri<span>Politique</span></div>
+        <div class="logo-tagline">L'actualité politique africaine &amp; mondiale</div>
+      </div>
+    </div>
+    <div class="header-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Rechercher un article, un pays, un thème…" />
+    </div>
+    <div class="header-cta">
+      <a href="#" class="btn-secondary">Se connecter</a>
+      <a href="abonner.html" class="btn-primary">S'abonner</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-item">
+      <a class="nav-link active" href="#">Accueil</a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link breaking-link" href="#">🔴 Flash</a>
+    </div>
+    <div class="nav-item">
+      <span class="nav-link">Afrique <span class="arrow">▾</span></span>
+      <div class="mega-menu">
+        <div class="mega-col">
+          <h4>Régions</h4>
+          <ul>
+            <li><a href="#">Afrique de l'Ouest</a></li>
+            <li><a href="#">Afrique Centrale</a></li>
+            <li><a href="#">Afrique de l'Est</a></li>
+            <li><a href="#">Afrique du Nord</a></li>
+            <li><a href="#">Afrique Australe</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4>Thèmes</h4>
+          <ul>
+            <li><a href="#">Politique</a></li>
+            <li><a href="#">Élections</a></li>
+            <li><a href="#">Sécurité</a></li>
+            <li><a href="#">Économie politique</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4>Pays phares</h4>
+          <ul>
+            <li><a href="#">🇳🇬 Nigeria</a></li>
+            <li><a href="#">🇿🇦 Afrique du Sud</a></li>
+            <li><a href="#">🇸🇳 Sénégal</a></li>
+            <li><a href="#">🇪🇹 Éthiopie</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item">
+      <span class="nav-link">Monde <span class="arrow">▾</span></span>
+      <div class="mega-menu">
+        <div class="mega-col">
+          <h4>International</h4>
+          <ul>
+            <li><a href="#">Relations Afrique-Europe</a></li>
+            <li><a href="#">Afrique-Chine</a></li>
+            <li><a href="#">Afrique-USA</a></li>
+            <li><a href="#">Afrique-Russie</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4>Organisations</h4>
+          <ul>
+            <li><a href="#">Union Africaine</a></li>
+            <li><a href="#">Nations Unies</a></li>
+            <li><a href="#">CEDEAO</a></li>
+            <li><a href="#">ZLECAF</a></li>
+          </ul>
+        </div>
+        <div class="mega-col">
+          <h4>Dossiers</h4>
+          <ul>
+            <li><a href="#">Sahel en crise</a></li>
+            <li><a href="#">Dette africaine</a></li>
+            <li><a href="#">Transition démocratique</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="nav-item"><a class="nav-link" href="#">Élections</a></div>
+    <div class="nav-item"><a class="nav-link" href="#">Diplomatie</a></div>
+    <div class="nav-item"><a class="nav-link" href="#">Économie</a></div>
+    <div class="nav-item"><a class="nav-link" href="#">Sécurité</a></div>
+    <div class="nav-item"><a class="nav-link" href="#">Opinions</a></div>
+    <div class="nav-item"><a class="nav-link" href="#">Vidéos</a></div>
+    <button class="nav-mobile-btn" onclick="document.getElementById('mobile-nav').classList.add('open')">☰</button>
+  </div>
+</nav>
+
+<!-- ═══ BREAKING ═══ -->
+<div class="breaking-bar">
+  <div class="breaking-bar-inner">
+    <span class="breaking-tag">🔴 Flash</span>
+    <span class="breaking-text">L'UA convoque un sommet d'urgence ce week-end à Addis-Abeba sur la sécurité au Sahel — présence confirmée de 38 chefs d'État</span>
+    <a class="breaking-more" href="#">Lire →</a>
+  </div>
+</div>
+
+<!-- ═══ CONTENU PRINCIPAL ═══ -->
+<div class="page-wrap">
+  <div class="main-layout">
+
+    <!-- ══ COLONNE PRINCIPALE ══ -->
+    <main>
+
+      <!-- À LA UNE -->
+      <section class="une-section">
+        <div class="section-head">
+          <h2><span class="bar"></span>À la Une</h2>
+          <a href="#">Toutes les actualités →</a>
+        </div>
+        <div class="une-grid">
+
+          <!-- HERO -->
+          <a href="article.html?id=france-tchad-retour" class="hero-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Op%C3%A9ration_Barkhane_passage_en_revue_des_hommes_par_g%C3%A9n%C3%A9ral_fran%C3%A7ais_%C3%A0_N%27Djamena_en_2014.jpg/1920px-Op%C3%A9ration_Barkhane_passage_en_revue_des_hommes_par_g%C3%A9n%C3%A9ral_fran%C3%A7ais_%C3%A0_N%27Djamena_en_2014.jpg" alt="Cérémonie des drapeaux France-Tchad, lancement de l'opération Barkhane à N'Djaména (2014)" />
+            <div class="hero-card-body">
+              <div class="cat-tag cat-politique" style="margin-bottom:.5rem">Afrique — Géopolitique</div>
+              <div class="hero-title-main">France-Tchad : un an plus tard, le Tchad retombe dans la main de la France</div>
+              <div class="hero-excerpt-main">Le Tchad a chassé l'armée française en janvier 2025. Treize mois plus tard, Mahamat Déby était à l'Élysée pour demander son retour. Soixante ans d'une dépendance jamais rompue — et ce qu'elle coûte aux Tchadiens et aux États de l'AES.</div>
+              <div class="article-byline">
+                <span>✍️ Rédaction AfriPolitique</span>
+                <span>🕐 12 juin 2026</span>
+                <span>📖 12 min</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Side card 1 — ex-héros -->
+          <a href="afrique_mondial_2026.html" class="side-card">
+            <div class="side-card-img">
+              <img src="https://images.unsplash.com/photo-1551958219-acbc595d3b09?w=300&q=80&auto=format&fit=crop" alt="Football Afrique Coupe du Monde 2026" />
+            </div>
+            <div class="side-card-body">
+              <span class="cat-tag" style="background:#006233;color:#fff;">Sport — Mondial 2026</span>
+              <div class="side-title">L'Afrique à l'assaut du monde : 10 nations, une seule ambition</div>
+              <div class="side-excerpt">Dix équipes africaines disputeront la Coupe du Monde. Qui peut aller en finale ?</div>
+              <div class="article-byline dark"><span>9 juin 2026</span></div>
+            </div>
+          </a>
+
+          <!-- Side card 2 -->
+          <a href="article.html?id=union-africaine-sahel" class="side-card">
+            <div class="side-card-img">
+              <img src="https://images.unsplash.com/photo-1626695436755-3e288720849c?w=300&q=80&auto=format&fit=crop" alt="Union Africaine Sahel" />
+            </div>
+            <div class="side-card-body">
+              <span class="cat-tag cat-politique">Politique</span>
+              <div class="side-title">Union Africaine : vers une armée continentale face aux crises du Sahel</div>
+              <div class="side-excerpt">Les dirigeants africains examinent la création d'une force militaire commune à Addis-Abeba.</div>
+              <div class="article-byline dark"><span>4 juin 2026</span></div>
+            </div>
+          </a>
+
+          <!-- Side card 3 -->
+          <a href="article.html?id=senegal-legislatives" class="side-card">
+            <div class="side-card-img">
+              <img src="https://images.unsplash.com/photo-1515657241610-a6b33f0f6c5a?w=300&q=80&auto=format&fit=crop" alt="Sénégal élections" />
+            </div>
+            <div class="side-card-body">
+              <span class="cat-tag cat-election">Élections</span>
+              <div class="side-title">Sénégal : la coalition Pastef remporte les législatives avec une majorité renforcée</div>
+              <div class="side-excerpt">Participation record de 68 % dans les grandes villes lors de ce scrutin historique.</div>
+              <div class="article-byline dark"><span>3 juin 2026</span></div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- AFRIQUE -->
+      <section>
+        <div class="section-head">
+          <h2><span class="bar"></span>Afrique</h2>
+          <a href="#">Voir tout →</a>
+        </div>
+        <div class="articles-3col">
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1554457606-ed16c39db884?w=600&q=80&auto=format&fit=crop" alt="Nigeria Parlement" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-politique">Politique</span>
+              <a class="art-card-title" href="article.html?id=nigeria-parlement">Nigeria : le Parlement rejette la réforme constitutionnelle sur la décentralisation fiscale</a>
+              <p class="art-card-excerpt">Les gouverneurs du delta du Niger dénoncent un "hold-up institutionnel" après le vote qui maintient le contrôle fédéral sur les ressources pétrolières.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>3 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/nigeria-parlement" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Nigeria+Parlement&url=https://www.afripolitique.com/nigeria-parlement&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Nigeria+Parlement+https://www.afripolitique.com/nigeria-parlement" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/nigeria-parlement" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1649299313612-48cc3493f62e?w=600&q=80&auto=format&fit=crop" alt="Maroc Algérie" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-diplo">Diplomatie</span>
+              <a class="art-card-title" href="article.html?id=maroc-algerie">Maroc–Algérie : reprise discrète des contacts via un canal qatarien</a>
+              <p class="art-card-excerpt">Des sources diplomatiques confirment des échanges indirects entre Rabat et Alger pour la première fois depuis la rupture des relations en 2021.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>2 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/maroc-algerie" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Maroc-Algérie+diplomatie&url=https://www.afripolitique.com/maroc-algerie&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Maroc-Algérie+https://www.afripolitique.com/maroc-algerie" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/maroc-algerie" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1776013700766-64ed864bf36a?w=600&q=80&auto=format&fit=crop" alt="Burkina Faso" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-securite">Sécurité</span>
+              <a class="art-card-title" href="article.html?id=burkina-securite">Burkina Faso : la junte annonce une "victoire décisive" contre les groupes armés dans le Nord</a>
+              <p class="art-card-excerpt">L'état-major revendique la reprise de trois localités stratégiques, mais des ONG locales font état d'un bilan civil lourd.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>1 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/burkina-securite" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Burkina+Faso+sécurité&url=https://www.afripolitique.com/burkina-securite&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Burkina+Faso+https://www.afripolitique.com/burkina-securite" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/burkina-securite" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1600633349333-eebb43d01e23?w=600&q=80&auto=format&fit=crop" alt="ZLECAF" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-economie">Économie politique</span>
+              <a class="art-card-title" href="article.html?id=zlecaf">ZLECAF : 12 pays toujours hors du dispositif douanier, cinq ans après le lancement</a>
+              <p class="art-card-excerpt">Le secrétariat général dresse un bilan en demi-teinte : obstacles réglementaires et volonté politique en berne dans plusieurs capitales.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>2 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/zlecaf" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ZLECAF+bilan&url=https://www.afripolitique.com/zlecaf&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=ZLECAF+https://www.afripolitique.com/zlecaf" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/zlecaf" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1633116936671-99ba7425e06c?w=600&q=80&auto=format&fit=crop" alt="RDC paix" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-securite">Sécurité</span>
+              <a class="art-card-title" href="article.html?id=rdc-paix">RDC : l'accord de paix avec le M23 entre en vigueur — premières réactions des parties prenantes</a>
+              <p class="art-card-excerpt">La mise en œuvre du cessez-le-feu suscite espoir et méfiance dans l'est du pays, où la population attend un retour à la normalité.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>4 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/rdc-paix" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=RDC+accord+de+paix&url=https://www.afripolitique.com/rdc-paix&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=RDC+paix+https://www.afripolitique.com/rdc-paix" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/rdc-paix" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-card">
+            <div class="art-card-img">
+              <img src="https://images.unsplash.com/photo-1633116938154-de2b8637ba21?w=600&q=80&auto=format&fit=crop" alt="Éthiopie Amhara" />
+            </div>
+            <div class="art-card-body">
+              <span class="cat-tag cat-politique">Politique</span>
+              <a class="art-card-title" href="article.html?id=ethiopie-amhara">Éthiopie : le Premier ministre Abiy affronte une nouvelle crise dans la région Amhara</a>
+              <p class="art-card-excerpt">Les tensions entre Addis-Abeba et les forces de la région Amhara s'intensifient malgré les pourparlers de paix en cours.</p>
+              <div class="art-card-footer">
+                <div class="article-byline dark"><span>Rédaction AfriPolitique</span><span>3 juin 2026</span></div>
+              </div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/ethiopie-amhara" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Éthiopie+crise+Amhara&url=https://www.afripolitique.com/ethiopie-amhara&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Éthiopie+https://www.afripolitique.com/ethiopie-amhara" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/ethiopie-amhara" target="_blank">in</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- MONDE -->
+      <section>
+        <div class="section-head">
+          <h2><span class="bar"></span>Monde</h2>
+          <a href="#">Voir tout →</a>
+        </div>
+        <div class="art-list">
+
+          <div class="art-list-item">
+            <div class="art-list-img">
+              <img src="https://images.unsplash.com/photo-1633116937591-f312921e99b9?w=200&q=80&auto=format&fit=crop" alt="ONU Afrique" />
+            </div>
+            <div class="art-list-body">
+              <span class="cat-tag cat-monde">International</span>
+              <a class="art-list-title" href="article.html?id=onu-reforme">Réforme du Conseil de sécurité de l'ONU : l'Afrique réclame deux sièges permanents avec droit de veto</a>
+              <p class="art-list-excerpt">Le groupe africain intensifie sa campagne pour une représentation permanente, soutenu par 35 États membres lors du vote consultatif de mai.</p>
+              <div class="art-list-meta">Rédaction AfriPolitique · 4 juin 2026 · 6 min de lecture</div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/onu-reforme" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ONU+réforme+Afrique&url=https://www.afripolitique.com/onu-reforme&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=ONU+Afrique+https://www.afripolitique.com/onu-reforme" target="_blank">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-list-item">
+            <div class="art-list-img">
+              <img src="https://images.unsplash.com/photo-1625646782619-eccd5102cefd?w=200&q=80&auto=format&fit=crop" alt="Russie Afrique" />
+            </div>
+            <div class="art-list-body">
+              <span class="cat-tag cat-diplo">Diplomatie</span>
+              <a class="art-list-title" href="article.html?id=russie-afrique">Russie–Afrique : Moscou propose un nouveau forum économique après la désaffection de plusieurs partenaires</a>
+              <p class="art-list-excerpt">Après le retrait de six pays africains des accords de coopération militaire en 2025, la Russie tente de relancer son influence via des investissements agricoles.</p>
+              <div class="art-list-meta">Rédaction AfriPolitique · 3 juin 2026 · 5 min de lecture</div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/russie-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Russie-Afrique+forum&url=https://www.afripolitique.com/russie-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Russie-Afrique+https://www.afripolitique.com/russie-afrique" target="_blank">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-list-item">
+            <div class="art-list-img">
+              <img src="https://images.unsplash.com/photo-1504975692386-cfacf81e1022?w=200&q=80&auto=format&fit=crop" alt="Chine Afrique" />
+            </div>
+            <div class="art-list-body">
+              <span class="cat-tag cat-monde">International</span>
+              <a class="art-list-title" href="article.html?id=chine-afrique">Chine : l'initiative "Route de la soie" africaine entre dans sa phase de renégociation — la dette en question</a>
+              <p class="art-list-excerpt">Pékin accepte de rééchelonner la dette de huit pays africains, tout en préservant ses droits d'exploitation minière sur les ressources stratégiques.</p>
+              <div class="art-list-meta">Rédaction AfriPolitique · 2 juin 2026 · 7 min de lecture</div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/chine-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Chine+Route+soie+Afrique&url=https://www.afripolitique.com/chine-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Chine-Afrique+https://www.afripolitique.com/chine-afrique" target="_blank">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="art-list-item">
+            <div class="art-list-img">
+              <img src="https://images.unsplash.com/photo-1647558165776-8b4ab9ac8c6f?w=200&q=80&auto=format&fit=crop" alt="USA Afrique" />
+            </div>
+            <div class="art-list-body">
+              <span class="cat-tag cat-monde">International</span>
+              <a class="art-list-title" href="article.html?id=usa-afrique">États-Unis : la nouvelle stratégie africaine de Washington cible la coopération climatique et les terres rares</a>
+              <p class="art-list-excerpt">L'administration américaine annonce un plan de 8 milliards de dollars pour contrer l'influence chinoise sur les ressources stratégiques du continent.</p>
+              <div class="art-list-meta">Rédaction AfriPolitique · 1 juin 2026 · 5 min de lecture</div>
+              <div class="share-bar">
+                <span class="share-lbl">Partager</span>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/usa-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=USA+stratégie+Afrique&url=https://www.afripolitique.com/usa-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=USA-Afrique+https://www.afripolitique.com/usa-afrique" target="_blank">💬 WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- NEWSLETTER BAND -->
+      <div class="nl-band">
+        <div class="nl-band-inner">
+          <div class="nl-band-text">
+            <h3>📩 La newsletter AfriPolitique</h3>
+            <p>L'essentiel de l'actualité politique africaine chaque matin dans votre boîte mail. Gratuit.</p>
+          </div>
+          <div id="nl-band-wrap" style="flex:1;max-width:420px;">
+            <form class="nl-band-form" id="nl-band-form"
+                  action="https://01c06ba0.sibforms.com/serve/MUIFALdt58dvd8Kv9UZagMyipE42uwhuam4h1Ap5HfeJv1rDz7N5pwk2AA0zBeVBSfsAHBCzQ0OT4OT3wEcMKayuRAfBjqCGmyEW9c5RdfxCeUIY2PTouI0TozzlTpGqjHqFIPzZ-oIT5EEnkclm-vPFvstbAyvwVNjNBjLgXfp6_gkPYQx6YIDjO-EZUuPTc2JyHtXbVhdNYRCW_g=="
+                  method="post" target="brevo-iframe-band">
+              <input type="email" name="EMAIL" placeholder="Votre adresse e-mail" required />
+              <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off" />
+              <input type="hidden" name="locale" value="fr" />
+              <input type="hidden" name="html_type" value="simple" />
+              <button type="submit">S'abonner</button>
+            </form>
+            <iframe name="brevo-iframe-band" style="display:none"></iframe>
+            <div id="nl-band-success" style="display:none;color:#fff;font-family:var(--sans);font-size:.9rem;padding:.75rem 0;">
+              ✅ Merci ! Vérifiez votre boîte mail pour confirmer votre inscription.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- TRIBUNES & OPINIONS -->
+      <section>
+        <div class="section-head">
+          <h2><span class="bar"></span>Tribunes &amp; Analyses</h2>
+          <a href="#">Voir tout →</a>
+        </div>
+        <div class="opinion-grid">
+          <div class="opinion-card">
+            <div class="op-quote">"</div>
+            <p class="op-text">Le panafricanisme ne peut se construire sur des souverainetés fragmentées. Il est temps de dépasser les frontières héritées de la colonisation pour imaginer une gouvernance continentale réelle.</p>
+            <div class="op-author">
+              <div class="op-avatar">👤</div>
+              <div><div class="op-name">Prof. Ibrahima Sall</div><div class="op-role">Politologue, Université de Dakar</div></div>
+            </div>
+          </div>
+          <div class="opinion-card">
+            <div class="op-quote">"</div>
+            <p class="op-text">Les transitions militaires répétées au Sahel révèlent moins un échec de la démocratie qu'une incapacité des élites civiles à répondre aux urgences sociales de leurs populations.</p>
+            <div class="op-author">
+              <div class="op-avatar">👤</div>
+              <div><div class="op-name">Dr. Aissatou Bah</div><div class="op-role">Chercheuse, Institut d'études africaines, Paris</div></div>
+            </div>
+          </div>
+          <div class="opinion-card">
+            <div class="op-quote">"</div>
+            <p class="op-text">La dette africaine envers les créanciers étrangers n'est pas qu'économique — elle est aussi politique. Refuser de la renégocier, c'est accepter une tutelle permanente sur nos politiques publiques.</p>
+            <div class="op-author">
+              <div class="op-avatar">👤</div>
+              <div><div class="op-name">Chidi Nwosu</div><div class="op-role">Économiste, Lagos Business School</div></div>
+            </div>
+          </div>
+          <div class="opinion-card">
+            <div class="op-quote">"</div>
+            <p class="op-text">L'émergence des pays africains ne peut être portée que par leurs propres ressources humaines et naturelles. La coopération internationale doit cesser d'être un instrument de dépendance.</p>
+            <div class="op-author">
+              <div class="op-avatar">👤</div>
+              <div><div class="op-name">Mme. Naledi Dlamini</div><div class="op-role">Ancienne ministre des AE, Afrique du Sud</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main><!-- /main -->
+
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar">
+
+      <div class="widget">
+        <div class="widget-head red">🔥 Les plus lus</div>
+        <div class="widget-body">
+          <div class="trending-list">
+            <div class="trend-item">
+              <span class="trend-num">01</span>
+              <div><a class="trend-title" href="article.html?id=rdc-paix">RDC : l'accord de paix avec le M23 entre en vigueur</a><div class="trend-cat">Sécurité · 4 juin 2026</div></div>
+            </div>
+            <div class="trend-item">
+              <span class="trend-num">02</span>
+              <div><a class="trend-title" href="article.html?id=ethiopie-amhara">Éthiopie : nouvelle crise dans la région Amhara</a><div class="trend-cat">Politique · 3 juin 2026</div></div>
+            </div>
+            <div class="trend-item">
+              <span class="trend-num">03</span>
+              <div><a class="trend-title" href="article.html?id=g7-dette-covid">G7 : l'Afrique demande l'annulation de sa dette post-COVID</a><div class="trend-cat">International · 3 juin 2026</div></div>
+            </div>
+            <div class="trend-item">
+              <span class="trend-num">04</span>
+              <div><a class="trend-title" href="article.html?id=tunisie-judiciaire">Tunisie : Saïed renforce son emprise sur le judiciaire</a><div class="trend-cat">Afrique du Nord · 2 juin 2026</div></div>
+            </div>
+            <div class="trend-item">
+              <span class="trend-num">05</span>
+              <div><a class="trend-title" href="article.html?id=angola-corruption">Angola : scandale de corruption — procès en cours</a><div class="trend-cat">Justice · 1 juin 2026</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-head">🗺️ Par pays</div>
+        <div class="country-list">
+          <div class="country-item"><span class="country-flag">🇸🇳</span> Sénégal <span class="country-count">12</span></div>
+          <div class="country-item"><span class="country-flag">🇨🇩</span> RD Congo <span class="country-count">9</span></div>
+          <div class="country-item"><span class="country-flag">🇳🇬</span> Nigeria <span class="country-count">11</span></div>
+          <div class="country-item"><span class="country-flag">🇲🇦</span> Maroc <span class="country-count">7</span></div>
+          <div class="country-item"><span class="country-flag">🇪🇹</span> Éthiopie <span class="country-count">8</span></div>
+          <div class="country-item"><span class="country-flag">🇧🇫</span> Burkina Faso <span class="country-count">6</span></div>
+          <div class="country-item"><span class="country-flag">🇿🇦</span> Afrique du Sud <span class="country-count">10</span></div>
+          <div class="country-item"><span class="country-flag">🇰🇪</span> Kenya <span class="country-count">8</span></div>
+          <div class="country-item"><span class="country-flag">🇨🇲</span> Cameroun <span class="country-count">5</span></div>
+          <div class="country-item" style="color:var(--red);font-weight:700">🌍 Tous les pays →</div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-head">📅 Agenda politique</div>
+        <div class="widget-body">
+          <div class="agenda-list">
+            <div class="agenda-item">
+              <div class="agenda-date">06<br>JUIN</div>
+              <div><div class="agenda-title">Sommet UA — Addis-Abeba</div><div class="agenda-lieu">Sécurité &amp; paix au Sahel</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-date" style="background:var(--black)">12<br>JUIN</div>
+              <div><div class="agenda-title">Élections — Mozambique</div><div class="agenda-lieu">Second tour présidentiel</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-date" style="background:var(--black)">18<br>JUIN</div>
+              <div><div class="agenda-title">Forum Paix — Nairobi</div><div class="agenda-lieu">IGAD &amp; partenaires</div></div>
+            </div>
+            <div class="agenda-item">
+              <div class="agenda-date" style="background:var(--black)">25<br>JUIN</div>
+              <div><div class="agenda-title">G20 Afrique — Johannesburg</div><div class="agenda-lieu">Économie &amp; investissement</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-head red">📩 Newsletter</div>
+        <div class="widget-body">
+          <p class="nl-desc">Recevez l'essentiel de l'actualité africaine chaque matin. Gratuit, sans spam.</p>
+          <form class="nl-form" id="nl-sidebar-form"
+                action="https://01c06ba0.sibforms.com/serve/MUIFALdt58dvd8Kv9UZagMyipE42uwhuam4h1Ap5HfeJv1rDz7N5pwk2AA0zBeVBSfsAHBCzQ0OT4OT3wEcMKayuRAfBjqCGmyEW9c5RdfxCeUIY2PTouI0TozzlTpGqjHqFIPzZ-oIT5EEnkclm-vPFvstbAyvwVNjNBjLgXfp6_gkPYQx6YIDjO-EZUuPTc2JyHtXbVhdNYRCW_g=="
+                method="post" target="brevo-iframe-sidebar">
+            <input type="email" name="EMAIL" placeholder="Votre e-mail" required />
+            <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off" />
+            <input type="hidden" name="locale" value="fr" />
+            <input type="hidden" name="html_type" value="simple" />
+            <button type="submit">S'abonner gratuitement</button>
+          </form>
+          <iframe name="brevo-iframe-sidebar" style="display:none"></iframe>
+          <div id="nl-sidebar-success" style="display:none;background:#f0fff4;border:1px solid #1a7c4a;border-radius:4px;padding:.75rem;font-family:var(--sans);font-size:.82rem;color:#1a7c4a;margin-top:.5rem;">
+            ✅ Inscription confirmée ! Vérifiez votre boîte mail.
+          </div>
+          <p style="font-family:var(--sans);font-size:.72rem;color:#999;margin-top:.5rem;text-align:center;">
+            <a href="abonner.html" style="color:var(--red);">Plus d'options d'abonnement →</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="pub-widget">
+        <p>📣 Publicité</p>
+        <h3>AfriPolitique+</h3>
+        <span>Accès illimité à tous nos articles,<br/>analyses et archives.</span>
+        <br/><br/>
+        <a href="#" style="background:#c9a84c;color:#000;font-family:var(--sans);font-weight:700;font-size:.8rem;padding:.55rem 1.2rem;border-radius:3px;display:inline-block">Découvrir l'offre →</a>
+      </div>
+
+    </aside>
+
+  </div><!-- /main-layout -->
+</div><!-- /page-wrap -->
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div><div class="stat-num">54</div><div class="stat-lbl">Pays couverts</div></div>
+    <div><div class="stat-num">12</div><div class="stat-lbl">Correspondants</div></div>
+    <div><div class="stat-num">1 200+</div><div class="stat-lbl">Articles publiés</div></div>
+    <div><div class="stat-num">48h</div><div class="stat-lbl">Délai de vérification</div></div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="f-logo">Afri<span>Politique</span></div>
+      <p>Média indépendant dédié à l'information politique africaine et mondiale. Notre mission : décrypter les enjeux de pouvoir et de gouvernance avec rigueur.</p>
+      <div class="f-email">✉️ redaction@afripolitique.com</div>
+      <div class="social-row">
+        <a class="soc-btn" href="https://twitter.com/AfriPolitique" target="_blank" rel="noopener" title="X/Twitter">𝕏</a>
+        <a class="soc-btn" href="https://www.facebook.com/AfriPolitique" target="_blank" rel="noopener" title="Facebook">f</a>
+        <a class="soc-btn" href="https://www.instagram.com/afripolitique" target="_blank" rel="noopener" title="Instagram">📷</a>
+        <a class="soc-btn" href="https://www.youtube.com/@AfriPolitique" target="_blank" rel="noopener" title="YouTube">▶</a>
+        <a class="soc-btn" href="https://whatsapp.com/channel/AfriPolitique" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+        <a class="soc-btn" href="https://www.linkedin.com/company/afripolitique" target="_blank" rel="noopener" title="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Rubriques</h4>
+      <ul>
+        <li><a href="#">Afrique</a></li>
+        <li><a href="#">Monde</a></li>
+        <li><a href="#">Élections</a></li>
+        <li><a href="#">Diplomatie</a></li>
+        <li><a href="#">Économie politique</a></li>
+        <li><a href="#">Sécurité</a></li>
+        <li><a href="#">Opinions</a></li>
+        <li><a href="#">Vidéos</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Régions</h4>
+      <ul>
+        <li><a href="#">Afrique de l'Ouest</a></li>
+        <li><a href="#">Afrique Centrale</a></li>
+        <li><a href="#">Afrique de l'Est</a></li>
+        <li><a href="#">Afrique du Nord</a></li>
+        <li><a href="#">Afrique Australe</a></li>
+        <li><a href="#">Diaspora</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>À propos</h4>
+      <ul>
+        <li><a href="#">Notre équipe</a></li>
+        <li><a href="#">Charte éditoriale</a></li>
+        <li><a href="#">Contactez-nous</a></li>
+        <li><a href="mailto:redaction@afripolitique.com">contact@afripolitique.com</a></li>
+        <li><a href="#">Publicité</a></li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 AfriPolitique. Tous droits réservés.</p>
+    <div class="footer-legal">
+      <a href="#">Mentions légales</a>
+      <a href="#">CGU</a>
+      <a href="#">Cookies</a>
+      <a href="#">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Confirmation inline pour les formulaires newsletter (envoi via iframe caché)
+  function setupNlForm(formId, successId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function() {
+      setTimeout(function() {
+        form.style.display = 'none';
+        var s = document.getElementById(successId);
+        if (s) s.style.display = 'block';
+      }, 700);
+    });
+  }
+  setupNlForm('nl-band-form', 'nl-band-success');
+  setupNlForm('nl-sidebar-form', 'nl-sidebar-success');
+
+  // Date dynamique dans la topbar
+  (function() {
+    var el = document.querySelector('.topbar-date');
+    if (!el) return;
+    var d = new Date();
+    var jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+    var mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+    el.textContent = '📅 ' + jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()] + ' ' + d.getFullYear();
+  })();
+
+  // Partage social dynamique sur la page d'accueil (Web Share API si disponible)
+  document.querySelectorAll('.s-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var href = btn.getAttribute('href');
+      if (href && href !== '#' && href.startsWith('http')) {
+        // Ouvrir dans une petite fenêtre popup pour partage
+        e.preventDefault();
+        window.open(href, 'share', 'width=600,height=450,location=0,menubar=0,toolbar=0');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+                                                                       

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title id="page-title">AfriPolitique — Article</title>
+<meta id="meta-desc" name="description" content="AfriPolitique — Actualités politiques africaines et mondiales"/>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia','Times New Roman',serif;
+    font-size: 16px; color: #1a1a1a; background: #f5f5f0; line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  :root {
+    --red: #c8102e; --red-dark:#a00d24; --black:#1a1a1a; --gray:#4a4a4a;
+    --light:#f5f5f0; --white:#fff; --border:#e0e0d8; --blue:#1a5276; --green:#1a7c4a;
+    --sans: 'Arial','Helvetica Neue',sans-serif;
+  }
+
+  /* Topbar */
+  .topbar { background: var(--black); color:#ccc; font-family:var(--sans); font-size:.72rem; padding:.4rem 0; border-bottom:1px solid #333; }
+  .topbar-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .topbar-date { color:#aaa; }
+  .topbar-links { display:flex; gap:1rem; }
+  .topbar-links a { color:#aaa; font-size:.72rem; font-family:var(--sans); }
+  .topbar-links a:hover { color:var(--white); }
+
+  /* Header */
+  .site-header { background: var(--white); border-bottom: 3px solid var(--red); padding: 1rem 0 .75rem; }
+  .header-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+  .logo-wrap { display:flex; align-items:center; gap:.75rem; }
+  .logo-flag { width:44px; height:44px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:900; font-size:1.1rem; color:#fff; letter-spacing:-.05em; }
+  .logo-name { font-size:1.85rem; font-family:Georgia,serif; font-weight:700; color:var(--black); letter-spacing:-.02em; }
+  .logo-name span { color: var(--red); }
+  .logo-tagline { font-size:.68rem; font-family:var(--sans); color:var(--gray); text-transform:uppercase; letter-spacing:.12em; }
+  .header-cta a { font-family:var(--sans); font-size:.78rem; font-weight:700; padding:.5rem 1.1rem; border-radius:3px; text-transform:uppercase; letter-spacing:.04em; }
+  .btn-primary { background:var(--red); color:#fff; }
+  .btn-secondary { color:var(--black); border:1px solid var(--border); }
+
+  /* Breadcrumb / back link */
+  .crumb-bar { background:var(--white); border-bottom:1px solid var(--border); }
+  .crumb-inner { max-width: 860px; margin:auto; padding:.75rem 1rem; font-family:var(--sans); font-size:.78rem; color:var(--gray); display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; }
+  .crumb-inner a { color: var(--red); font-weight:700; }
+  .crumb-inner a:hover { text-decoration:underline; }
+  .crumb-sep { color:#bbb; }
+
+  /* Article layout */
+  .article-wrap { max-width: 860px; margin: 2rem auto; padding: 0 1rem 3rem; }
+  .cat-tag { display:inline-block; font-family:var(--sans); font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; padding:.22rem .6rem; border-radius:2px; margin-bottom: 1rem; }
+  .cat-politique { background:var(--red); color:#fff; }
+  .cat-election  { background:#1a7c4a; color:#fff; }
+  .cat-diplo     { background:#1a5276; color:#fff; }
+  .cat-securite  { background:#7d3c98; color:#fff; }
+  .cat-economie  { background:#b7770d; color:#fff; }
+  .cat-monde     { background:#2e4057; color:#fff; }
+  .cat-opinion   { background:var(--black); color:#fff; }
+
+  .article-title {
+    font-family: Georgia, serif; font-size: 2.1rem; font-weight:700; line-height:1.25;
+    color: var(--black); margin-bottom: .9rem;
+  }
+  @media(max-width:600px){ .article-title{ font-size:1.5rem; } }
+
+  .article-excerpt { font-size: 1.1rem; color: var(--gray); font-style: italic; margin-bottom: 1.1rem; }
+
+  .article-meta {
+    display:flex; flex-wrap:wrap; gap:1.1rem; align-items:center;
+    font-family: var(--sans); font-size:.78rem; color: var(--gray);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: .85rem 0; margin-bottom: 1.6rem;
+  }
+  .article-meta b { color: var(--black); }
+
+  .article-cover { border-radius: 4px; overflow:hidden; margin-bottom: 1.8rem; background:#ddd; height: 420px; }
+  @media(max-width:600px){ .article-cover{ height:240px; } }
+  .article-cover-caption { font-family: var(--sans); font-size:.72rem; color:#999; margin-top:.4rem; }
+
+  .article-body p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #2a2a2a; }
+  .article-body p:first-of-type::first-letter {
+    font-family: Georgia, serif; font-size: 3.2rem; font-weight:700; color: var(--red);
+    float:left; line-height: .8; margin: .12em .15em 0 0;
+  }
+
+  .share-bar { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; margin: 1.6rem 0 2.2rem; }
+  .share-lbl { font-family:var(--sans); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:#999; margin-right:.2rem; }
+  .s-btn { display:inline-flex; align-items:center; gap:.3rem; padding:.35rem .8rem; border-radius:3px; font-family:var(--sans); font-size:.74rem; font-weight:700; transition:opacity .15s; }
+  .s-btn:hover { opacity:.85; }
+  .s-fb { background:#1877f2; color:#fff; }
+  .s-tw { background:#000; color:#fff; }
+  .s-wa { background:#25d366; color:#fff; }
+  .s-lk { background:#0a66c2; color:#fff; }
+
+  .back-link {
+    display:inline-flex; align-items:center; gap:.4rem;
+    font-family: var(--sans); font-size:.8rem; font-weight:700; color: var(--red);
+    margin-bottom: 1.5rem;
+  }
+  .back-link:hover { text-decoration:underline; }
+
+  .related-section { border-top: 2px solid var(--black); padding-top: 1.2rem; margin-top: 2.5rem; }
+  .related-section h3 { font-family:var(--sans); font-size:.85rem; font-weight:900; text-transform:uppercase; letter-spacing:.12em; margin-bottom: 1rem; display:flex; align-items:center; gap:.5rem; }
+  .related-section h3 .bar { width:4px; height:1.1rem; background:var(--red); border-radius:2px; display:inline-block; }
+  .related-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  @media(max-width:700px){ .related-grid{ grid-template-columns: 1fr; } }
+  .rel-card { background:var(--white); border:1px solid var(--border); border-radius:3px; overflow:hidden; display:flex; flex-direction:column; transition: box-shadow .2s, transform .2s; }
+  .rel-card:hover { box-shadow:0 4px 16px rgba(0,0,0,.1); transform: translateY(-2px); }
+  .rel-card-img { height:120px; overflow:hidden; background:#ddd; }
+  .rel-card-body { padding:.8rem; }
+  .rel-card-title { font-size:.85rem; font-weight:700; line-height:1.3; color:var(--black); }
+  .rel-card-title:hover { color: var(--red); }
+  .rel-card .cat-tag { margin-bottom:.4rem; font-size:.6rem; }
+
+  .not-found { text-align:center; padding: 5rem 1rem; }
+  .not-found h1 { font-family: var(--sans); font-size:1.4rem; margin-bottom: 1rem; }
+  .not-found a { color: var(--red); font-weight:700; font-family: var(--sans); }
+
+  /* Footer (compact) */
+  footer { background: var(--black); color:#ccc; font-family: var(--sans); margin-top: 2rem; }
+  .footer-inner { max-width:1240px; margin:auto; padding: 2rem 1rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; justify-content:space-between; }
+  .f-logo { font-family: Georgia, serif; font-size:1.3rem; font-weight:700; color:#fff; }
+  .f-logo span { color: var(--red); }
+  footer p { font-size:.78rem; color:#999; }
+  .footer-bottom { border-top:1px solid #333; text-align:center; padding: 1rem; font-size:.72rem; color:#888; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-date">📅 Dimanche 7 juin 2026</span>
+    <div class="topbar-links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html">Newsletter</a>
+      <a href="index.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-flag">AP</div>
+      <div class="logo-text">
+        <div class="logo-name">Afri<span>Politique</span></div>
+        <div class="logo-tagline">L'actualité politique africaine &amp; mondiale</div>
+      </div>
+    </a>
+    <div class="header-cta">
+      <a href="index.html" class="btn-secondary">Accueil</a>
+      <a href="abonner.html" class="btn-primary">S'abonner</a>
+    </div>
+  </div>
+</header>
+
+<div class="crumb-bar">
+  <div class="crumb-inner">
+    <a href="index.html">Accueil</a>
+    <span class="crumb-sep">›</span>
+    <span id="crumb-cat">Article</span>
+    <span class="crumb-sep">›</span>
+    <span id="crumb-title" style="color:var(--gray); font-weight:400;">…</span>
+  </div>
+</div>
+
+<div class="article-wrap" id="article-root">
+  <!-- Rempli dynamiquement par le script -->
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">Afri<span>Politique</span></div>
+      <p style="margin-top:.4rem;">Média indépendant dédié à l'information politique africaine et mondiale.</p>
+    </div>
+    <p>✉️ redaction@afripolitique.com</p>
+  </div>
+  <div class="footer-bottom">© 2026 AfriPolitique. Tous droits réservés.</div>
+</footer>
+
+<script src="articles-data.js"></script>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const root = document.getElementById('article-root');
+  const SITE = 'https://www.afripolitique.com/';
+
+  const article = (typeof ARTICLES !== 'undefined' && id) ? ARTICLES[id] : null;
+
+  function escAttr(s){ return String(s).replace(/"/g,'&quot;'); }
+
+  if (!article) {
+    root.innerHTML = `
+      <div class="not-found">
+        <h1>Article introuvable</h1>
+        <p style="color:var(--gray); margin-bottom:1.2rem;">Cet article n'existe pas ou a été déplacé.</p>
+        <a href="index.html">← Retour à l'accueil</a>
+      </div>`;
+    document.getElementById('crumb-title').textContent = 'Introuvable';
+    return;
+  }
+
+  document.title = article.title + ' — AfriPolitique';
+  document.getElementById('meta-desc').setAttribute('content', article.excerpt);
+  document.getElementById('crumb-cat').textContent = article.catLabel || 'Article';
+  document.getElementById('crumb-title').textContent = article.title;
+
+  const shareUrl = SITE + id;
+  const shareText = encodeURIComponent(article.title);
+
+  const bodyHtml = article.body.map(p => `<p>${p}</p>`).join('\n');
+
+  // Articles apparentés : 3 autres articles au hasard (hors article courant)
+  const otherIds = Object.keys(ARTICLES).filter(k => k !== id);
+  const shuffled = otherIds.sort(() => Math.random() - 0.5).slice(0, 3);
+  const relatedHtml = shuffled.map(rid => {
+    const a = ARTICLES[rid];
+    return `
+      <a class="rel-card" href="article.html?id=${encodeURIComponent(rid)}">
+        <div class="rel-card-img"><img src="${escAttr(a.img)}" alt="${escAttr(a.title)}" loading="lazy"/></div>
+        <div class="rel-card-body">
+          <span class="cat-tag ${a.cat}">${a.catLabel}</span>
+          <div class="rel-card-title">${a.title}</div>
+        </div>
+      </a>`;
+  }).join('');
+
+  root.innerHTML = `
+    <a class="back-link" href="index.html">← Retour à l'accueil</a>
+
+    <span class="cat-tag ${article.cat}">${article.catLabel}</span>
+    <h1 class="article-title">${article.title}</h1>
+    <p class="article-excerpt">${article.excerpt}</p>
+
+    <div class="article-meta">
+      <span>✍️ <b>${article.author}</b></span>
+      <span>🕐 ${article.date}</span>
+      <span>⏱ ${article.read} de lecture</span>
+    </div>
+
+    <div class="article-cover"><img src="${escAttr(article.img)}" alt="${escAttr(article.title)}"/></div>
+
+    <div class="article-body">${bodyHtml}</div>
+
+    <div class="share-bar">
+      <span class="share-lbl">Partager :</span>
+      <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}" target="_blank" rel="noopener">f Facebook</a>
+      <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=${shareText}&url=${encodeURIComponent(shareUrl)}&via=AfriPolitique" target="_blank" rel="noopener">𝕏 Twitter</a>
+      <a class="s-btn s-wa" href="https://wa.me/?text=${shareText}%20${encodeURIComponent(shareUrl)}" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}" target="_blank" rel="noopener">in LinkedIn</a>
+    </div>
+
+    <div class="related-section">
+      <h3><span class="bar"></span>À lire aussi</h3>
+      <div class="related-grid">${relatedHtml}</div>
+    </div>
+  `;
+})();
+</script>
+
+</body>
+</html>

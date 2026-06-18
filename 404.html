@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirection — AfriPolitique</title>
+<style>
+  body { font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #faf8f4; }
+  .box { text-align: center; color: #666; }
+  .logo { font-size: 28px; font-weight: 900; color: #8B2635; margin-bottom: 12px; }
+  p { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">AfriPolitique</div>
+  <p>Redirection en cours…</p>
+</div>
+<script>
+  // Récupère le paramètre "id" de l'URL (ex: article.html?id=cdm2026)
+  var id = new URLSearchParams(window.location.search).get('id');
+  if (id) {
+    // Redirige vers la page principale avec le paramètre id
+    window.location.replace('/?id=' + encodeURIComponent(id));
+  } else {
+    // Pas d'id → retour à l'accueil
+    window.location.replace('/');
+  }
+</script>
+</body>
+</html>

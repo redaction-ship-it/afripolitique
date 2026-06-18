@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>S'abonner à AfriPolitique — Newsletters & Alertes</title>
+  <meta name="description" content="Abonnez-vous à AfriPolitique : newsletters quotidiennes, alertes breaking news, analyses exclusives sur l'Afrique et le monde."/>
+  <meta property="og:title" content="S'abonner à AfriPolitique"/>
+  <meta property="og:description" content="L'actualité politique africaine dans votre boîte mail. Gratuit."/>
+  <meta property="og:url" content="https://www.afripolitique.com/abonner"/>
+  <meta property="og:image" content="https://images.unsplash.com/photo-1626695436755-3e288720849c?w=1200&q=80&auto=format&fit=crop"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@AfriPolitique"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Georgia','Times New Roman',serif; font-size:16px; color:#1a1a1a; background:#f5f5f0; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    button { cursor:pointer; border:none; font-family:inherit; }
+
+    :root {
+      --red:#c8102e; --red-dark:#a00d24; --black:#1a1a1a; --gray:#4a4a4a;
+      --light:#f5f5f0; --white:#fff; --border:#e0e0d8; --gold:#c9a84c;
+      --sans:'Arial','Helvetica Neue',sans-serif;
+    }
+
+    /* TOP BAR */
+    .topbar { background:var(--black); color:#ccc; font-family:var(--sans); font-size:.72rem; padding:.4rem 0; }
+    .topbar-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; }
+    .topbar-links { display:flex; gap:1rem; }
+    .topbar-links a { color:#aaa; }
+    .topbar-links a:hover { color:#fff; }
+
+    /* HEADER */
+    .site-header { background:#fff; border-bottom:3px solid var(--red); padding:1rem 0 .75rem; }
+    .header-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+    .logo-wrap { display:flex; align-items:center; gap:.75rem; }
+    .logo-flag { width:44px; height:44px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:900; font-size:1.1rem; color:#fff; }
+    .logo-name { font-size:1.85rem; font-family:Georgia,serif; font-weight:700; color:var(--black); }
+    .logo-name span { color:var(--red); }
+    .logo-tagline { font-size:.68rem; font-family:var(--sans); color:var(--gray); text-transform:uppercase; letter-spacing:.12em; }
+    .header-cta { display:flex; gap:.6rem; }
+    .header-cta a { font-family:var(--sans); font-size:.78rem; font-weight:700; padding:.5rem 1.1rem; border-radius:3px; text-transform:uppercase; letter-spacing:.04em; }
+    .btn-primary { background:var(--red); color:#fff; }
+    .btn-secondary { color:var(--black); border:1px solid var(--border); }
+    .btn-primary:hover { background:var(--red-dark); }
+
+    /* NAV */
+    .main-nav { background:var(--black); }
+    .nav-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; gap:.25rem; align-items:center; }
+    .nav-link { display:block; padding:.65rem .9rem; font-family:var(--sans); font-size:.8rem; font-weight:700; color:#ccc; text-transform:uppercase; letter-spacing:.04em; }
+    .nav-link:hover, .nav-link.active { color:#fff; }
+    .nav-link.breaking-link { color:var(--red); }
+    .nav-link.active { border-bottom:2px solid var(--red); color:#fff; }
+
+    /* BREADCRUMB */
+    .crumb-bar { background:#fff; border-bottom:1px solid var(--border); }
+    .crumb-inner { max-width:1000px; margin:auto; padding:.75rem 1rem; font-family:var(--sans); font-size:.78rem; color:var(--gray); display:flex; gap:.4rem; align-items:center; }
+    .crumb-inner a { color:var(--red); font-weight:700; }
+    .crumb-inner a:hover { text-decoration:underline; }
+
+    /* HERO SUBSCRIBE */
+    .sub-hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1a 50%, #c8102e 100%);
+      color:#fff; padding:4rem 1rem; text-align:center;
+    }
+    .sub-hero-icon { font-size:3rem; margin-bottom:1rem; }
+    .sub-hero h1 { font-size:2.4rem; font-family:Georgia,serif; margin-bottom:.75rem; }
+    .sub-hero p { font-size:1.1rem; color:#ddd; max-width:600px; margin:0 auto 1.5rem; font-family:var(--sans); }
+    .sub-hero-stats { display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem; }
+    .sub-stat { font-family:var(--sans); }
+    .sub-stat-num { font-size:1.8rem; font-weight:700; color:var(--gold); }
+    .sub-stat-lbl { font-size:.75rem; color:#bbb; text-transform:uppercase; letter-spacing:.06em; }
+
+    /* MAIN LAYOUT */
+    .sub-page { max-width:1000px; margin:3rem auto; padding:0 1rem; }
+
+    /* NEWSLETTER CARDS */
+    .nl-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:3rem; }
+    .nl-card {
+      background:#fff; border:2px solid var(--border); border-radius:8px; padding:1.75rem;
+      display:flex; flex-direction:column; transition: border-color .2s, box-shadow .2s;
+    }
+    .nl-card:hover { border-color:var(--red); box-shadow:0 4px 20px rgba(200,16,46,.1); }
+    .nl-card.featured { border-color:var(--red); }
+    .nl-card-badge { font-family:var(--sans); font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; background:var(--red); color:#fff; padding:.2rem .6rem; border-radius:20px; display:inline-block; margin-bottom:.75rem; width:fit-content; }
+    .nl-card-badge.gold { background:var(--gold); color:#000; }
+    .nl-card h3 { font-size:1.2rem; margin-bottom:.4rem; }
+    .nl-card .freq { font-family:var(--sans); font-size:.78rem; color:var(--gray); margin-bottom:1rem; }
+    .nl-card p { font-family:var(--sans); font-size:.87rem; color:var(--gray); flex:1; margin-bottom:1.25rem; }
+    .nl-card ul { list-style:none; margin-bottom:1.5rem; flex:1; }
+    .nl-card ul li { font-family:var(--sans); font-size:.83rem; color:var(--gray); padding:.3rem 0; border-bottom:1px solid #f0f0ea; }
+    .nl-card ul li::before { content:"✓  "; color:var(--red); font-weight:700; }
+
+    /* MAIN FORM */
+    .sub-form-section { background:#fff; border:1px solid var(--border); border-radius:8px; padding:2.5rem; margin-bottom:3rem; }
+    .sub-form-section h2 { font-size:1.6rem; margin-bottom:.4rem; }
+    .sub-form-section .sub-subtitle { font-family:var(--sans); font-size:.9rem; color:var(--gray); margin-bottom:2rem; }
+
+    .nl-type-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .nl-type { border:2px solid var(--border); border-radius:6px; padding:1rem; cursor:pointer; transition:border-color .2s; }
+    .nl-type input[type=checkbox] { display:none; }
+    .nl-type:has(input:checked) { border-color:var(--red); background:#fff5f7; }
+    .nl-type-icon { font-size:1.5rem; margin-bottom:.4rem; }
+    .nl-type-name { font-family:var(--sans); font-size:.85rem; font-weight:700; margin-bottom:.2rem; }
+    .nl-type-desc { font-family:var(--sans); font-size:.75rem; color:var(--gray); }
+
+    .form-row { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .form-group { flex:1; min-width:200px; display:flex; flex-direction:column; gap:.35rem; }
+    .form-group label { font-family:var(--sans); font-size:.8rem; font-weight:700; color:var(--black); }
+    .form-group input, .form-group select {
+      padding:.7rem .9rem; border:1px solid var(--border); border-radius:4px;
+      font-family:var(--sans); font-size:.9rem; color:var(--black);
+      transition:border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus { outline:none; border-color:var(--red); }
+    .form-group.full { flex:100%; }
+
+    .gdpr-row { font-family:var(--sans); font-size:.78rem; color:var(--gray); margin:1rem 0; display:flex; gap:.6rem; align-items:flex-start; }
+    .gdpr-row input[type=checkbox] { margin-top:.2rem; accent-color:var(--red); flex-shrink:0; }
+
+    .sub-btn {
+      background:var(--red); color:#fff; font-family:var(--sans); font-size:.95rem;
+      font-weight:700; padding:.85rem 2.5rem; border-radius:4px; text-transform:uppercase;
+      letter-spacing:.04em; width:100%; margin-top:.5rem; transition:background .2s;
+    }
+    .sub-btn:hover { background:var(--red-dark); }
+
+    /* SUCCESS STATE */
+    .sub-success {
+      display:none; text-align:center; padding:2rem;
+    }
+    .sub-success.show { display:block; }
+    .sub-success-icon { font-size:3rem; margin-bottom:1rem; }
+    .sub-success h3 { font-size:1.4rem; margin-bottom:.5rem; }
+    .sub-success p { font-family:var(--sans); font-size:.9rem; color:var(--gray); }
+
+    /* BENEFITS */
+    .benefits-section { margin-bottom:3rem; }
+    .benefits-section h2 { font-size:1.5rem; margin-bottom:1.5rem; }
+    .benefits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.25rem; }
+    .benefit-card { background:#fff; border:1px solid var(--border); border-radius:6px; padding:1.25rem; }
+    .benefit-icon { font-size:1.6rem; margin-bottom:.5rem; }
+    .benefit-card h4 { font-size:1rem; margin-bottom:.4rem; }
+    .benefit-card p { font-family:var(--sans); font-size:.82rem; color:var(--gray); }
+
+    /* TESTIMONIALS */
+    .testimonials { background:#fff; border:1px solid var(--border); border-radius:8px; padding:2rem; margin-bottom:3rem; }
+    .testimonials h2 { font-size:1.3rem; margin-bottom:1.5rem; }
+    .testi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.25rem; }
+    .testi { border-left:3px solid var(--red); padding-left:1rem; }
+    .testi-text { font-style:italic; font-size:.9rem; margin-bottom:.5rem; color:var(--gray); }
+    .testi-author { font-family:var(--sans); font-size:.78rem; font-weight:700; }
+
+    /* FAQ */
+    .faq-section { margin-bottom:3rem; }
+    .faq-section h2 { font-size:1.3rem; margin-bottom:1rem; }
+    .faq-item { border-bottom:1px solid var(--border); padding:1rem 0; }
+    .faq-q { font-family:var(--sans); font-size:.9rem; font-weight:700; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+    .faq-q::after { content:"▾"; font-size:.7rem; color:var(--gray); transition:transform .2s; }
+    .faq-item.open .faq-q::after { transform:rotate(180deg); }
+    .faq-a { font-family:var(--sans); font-size:.85rem; color:var(--gray); margin-top:.6rem; display:none; line-height:1.7; }
+    .faq-item.open .faq-a { display:block; }
+
+    /* FOOTER */
+    footer { background:var(--black); color:#ccc; padding:3rem 0 1.5rem; }
+    .footer-inner { max-width:1240px; margin:auto; padding:0 1rem; }
+    .footer-bottom { border-top:1px solid #333; margin-top:2rem; padding-top:1rem; font-family:var(--sans); font-size:.72rem; color:#666; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; }
+    .footer-bottom a { color:#999; }
+    .footer-bottom a:hover { color:#fff; }
+
+    @media(max-width:640px) {
+      .sub-hero h1 { font-size:1.7rem; }
+      .sub-hero-stats { gap:1rem; }
+      .sub-form-section { padding:1.5rem; }
+      .form-row { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>📰 AfriPolitique — L'actualité politique africaine & mondiale</span>
+    <div class="topbar-links">
+      <a href="index.html">Accueil</a>
+      <a href="mailto:redaction@afripolitique.com">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-flag">AP</div>
+      <div>
+        <div class="logo-name">Afri<span>Politique</span></div>
+        <div class="logo-tagline">L'actualité politique africaine & mondiale</div>
+      </div>
+    </a>
+    <div class="header-cta">
+      <a href="index.html" class="btn-secondary">Retour au site</a>
+      <a href="#subscribe-form" class="btn-primary">S'abonner maintenant</a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <a class="nav-link" href="index.html">Accueil</a>
+    <a class="nav-link breaking-link" href="index.html">🔴 Flash</a>
+    <a class="nav-link" href="index.html">Afrique</a>
+    <a class="nav-link" href="index.html">Monde</a>
+    <a class="nav-link" href="index.html">Élections</a>
+    <a class="nav-link" href="index.html">Diplomatie</a>
+    <a class="nav-link" href="index.html">Économie</a>
+    <a class="nav-link active" href="#">Newsletters</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="crumb-bar">
+  <div class="crumb-inner">
+    <a href="index.html">Accueil</a>
+    <span> › </span>
+    <span>S'abonner</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="sub-hero">
+  <div class="sub-hero-icon">📩</div>
+  <h1>Restez au cœur de l'actualité africaine</h1>
+  <p>Newsletters quotidiennes, alertes breaking news et analyses approfondies — directement dans votre boîte mail. 100 % gratuit.</p>
+  <div class="sub-hero-stats">
+    <div class="sub-stat">
+      <div class="sub-stat-num">15 000+</div>
+      <div class="sub-stat-lbl">Abonnés actifs</div>
+    </div>
+    <div class="sub-stat">
+      <div class="sub-stat-num">54</div>
+      <div class="sub-stat-lbl">Pays couverts</div>
+    </div>
+    <div class="sub-stat">
+      <div class="sub-stat-num">5×/sem.</div>
+      <div class="sub-stat-lbl">Fréquence</div>
+    </div>
+    <div class="sub-stat">
+      <div class="sub-stat-num">0 €</div>
+      <div class="sub-stat-lbl">Toujours gratuit</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="sub-page">
+
+  <!-- NOS NEWSLETTERS -->
+  <h2 style="font-size:1.5rem;margin-bottom:1.25rem;">Nos newsletters</h2>
+  <div class="nl-cards">
+
+    <div class="nl-card featured">
+      <span class="nl-card-badge">⭐ Recommandée</span>
+      <h3>Le Briefing AfriPolitique</h3>
+      <div class="freq">📅 Chaque matin — lundi au vendredi</div>
+      <p>L'essentiel de l'actualité politique africaine en 5 minutes. Sélection rigoureuse, décryptage et contexte.</p>
+      <ul>
+        <li>3 à 5 actualités du jour</li>
+        <li>Analyse et contexte géopolitique</li>
+        <li>Chiffre ou citation marquante</li>
+        <li>Lien vers l'article complet</li>
+      </ul>
+      <a href="#subscribe-form" style="background:var(--red);color:#fff;font-family:var(--sans);font-size:.83rem;font-weight:700;padding:.55rem 1.2rem;border-radius:4px;display:inline-block;text-align:center;text-transform:uppercase;">S'abonner gratuitement</a>
+    </div>
+
+    <div class="nl-card">
+      <span class="nl-card-badge" style="background:#1a5276;">📊 Analyses</span>
+      <h3>AfriPolitique Hebdo</h3>
+      <div class="freq">📅 Chaque dimanche</div>
+      <p>Un regard approfondi sur les grandes tendances de la semaine écoulée. Pour comprendre les dynamiques de fond.</p>
+      <ul>
+        <li>Décryptage de la semaine</li>
+        <li>Tribune d'un expert</li>
+        <li>Carte ou infographie</li>
+        <li>À lire, à écouter, à regarder</li>
+      </ul>
+      <a href="#subscribe-form" style="background:var(--black);color:#fff;font-family:var(--sans);font-size:.83rem;font-weight:700;padding:.55rem 1.2rem;border-radius:4px;display:inline-block;text-align:center;text-transform:uppercase;">S'abonner</a>
+    </div>
+
+    <div class="nl-card">
+      <span class="nl-card-badge" style="background:#1a7c4a;">🔔 Alertes</span>
+      <h3>Flash Infos</h3>
+      <div class="freq">📅 En temps réel (max. 3/jour)</div>
+      <p>Ne manquez aucun événement majeur. Alertes immédiates pour les élections, crises et déclarations importantes.</p>
+      <ul>
+        <li>Résultats d'élections en direct</li>
+        <li>Coups d'état et crises politiques</li>
+        <li>Déclarations de chefs d'État</li>
+        <li>Accords & traités majeurs</li>
+      </ul>
+      <a href="#subscribe-form" style="background:#1a7c4a;color:#fff;font-family:var(--sans);font-size:.83rem;font-weight:700;padding:.55rem 1.2rem;border-radius:4px;display:inline-block;text-align:center;text-transform:uppercase;">S'abonner</a>
+    </div>
+
+  </div>
+
+  <!-- FORMULAIRE D'ABONNEMENT -->
+  <div class="sub-form-section" id="subscribe-form">
+    <h2>📩 Inscrivez-vous maintenant</h2>
+    <p class="sub-subtitle">Gratuit, sans spam. Vous pouvez vous désinscrire à tout moment en un clic.</p>
+
+    <!-- Sélection newsletters -->
+    <div class="nl-type-grid">
+      <label class="nl-type">
+        <input type="checkbox" name="nl_briefing" checked/>
+        <div class="nl-type-icon">☀️</div>
+        <div class="nl-type-name">Le Briefing</div>
+        <div class="nl-type-desc">Lun–Ven, chaque matin</div>
+      </label>
+      <label class="nl-type">
+        <input type="checkbox" name="nl_hebdo"/>
+        <div class="nl-type-icon">📊</div>
+        <div class="nl-type-name">AfriPolitique Hebdo</div>
+        <div class="nl-type-desc">Chaque dimanche</div>
+      </label>
+      <label class="nl-type">
+        <input type="checkbox" name="nl_flash"/>
+        <div class="nl-type-icon">🔔</div>
+        <div class="nl-type-name">Flash Infos</div>
+        <div class="nl-type-desc">Alertes breaking news</div>
+      </label>
+      <label class="nl-type">
+        <input type="checkbox" name="nl_elections"/>
+        <div class="nl-type-icon">🗳️</div>
+        <div class="nl-type-name">Élections Africa</div>
+        <div class="nl-type-desc">Calendrier & résultats</div>
+      </label>
+    </div>
+
+    <!-- Formulaire principal (Brevo) -->
+    <form id="brevo-form"
+          action="https://01c06ba0.sibforms.com/serve/MUIFALdt58dvd8Kv9UZagMyipE42uwhuam4h1Ap5HfeJv1rDz7N5pwk2AA0zBeVBSfsAHBCzQ0OT4OT3wEcMKayuRAfBjqCGmyEW9c5RdfxCeUIY2PTouI0TozzlTpGqjHqFIPzZ-oIT5EEnkclm-vPFvstbAyvwVNjNBjLgXfp6_gkPYQx6YIDjO-EZUuPTc2JyHtXbVhdNYRCW_g=="
+          method="post">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="FIRSTNAME">Prénom</label>
+          <input type="text" id="FIRSTNAME" name="FIRSTNAME" placeholder="Votre prénom"/>
+        </div>
+        <div class="form-group">
+          <label for="LASTNAME">Nom</label>
+          <input type="text" id="LASTNAME" name="LASTNAME" placeholder="Votre nom"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group full">
+          <label for="EMAIL">Adresse e-mail *</label>
+          <input type="email" id="EMAIL" name="EMAIL" placeholder="exemple@domaine.com" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="PAYS">Pays de résidence</label>
+          <select id="PAYS" name="PAYS">
+            <option value="">-- Sélectionnez --</option>
+            <option>Algérie</option><option>Angola</option><option>Bénin</option>
+            <option>Burkina Faso</option><option>Cameroun</option><option>Congo (RDC)</option>
+            <option>Côte d'Ivoire</option><option>Égypte</option><option>Éthiopie</option>
+            <option>France</option><option>Gabon</option><option>Ghana</option>
+            <option>Guinée</option><option>Kenya</option><option>Madagascar</option>
+            <option>Mali</option><option>Maroc</option><option>Mauritanie</option>
+            <option>Mozambique</option><option>Niger</option><option>Nigeria</option>
+            <option>Rwanda</option><option>Sénégal</option><option>Soudan</option>
+            <option>Tanzanie</option><option>Tchad</option><option>Togo</option>
+            <option>Tunisie</option><option>Ouganda</option><option>Zimbabwe</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="PROFIL">Profil</label>
+          <select id="PROFIL" name="PROFIL">
+            <option value="">-- Sélectionnez --</option>
+            <option>Étudiant / Chercheur</option>
+            <option>Journaliste / Médias</option>
+            <option>Politique / Gouvernement</option>
+            <option>Entreprise / ONG</option>
+            <option>Diaspora africaine</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="email_address_check" value="" style="display:none" tabindex="-1" autocomplete="off"/>
+      <input type="hidden" name="locale" value="fr"/>
+      <input type="hidden" name="html_type" value="simple"/>
+
+      <div class="gdpr-row">
+        <input type="checkbox" id="gdpr" required/>
+        <label for="gdpr">J'accepte de recevoir les newsletters d'AfriPolitique et je peux me désinscrire à tout moment. Pas de spam, jamais. <a href="#faq" style="color:var(--red);">En savoir plus →</a></label>
+      </div>
+
+      <button type="submit" class="sub-btn">✉️ S'abonner gratuitement</button>
+    </form>
+
+    <div class="sub-success" id="sub-success">
+      <div class="sub-success-icon">🎉</div>
+      <h3>Bienvenue dans la communauté AfriPolitique !</h3>
+      <p>Vérifiez votre boîte mail pour confirmer votre inscription.<br/>Si vous ne voyez pas notre email, vérifiez vos spams.</p>
+    </div>
+  </div>
+
+  <!-- AVANTAGES -->
+  <div class="benefits-section">
+    <h2>Pourquoi s'abonner à AfriPolitique ?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🎯</div>
+        <h4>Information vérifiée</h4>
+        <p>Chaque article est vérifié sous 48h par nos correspondants sur le terrain dans 54 pays africains.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🌍</div>
+        <h4>Couverture continentale</h4>
+        <p>Du Caire à Cape Town, de Dakar à Mogadiscio — l'Afrique dans toute sa diversité politique.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h4>Réactivité maximale</h4>
+        <p>Alertes flash en temps réel pour les événements majeurs : élections, coups d'État, crises diplomatiques.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔓</div>
+        <h4>100 % gratuit</h4>
+        <p>Accès illimité à toutes nos newsletters. Aucune carte de crédit, aucun engagement, désabonnement en un clic.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚫</div>
+        <h4>Zéro spam</h4>
+        <p>Nous respectons votre vie privée. Vos données ne sont jamais vendues ni partagées avec des tiers.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📱</div>
+        <h4>Sur tous vos appareils</h4>
+        <p>Newsletters optimisées pour mobile, tablette et desktop. Lisez où vous voulez, quand vous voulez.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TÉMOIGNAGES -->
+  <div class="testimonials">
+    <h2>Ce que disent nos abonnés</h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-text">"AfriPolitique est devenu ma source principale pour comprendre la géopolitique africaine. Le briefing du matin est indispensable."</div>
+        <div class="testi-author">Amadou K. — Consultant, Dakar</div>
+      </div>
+      <div class="testi">
+        <div class="testi-text">"En tant que journaliste, j'apprécie la rigueur et la profondeur des analyses. C'est la référence que je recommande à mes confrères."</div>
+        <div class="testi-author">Marie-Claire T. — Journaliste, Paris</div>
+      </div>
+      <div class="testi">
+        <div class="testi-text">"Depuis que je reçois les alertes flash, je ne rate plus aucun événement majeur en Afrique. Un service vraiment précieux."</div>
+        <div class="testi-author">Emmanuel O. — Étudiant, Lagos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section" id="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Comment puis-je me désinscrire ?</div>
+      <div class="faq-a">Chaque email contient un lien de désinscription en bas de page. Un seul clic suffit, aucune question posée. Vous pouvez également écrire à redaction@afripolitique.com.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Mes données personnelles sont-elles protégées ?</div>
+      <div class="faq-a">Absolument. Vos données sont traitées via Brevo (anciennement Sendinblue), hébergé en Europe et conforme au RGPD. Nous ne vendons ni ne partageons vos données avec des tiers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">À quelle fréquence vais-je recevoir des emails ?</div>
+      <div class="faq-a">Cela dépend des newsletters choisies : Le Briefing arrive 5 fois par semaine (lun–ven), l'Hebdo une fois le dimanche, les Flash Infos uniquement lors d'événements majeurs (maximum 3 par jour).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Je ne reçois pas les emails, que faire ?</div>
+      <div class="faq-a">Vérifiez d'abord votre dossier spam ou courrier indésirable. Ajoutez newsletter@afripolitique.com à vos contacts pour garantir la livraison. Si le problème persiste, contactez-nous à redaction@afripolitique.com.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Puis-je changer les newsletters auxquelles je suis abonné(e) ?</div>
+      <div class="faq-a">Oui, à tout moment. Chaque email contient un lien "Gérer mes préférences" qui vous permet de modifier vos abonnements, changer votre adresse email ou vous désinscrire.</div>
+    </div>
+  </div>
+
+</div><!-- /sub-page -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p style="font-family:var(--sans);font-size:.85rem;color:#888;text-align:center;margin-bottom:1rem;">
+      © 2025 AfriPolitique — Média indépendant dédié à l'information politique africaine et mondiale.<br/>
+      <a href="mailto:redaction@afripolitique.com" style="color:#aaa;">redaction@afripolitique.com</a>
+    </p>
+    <div class="footer-bottom">
+      <span>© 2025 AfriPolitique</span>
+      <div style="display:flex;gap:1rem;">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Interception du formulaire pour afficher le message de succès inline
+  document.getElementById('brevo-form').addEventListener('submit', function(e) {
+    const email = document.getElementById('EMAIL').value;
+    if (!email) return;
+
+    // On laisse le formulaire s'envoyer normalement vers Brevo (POST)
+    // mais on affiche aussi le message de succès après 500ms
+    setTimeout(function() {
+      document.getElementById('brevo-form').style.display = 'none';
+      document.getElementById('sub-success').classList.add('show');
+    }, 600);
+  });
+
+  // Sélection visuelle des types de newsletter
+  document.querySelectorAll('.nl-type input[type=checkbox]').forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      this.closest('.nl-type').style.borderColor = this.checked ? 'var(--red)' : '';
+    });
+    // Init
+    if (cb.checked) cb.closest('.nl-type').style.borderColor = 'var(--red)';
+  });
+</script>
+
+</body>
+</html>
