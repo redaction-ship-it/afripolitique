@@ -4,6 +4,31 @@
 
 const ARTICLES = {
 
+  "ruto-g7-evian-injustice-capital": {
+    cat: "cat-economie", catLabel: "Afrique — Diplomatie économique",
+    img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=1400&q=80&auto=format&fit=crop",
+    title: "Au G7 d'Évian, l'Afrique porte la voix d'une réforme financière mondiale et dénonce « l'injustice du capital »",
+    excerpt: "Invité du sommet du G7 à Évian du 15 au 17 juin 2026, le président kényan William Ruto a fait de la réforme du système financier international le dossier africain de l'année. Son message : le continent n'a pas un déficit de capitaux mais un excès de prime de risque. Les Sept ont entériné une déclaration qui reprend l'essentiel de ses propositions.",
+    author: "Rédaction AfriPolitique", date: "19 juin 2026", read: "5 min",
+    body: [
+      "<p>Ce n'était pas une chaise d'observateur. Du 15 au 17 juin 2026, au sommet du G7 réuni à Évian, sur les rives françaises du lac Léman, le président kényan <strong>William Ruto</strong> s'est imposé comme le porte-parole d'un continent qui refuse désormais d'être traité en simple bénéficiaire de l'aide. Invité par le président français Emmanuel Macron aux côtés du Brésil, de l'Égypte, de l'Inde et de la Corée du Sud, le chef de l'État kényan y a martelé une thèse devenue le fil rouge de sa diplomatie : « <em>L'Afrique n'est pas un problème à résoudre.</em> »</p>",
+      "<h3>Une « injustice du capital » au cœur du système financier mondial</h3>",
+      "<p>Le diagnostic de William Ruto tient en une formule : « l'injustice du capital ». Selon lui, les pays africains empruntent systématiquement plus cher que des économies comparables, non pas en raison de leurs fondamentaux, mais à cause de modèles d'évaluation du risque qui ne reflètent plus la réalité du continent. Ces perceptions héritées, a-t-il averti, faussent les décisions financières mondiales en gonflant artificiellement le coût du crédit pour l'Afrique.</p>",
+      "<p>Le président kényan a renversé le récit habituel de la pénurie. Le continent, a-t-il rappelé, dispose d'environ <strong>4 000 milliards de dollars d'épargne</strong> — un capital largement immobilisé par la prime de risque plutôt que par une véritable rareté de l'argent. Le problème n'est donc pas le manque de fonds, mais leur prix. « <em>L'Afrique a les moyens</em> », a-t-il résumé devant les dirigeants du G7 ; ce qui coûte cher, c'est le risque tel qu'il est perçu, pas tel qu'il est réellement.</p>",
+      "<h3>Garanties plutôt qu'aide</h3>",
+      "<p>De ce constat découle une demande précise. Plutôt que d'élargir l'aide publique au développement — en recul partout dans le monde —, William Ruto a exhorté les économies du G7 à <strong>garantir et adosser les institutions africaines de couverture du risque</strong>. L'idée : utiliser la signature des grandes puissances pour « dé-risquer » les investissements privés sur le continent, et faire ainsi baisser mécaniquement les taux d'emprunt.</p>",
+      "<p>Parmi les instruments cités figure l'Agence pour l'assurance du commerce et de l'investissement en Afrique (African Trade and Investment Development Insurance, ATIDI), que le G7 s'est engagé à soutenir. Le raisonnement est limpide : un dollar de garantie publique peut débloquer plusieurs dollars d'investissement privé, là où un dollar d'aide ne finance qu'un dollar de dépense.</p>",
+      "<h3>Le G7 entérine l'essentiel de l'agenda africain</h3>",
+      "<p>Fait notable, les Sept ne se sont pas contentés d'écouter. Le sommet s'est conclu sur une « <em>déclaration sur des partenariats internationaux mutuellement bénéfiques</em> » qui reprend plusieurs propositions défendues de longue date par Nairobi : un accès plus équitable au financement concessionnel, une réforme des mécanismes de restructuration de la dette, une mobilisation accrue de l'investissement privé et une révision de la manière dont le risque est évalué dans les économies en développement. La réforme de la dette y est érigée en priorité.</p>",
+      "<blockquote>« L'Afrique doit être traitée comme un partenaire à part entière du nouvel ordre mondial, et non comme un récipiendaire d'aide. » — William Ruto, sommet du G7 d'Évian</blockquote>",
+      "<p>Pour le Kenya, l'enjeu est aussi très concret. Lourdement endetté et confronté à des coûts de service de la dette qui absorbent une part croissante de son budget, Nairobi serait l'un des premiers bénéficiaires de tout abaissement structurel des primes de risque et de tout assouplissement des règles de restructuration. Le plaidoyer panafricain de William Ruto rejoint ici un intérêt national assumé.</p>",
+      "<h3>Une séquence diplomatique préparée de longue main</h3>",
+      "<p>La performance d'Évian ne sort pas de nulle part. Elle prolonge les conclusions du <strong>Africa Forward Summit</strong> tenu à Nairobi en mai 2026, où plusieurs chefs d'État avaient arrêté une position commune sur l'architecture financière mondiale. En se posant en relais de cet agenda devant le club des grandes puissances, le Kenya consolide une ambition diplomatique plus large : peser sur les règles plutôt que de les subir, et faire de la voix africaine un acteur de la gouvernance économique internationale.</p>",
+      "<p>Reste la question, décisive, de la traduction concrète. Une déclaration de sommet n'a pas force contraignante, et les engagements du G7 sur la dette et le financement du développement ont, par le passé, souvent buté sur leur mise en œuvre. La crédibilité de l'« esprit d'Évian » se mesurera dans les mois à venir : aux montants effectivement mobilisés pour les institutions de garantie, à la rapidité des restructurations de dette et, in fine, à l'évolution réelle des taux auxquels les États africains se financent sur les marchés.</p>",
+      "<p>En attendant, William Ruto aura réussi un coup politique : installer durablement, au plus haut niveau, l'idée que le sous-développement du financement africain est d'abord un problème de perception et de règles — et que sa correction relève autant de la justice que de l'intérêt bien compris des créanciers.</p>"
+    ]
+  },
+
   "mobile-money-ia-credit": {
     cat: "cat-economie", catLabel: "Afrique — Économie & Tech",
     img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=80&auto=format&fit=crop",
