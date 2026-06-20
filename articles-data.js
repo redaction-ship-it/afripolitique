@@ -6,7 +6,7 @@ const ARTICLES = {
 
   "sahel-terrorisme-2026": {
     cat: "cat-securite", catLabel: "Sahel — Sécurité",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/GARSI-SAHEL_Niger%2C_2019.png/1400px-GARSI-SAHEL_Niger%2C_2019.png",
+    img: "https://upload.wikimedia.org/wikipedia/commons/2/2d/GARSI-SAHEL_Niger%2C_2019.png",
     title: "Sahel : l'heure des ruptures — quand le djihadisme devient une menace d'État",
     excerpt: "Aéroport de Niamey frappé en plein cœur, ministre malien de la Défense tué près de Bamako, capitale sous blocus, alliance inédite entre djihadistes et rebelles touareg : le Sahel a basculé. Décryptage d'une menace qui ne se contente plus de tuer — elle administre, négocie et lorgne l'État. Et avance vers le golfe de Guinée.",
     author: "Rédaction AfriPolitique", date: "20 juin 2026", read: "16 min",
