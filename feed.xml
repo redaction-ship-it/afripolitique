@@ -12,7 +12,7 @@
     <copyright>© 2026 AfriPolitique. Tous droits réservés.</copyright>
     <managingEditor>redaction@afripolitique.com (Rédaction AfriPolitique)</managingEditor>
     <webMaster>contact@afripolitique.com (AfriPolitique)</webMaster>
-    <lastBuildDate>Mon, 09 Jun 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 08:00:00 +0000</lastBuildDate>
     <ttl>60</ttl>
     <image>
       <url>https://images.unsplash.com/photo-1626695436755-3e288720849c?w=144&amp;q=80&amp;auto=format&amp;fit=crop</url>
@@ -22,6 +22,17 @@
       <height>144</height>
     </image>
     <atom:link href="https://www.afripolitique.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+
+    <item>
+      <title><![CDATA[Rupture Burkina–France : la souveraineté au risque de l'isolement]]></title>
+      <link>https://www.afripolitique.com/article.html?id=burkina-france-rupture</link>
+      <guid isPermaLink="true">https://www.afripolitique.com/article.html?id=burkina-france-rupture</guid>
+      <pubDate>Fri, 03 Jul 2026 08:00:00 +0000</pubDate>
+      <dc:creator>Rédaction AfriPolitique</dc:creator>
+      <category>Diplomatie</category>
+      <description><![CDATA[Le 26 juin 2026, Ouagadougou a rompu ses relations diplomatiques avec Paris. Une rupture annoncée, aux lourdes conséquences pour le peuple et l'avenir du pays. Analyse, comparaisons historiques et pistes de sortie de crise.]]></description>
+    </item>
 
     <item>
       <title><![CDATA[L'Afrique à l'assaut du monde — Dix nations, un rêve continental (CdM 2026)]]></title>
@@ -33,7 +44,7 @@
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <description><![CDATA[Pour la Coupe du Monde 2026, l'Afrique aligne un nombre record de dix représentants. Maroc, Sénégal, Côte d'Ivoire, Égypte, Algérie, Ghana, Tunisie, Cap-Vert, Afrique du Sud et RD Congo : dix histoires, dix ambitions, un seul rêve.]]></description>
       <content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80&auto=format&fit=crop" alt="CdM 2026" style="max-width:100%;"/><p><strong>Un tournant historique.</strong> Pour la Coupe du Monde 2026, l'Afrique aligne un nombre record de <strong>dix représentants</strong>.</p><p><a href="https://www.afripolitique.com/article.html?id=cdm2026">Lire l'article complet →</a></p>]]></content:encoded>
-      <media:thumbnail url="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80&auto=format&fit=crop" width="400"/>
+      <media:thumbnail url="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&amp;q=80&amp;auto=format&amp;fit=crop" width="400"/>
     </item>
 
     <item>
@@ -45,7 +56,7 @@
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <description><![CDATA[Les chefs d'État africains réunis à Addis-Abeba examinent une proposition historique de création d'une force de défense panafricaine permanente.]]></description>
       <content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=800&q=80&auto=format&fit=crop" alt="Union Africaine" style="max-width:100%;"/><p>Les chefs d'État africains examinent une proposition de création d'une force de défense panafricaine permanente, avec un budget de 5 milliards USD.</p><p><a href="https://www.afripolitique.com/article.html?id=hero1">Lire l'article complet →</a></p>]]></content:encoded>
-      <media:thumbnail url="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=400&q=80&auto=format&fit=crop" width="400"/>
+      <media:thumbnail url="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?w=400&amp;q=80&amp;auto=format&amp;fit=crop" width="400"/>
     </item>
 
     <item>
@@ -57,7 +68,7 @@
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <description><![CDATA[Les investissements directs étrangers en Afrique ont bondi de 42% en 2025, atteignant 120 milliards USD.]]></description>
       <content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop" alt="IDE Afrique" style="max-width:100%;"/><p>Record historique : 120 milliards USD d'IDE en Afrique en 2025.</p><p><a href="https://www.afripolitique.com/article.html?id=ec1">Lire l'article complet →</a></p>]]></content:encoded>
-      <media:thumbnail url="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80&auto=format&fit=crop" width="400"/>
+      <media:thumbnail url="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&amp;q=80&amp;auto=format&amp;fit=crop" width="400"/>
     </item>
 
     <item>
@@ -69,7 +80,7 @@
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <description><![CDATA[Après quatre coups d'État en trois ans au Mali, Guinée, Burkina Faso et Niger, l'Afrique de l'Ouest repense ses modèles de gouvernance.]]></description>
       <content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=800&q=80&auto=format&fit=crop" alt="Afrique Ouest" style="max-width:100%;"/><p>Quatre coups d'État en trois ans : l'Afrique de l'Ouest à la croisée des chemins démocratiques.</p><p><a href="https://www.afripolitique.com/article.html?id=po1">Lire l'article complet →</a></p>]]></content:encoded>
-      <media:thumbnail url="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=400&q=80&auto=format&fit=crop" width="400"/>
+      <media:thumbnail url="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=400&amp;q=80&amp;auto=format&amp;fit=crop" width="400"/>
     </item>
 
     <item>
@@ -81,7 +92,7 @@
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <description><![CDATA[Le projet de révision constitutionnelle sénégalais divise profondément la classe politique dakaroise.]]></description>
       <content:encoded><![CDATA[<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80&auto=format&fit=crop" alt="Sénégal" style="max-width:100%;"/><p>Le projet de révision constitutionnelle proposé par le gouvernement sénégalais divise la classe politique. Des manifestations ont eu lieu à Dakar.</p><p><a href="https://www.afripolitique.com/article.html?id=a1">Lire l'article complet →</a></p>]]></content:encoded>
-      <media:thumbnail url="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&q=80&auto=format&fit=crop" width="400"/>
+      <media:thumbnail url="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&amp;q=80&amp;auto=format&amp;fit=crop" width="400"/>
     </item>
 
   </channel>
