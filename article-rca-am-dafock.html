@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Am Dafock, la porte du chaos : la Centrafrique au bord d'un nouveau conflit — AfriPolitique</title>
+<meta name="description" content="Le 30 juin 2026, une coalition rebelle venue du Soudan a frappé Am Dafock, dans la Vakaga. Sur fond de guerre soudanaise, de retour militaire français au Tchad et de troisième mandat de Touadéra, la RCA menace de rebasculer dans la guerre. Décryptage et carte de la zone de conflit."/>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia','Times New Roman',serif;
+    font-size: 16px; color: #1a1a1a; background: #f5f5f0; line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  :root {
+    --red: #c8102e; --red-dark:#a00d24; --black:#1a1a1a; --gray:#4a4a4a;
+    --light:#f5f5f0; --white:#fff; --border:#e0e0d8; --blue:#1a5276; --green:#1a7c4a;
+    --sans: 'Arial','Helvetica Neue',sans-serif;
+  }
+
+  .topbar { background: var(--black); color:#ccc; font-family:var(--sans); font-size:.72rem; padding:.4rem 0; border-bottom:1px solid #333; }
+  .topbar-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .topbar-date { color:#aaa; }
+  .topbar-links { display:flex; gap:1rem; }
+  .topbar-links a { color:#aaa; font-size:.72rem; font-family:var(--sans); }
+  .topbar-links a:hover { color:var(--white); }
+
+  .site-header { background: var(--white); border-bottom: 3px solid var(--red); padding: 1rem 0 .75rem; }
+  .header-inner { max-width:1240px; margin:auto; padding:0 1rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+  .logo-wrap { display:flex; align-items:center; gap:.75rem; }
+  .logo-flag { width:44px; height:44px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:900; font-size:1.1rem; color:#fff; letter-spacing:-.05em; }
+  .logo-name { font-size:1.85rem; font-family:Georgia,serif; font-weight:700; color:var(--black); letter-spacing:-.02em; }
+  .logo-name span { color: var(--red); }
+  .logo-tagline { font-size:.68rem; font-family:var(--sans); color:var(--gray); text-transform:uppercase; letter-spacing:.12em; }
+  .header-cta a { font-family:var(--sans); font-size:.78rem; font-weight:700; padding:.5rem 1.1rem; border-radius:3px; text-transform:uppercase; letter-spacing:.04em; }
+  .btn-primary { background:var(--red); color:#fff; }
+  .btn-secondary { color:var(--black); border:1px solid var(--border); }
+
+  .crumb-bar { background:var(--white); border-bottom:1px solid var(--border); }
+  .crumb-inner { max-width: 860px; margin:auto; padding:.75rem 1rem; font-family:var(--sans); font-size:.78rem; color:var(--gray); display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; }
+  .crumb-inner a { color: var(--red); font-weight:700; }
+  .crumb-inner a:hover { text-decoration:underline; }
+  .crumb-sep { color:#bbb; }
+
+  .article-wrap { max-width: 860px; margin: 2rem auto; padding: 0 1rem 3rem; }
+  .cat-tag { display:inline-block; font-family:var(--sans); font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; padding:.22rem .6rem; border-radius:2px; margin-bottom: 1rem; }
+  .cat-secu { background:var(--red); color:#fff; }
+
+  .article-title {
+    font-family: Georgia, serif; font-size: 2.1rem; font-weight:700; line-height:1.25;
+    color: var(--black); margin-bottom: .9rem;
+  }
+  @media(max-width:600px){ .article-title{ font-size:1.5rem; } }
+
+  .article-excerpt { font-size: 1.1rem; color: var(--gray); font-style: italic; margin-bottom: 1.1rem; }
+
+  .article-meta {
+    display:flex; flex-wrap:wrap; gap:1.1rem; align-items:center;
+    font-family: var(--sans); font-size:.78rem; color: var(--gray);
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: .85rem 0; margin-bottom: 1.6rem;
+  }
+  .article-meta b { color: var(--black); }
+
+  .article-body p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #2a2a2a; }
+  .article-body p:first-of-type::first-letter {
+    font-family: Georgia, serif; font-size: 3.2rem; font-weight:700; color: var(--red);
+    float:left; line-height: .8; margin: .12em .15em 0 0;
+  }
+  .sec-head {
+    display:block; font-family:inherit; font-size:1.25rem; font-weight:700;
+    margin:1.8rem 0 .4rem; border-left:4px solid var(--red); padding-left:10px; line-height:1.3; color:var(--black);
+  }
+  .pull {
+    border-left:4px solid var(--red); background:#fff; padding:1rem 1.2rem; margin:1.6rem 0;
+    font-style:italic; font-size:1.12rem; color:#333; font-family:Georgia,serif;
+  }
+  .article-body strong { color:#1a1a1a; }
+
+  /* --- MAP FIGURE --- */
+  .map-fig { margin: 1.8rem 0 .4rem; background:#fff; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+  .map-fig svg { display:block; width:100%; height:auto; }
+  .map-caption { font-family: var(--sans); font-size:.72rem; color:#999; margin: .5rem 0 2rem; }
+
+  /* --- FACTBOX --- */
+  .factbox { background:#fff; border:1px solid var(--border); border-top:4px solid var(--red); border-radius:4px; padding:1.1rem 1.3rem; margin:1.8rem 0; }
+  .factbox h4 { font-family:var(--sans); font-size:.72rem; font-weight:900; text-transform:uppercase; letter-spacing:.1em; color:var(--red); margin-bottom:.7rem; }
+  .factbox ul { list-style:none; font-family:var(--sans); font-size:.86rem; color:#333; }
+  .factbox li { padding:.28rem 0; border-bottom:1px dashed var(--border); display:flex; gap:.6rem; }
+  .factbox li:last-child { border-bottom:none; }
+  .factbox li b { color:var(--red); min-width:70px; display:inline-block; }
+
+  .share-bar { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; margin: 1.8rem 0 1rem; }
+  .share-lbl { font-family:var(--sans); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:#999; margin-right:.2rem; }
+  .s-btn { display:inline-flex; align-items:center; gap:.3rem; padding:.35rem .8rem; border-radius:3px; font-family:var(--sans); font-size:.74rem; font-weight:700; }
+  .s-fb { background:#1877f2; color:#fff; }
+  .s-tw { background:#000; color:#fff; }
+  .s-wa { background:#25d366; color:#fff; }
+  .s-lk { background:#0a66c2; color:#fff; }
+
+  .back-link { display:inline-flex; align-items:center; gap:.4rem; font-family: var(--sans); font-size:.8rem; font-weight:700; color: var(--red); margin-bottom: 1.5rem; }
+  .back-link:hover { text-decoration:underline; }
+
+  .sources-box { border-top:2px solid var(--black); margin-top:2.4rem; padding-top:1rem; }
+  .sources-box h3 { font-family:var(--sans); font-size:.8rem; font-weight:900; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.7rem; }
+  .sources-box ul { list-style:none; font-family:var(--sans); font-size:.78rem; color:var(--gray); }
+  .sources-box li { padding:.18rem 0; }
+  .sources-box a { color:var(--blue); }
+  .sources-box a:hover { text-decoration:underline; }
+
+  footer { background: var(--black); color:#ccc; font-family: var(--sans); margin-top: 2rem; }
+  .footer-inner { max-width:1240px; margin:auto; padding: 2rem 1rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; justify-content:space-between; }
+  .f-logo { font-family: Georgia, serif; font-size:1.3rem; font-weight:700; color:#fff; }
+  .f-logo span { color: var(--red); }
+  footer p { font-size:.78rem; color:#999; }
+  .footer-bottom { border-top:1px solid #333; text-align:center; padding: 1rem; font-size:.72rem; color:#888; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-date">📅 Lundi 6 juillet 2026</span>
+    <div class="topbar-links">
+      <a href="afripolitique.html">Accueil</a>
+      <a href="afripolitique.html">Newsletter</a>
+      <a href="afripolitique.html">Contact</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="afripolitique.html" class="logo-wrap">
+      <div class="logo-flag">AP</div>
+      <div class="logo-text">
+        <div class="logo-name">Afri<span>Politique</span></div>
+        <div class="logo-tagline">L'actualité politique africaine &amp; mondiale</div>
+      </div>
+    </a>
+    <div class="header-cta">
+      <a href="afripolitique.html" class="btn-secondary">Accueil</a>
+      <a href="afripolitique.html" class="btn-primary">S'abonner</a>
+    </div>
+  </div>
+</header>
+
+<div class="crumb-bar">
+  <div class="crumb-inner">
+    <a href="afripolitique.html">Accueil</a>
+    <span class="crumb-sep">›</span>
+    <span>Sécurité &amp; Défense</span>
+    <span class="crumb-sep">›</span>
+    <span style="color:var(--gray); font-weight:400;">Am Dafock, la porte du chaos</span>
+  </div>
+</div>
+
+<div class="article-wrap">
+
+  <a class="back-link" href="afripolitique.html">← Retour à l'accueil</a>
+
+  <span class="cat-tag cat-secu">Sécurité &amp; Défense — Grand format</span>
+  <h1 class="article-title">Am Dafock, la porte du chaos : la Centrafrique au bord d'un nouveau conflit</h1>
+  <p class="article-excerpt">Le 30 juin 2026, à l'aube, une coalition rebelle venue du Soudan a submergé Am Dafock, verrou stratégique de la Vakaga. Derrière cette offensive, c'est tout un jeu d'ombres régional qui se dévoile : guerre soudanaise, retour de l'armée française au Tchad, mercenaires russes, appétits émiratis et ukrainiens. La RCA risque-t-elle de rebasculer dans la guerre ?</p>
+
+  <div class="article-meta">
+    <span>✍️ <b>Rédaction AfriPolitique</b></span>
+    <span>🕐 6 juillet 2026</span>
+    <span>⏱ 7 min de lecture</span>
+  </div>
+
+  <div class="article-cover" style="height:auto;">
+    <img src="afripolitique_rca_cover.png" style="height:auto;" alt="Am Dafock, la porte du chaos — la Centrafrique au bord d'un nouveau conflit"/>
+  </div>
+  <p class="article-cover-caption">Illustration AfriPolitique — L'offensive du 30 juin 2026 sur Am Dafock (Vakaga) et son axe de progression, depuis le Darfour du Sud vers Bangui.</p>
+
+  <div class="article-body">
+
+    <p>Il était à peine 4 h 30, ce 30 juin 2026, quand Am Dafock s'est réveillée sous le feu. Dans cette localité poussiéreuse de la préfecture de la <strong>Vakaga</strong>, à la frontière du Soudan, plus de 700 combattants ont fondu sur les Forces armées centrafricaines (FACA) et leurs alliés russes, selon plusieurs sources concordantes. Débordées, les forces gouvernementales se sont repliées vers une base de la MINUSCA — la Mission des Nations unies en Centrafrique — dont l'enceinte a elle aussi été touchée : trois Casques bleus zambiens ont été blessés, dont un grièvement. En quelques heures, une bourgade oubliée des cartes est devenue l'épicentre d'une onde de choc régionale.</p>
+
+    <p>Car l'offensive d'Am Dafock n'est pas un fait divers militaire de plus. Elle sonne comme un avertissement : les crises centrafricaines ne s'analysent plus dans le huis clos national. La guerre au Soudan, les recompositions sécuritaires au Sahel et l'affirmation de la Russie comme acteur majeur en Afrique centrale sont désormais nouées ensemble, dans un même écheveau. Un nouveau foyer s'est allumé — et il redessine les équilibres de tout un sous-continent.</p>
+
+    <div class="factbox">
+      <h4>Am Dafock — l'attaque en bref</h4>
+      <ul>
+        <li><b>Date</b><span>30 juin 2026, vers 4 h 30 du matin</span></li>
+        <li><b>Lieu</b><span>Am Dafock, préfecture de la Vakaga, frontière soudanaise</span></li>
+        <li><b>Assaillants</b><span>+ de 700 combattants, coalition de l'Alliance du sursaut patriotique (ASP)</span></li>
+        <li><b>Origine</b><span>Lancée depuis le Darfour du Sud, sous contrôle des FSR d'Hemedti</span></li>
+        <li><b>Bilan</b><span>Près de 30 morts selon des sources locales ; 3 Casques bleus zambiens blessés</span></li>
+      </ul>
+    </div>
+
+    <span class="sec-head">Un verrou stratégique sur la route du chaos</span>
+
+    <p>Pour comprendre pourquoi Am Dafock compte, il faut regarder une carte. La localité se dresse sur l'axe qui relie le Darfour aux immensités sahéliennes de l'Afrique centrale. Depuis plus de deux décennies, ce couloir sert de veine ouverte : y transitent groupes rebelles, trafiquants d'armes, réseaux de contrebande et combattants étrangers. Zone vaste, difficilement contrôlable, coupée du reste du pays pendant la saison des pluies, Am Dafock est un point faible chronique du dispositif sécuritaire centrafricain — une porte que nul ne parvient vraiment à verrouiller.</p>
+
+    <p>L'insuffisance des effectifs dans ces garnisons lointaines pose, une fois de plus, la question des moyens de l'État. Perdre Am Dafock, ce n'est pas céder un village : c'est ouvrir une brèche vers l'intérieur du pays, avec un risque élevé de déstabilisation de la Vakaga, de la Haute-Kotto et, à terme, des axes reliant Bangui aux régions orientales.</p>
+
+    <div class="map-fig">
+      <svg viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carte de la zone de conflit : Am Dafock, Vakaga, axe vers Bangui">
+        <defs>
+          <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#c8102e"/>
+          </marker>
+          <marker id="arrowDash" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L7,3 L0,6 Z" fill="#a00d24"/>
+          </marker>
+        </defs>
+
+        <!-- background -->
+        <rect x="0" y="0" width="800" height="560" fill="#eef1f3"/>
+
+        <!-- Sudan (east) -->
+        <rect x="700" y="0" width="100" height="560" fill="#e2d6c2"/>
+        <text x="750" y="250" font-family="Arial" font-size="15" font-weight="700" fill="#8a7a5c" text-anchor="middle" transform="rotate(90 750 250)">SOUDAN</text>
+
+        <!-- CAR body -->
+        <path d="M120,150 L250,120 L400,110 L520,120 L620,108 L702,88
+                 L690,160 L662,220 L640,262 L600,300 L560,332
+                 L520,360 L470,382 L420,402 L360,420 L300,432 L250,416 L200,400
+                 L160,372 L138,320 L120,262 L110,200 Z"
+              fill="#f7f4ec" stroke="#c8102e" stroke-width="2.5"/>
+
+        <!-- Vakaga prefecture highlight (NE) -->
+        <path d="M540,124 L620,108 L702,88 L690,160 L640,190 L580,175 Z"
+              fill="#f6dcdc" stroke="#c8102e" stroke-width="1" stroke-dasharray="4 3" opacity="0.85"/>
+        <text x="600" y="126" font-family="Arial" font-size="12" font-weight="700" fill="#a00d24" text-anchor="middle">VAKAGA</text>
+
+        <!-- neighbours labels -->
+        <text x="330" y="86" font-family="Arial" font-size="14" font-weight="700" fill="#7a7a7a" text-anchor="middle">TCHAD</text>
+        <text x="650" y="330" font-family="Arial" font-size="12" font-weight="700" fill="#8a7a5c" text-anchor="middle">SOUDAN DU SUD</text>
+        <text x="420" y="470" font-family="Arial" font-size="13" font-weight="700" fill="#7a7a7a" text-anchor="middle">RDC</text>
+        <text x="150" y="440" font-family="Arial" font-size="12" font-weight="700" fill="#7a7a7a" text-anchor="middle">CONGO</text>
+        <text x="70" y="250" font-family="Arial" font-size="13" font-weight="700" fill="#7a7a7a" text-anchor="middle" transform="rotate(-90 70 250)">CAMEROUN</text>
+
+        <text x="250" y="250" font-family="Georgia" font-size="18" font-weight="700" fill="#c9c4b6" text-anchor="middle" letter-spacing="2">CENTRAFRIQUE</text>
+
+        <!-- Darfour du Sud origin (in Sudan) -->
+        <circle cx="748" cy="120" r="6" fill="#a00d24"/>
+        <text x="748" y="105" font-family="Arial" font-size="10.5" font-weight="700" fill="#a00d24" text-anchor="middle">Darfour du Sud</text>
+        <text x="748" y="140" font-family="Arial" font-size="9" fill="#8a7a5c" text-anchor="middle">(zone FSR / Hemedti)</text>
+
+        <!-- offensive arrow: Darfour -> Am Dafock -->
+        <path d="M742,124 Q715,110 707,96" fill="none" stroke="#c8102e" stroke-width="3" marker-end="url(#arrowRed)"/>
+
+        <!-- Am Dafock -->
+        <circle cx="700" cy="90" r="7" fill="#c8102e" stroke="#fff" stroke-width="2"/>
+        <text x="672" y="80" font-family="Arial" font-size="12.5" font-weight="800" fill="#c8102e" text-anchor="end">Am Dafock</text>
+        <text x="672" y="94" font-family="Arial" font-size="9" fill="#666" text-anchor="end">30 juin 2026</text>
+
+        <!-- Am Dafock -> Birao (next target) -->
+        <path d="M690,98 Q655,120 632,140" fill="none" stroke="#a00d24" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#arrowDash)"/>
+
+        <!-- Birao -->
+        <circle cx="626" cy="146" r="6" fill="#fff" stroke="#c8102e" stroke-width="2.5"/>
+        <text x="640" y="150" font-family="Arial" font-size="12" font-weight="700" fill="#a00d24" text-anchor="start">Birao</text>
+        <text x="640" y="163" font-family="Arial" font-size="8.5" fill="#666" text-anchor="start">chef-lieu Vakaga</text>
+
+        <!-- Birao -> Bangui (objective) long dashed arrow -->
+        <path d="M620,152 Q470,270 315,415" fill="none" stroke="#a00d24" stroke-width="2.2" stroke-dasharray="2 7" opacity="0.8" marker-end="url(#arrowDash)"/>
+
+        <!-- Bangui -->
+        <circle cx="305" cy="424" r="7.5" fill="#1a1a1a" stroke="#fff" stroke-width="2"/>
+        <path d="M305,415 l6,10 l-12,0 Z" fill="#c8102e"/>
+        <text x="305" y="448" font-family="Arial" font-size="13" font-weight="800" fill="#1a1a1a" text-anchor="middle">BANGUI</text>
+        <text x="305" y="461" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">capitale — objectif final</text>
+
+        <!-- legend -->
+        <g font-family="Arial">
+          <rect x="20" y="500" width="380" height="48" fill="#fff" stroke="#e0e0d8" rx="3"/>
+          <line x1="34" y1="516" x2="64" y2="516" stroke="#c8102e" stroke-width="3" marker-end="url(#arrowRed)"/>
+          <text x="72" y="520" font-size="10.5" fill="#333">Offensive du 30 juin (Darfour → Am Dafock)</text>
+          <line x1="34" y1="536" x2="64" y2="536" stroke="#a00d24" stroke-width="2.4" stroke-dasharray="7 5"/>
+          <text x="72" y="540" font-size="10.5" fill="#333">Axe de progression annoncé : Birao, puis Bangui</text>
+        </g>
+      </svg>
+    </div>
+    <p class="map-caption">Carte AfriPolitique — Localisation de la zone de conflit et de l'axe d'offensive Darfour du Sud → Am Dafock → Birao → Bangui. Fond schématique à but éditorial, données ouvertes ; tracés indicatifs, non contractuels.</p>
+
+    <span class="sec-head">Qui a frappé ? Une rébellion neuve, de vieux visages</span>
+
+    <p>L'assaut a été revendiqué par une coalition rebelle formée deux mois plus tôt : l'<strong>Alliance du sursaut patriotique (ASP)</strong>. Sous ce sigle neuf, de vieux visages — une nébuleuse d'anciens de l'ex-Séléka et de l'ex-anti-Balaka, regroupés autour de figures de la CPC, cette coalition qui avait déjà marché sur Bangui en 2020-2021. On y retrouve Noureddine Adam et l'ombre de l'ex-président <strong>François Bozizé</strong>, mué depuis des années en chef rebelle. Selon plusieurs sources centrafricaines, l'ASP s'appuie sur des relais au Soudan comme en France. Un attelage hétéroclite qui n'a qu'un ciment : le renversement de Touadéra.</p>
+
+    <p>Sur le terrain, l'identité des assaillants ne fait guère de doute. « Il y avait des éléments des Forces de soutien rapide soudanaises aux côtés de combattants de l'ex-Séléka », a déclaré à la presse le sous-préfet d'Am Dafock, <strong>Ramadan Abdelkader</strong>. Des vidéos diffusées sur les réseaux sociaux ont montré les hommes armés dans les locaux de la gendarmerie, près de corps en uniforme — leurs auteurs, s'exprimant dans une autre langue que le sango, revendiquant l'exécution de militaires, policiers et gendarmes centrafricains. À Bangui, des familles ont reconnu leurs proches sur ces images.</p>
+
+    <p>La stratégie, elle, est connue de la région : le grand banditisme, les « coupeurs de route ». Les groupes avancent par attaques éclair, harcèlent l'armée, puis s'évaporent dès que les forces de sécurité lancent leurs opérations de ratissage. Une guérilla d'usure, insaisissable, taillée pour un terrain immense et poreux.</p>
+
+    <div class="pull">« Après Am Dafock, l'étape suivante est Birao. L'objectif principal, lui, s'appelle Bangui. » Toute la question centrafricaine tient dans cette ligne droite.</div>
+
+    <div class="factbox">
+      <h4>De la Séléka à Am Dafock — treize ans de rechutes</h4>
+      <ul>
+        <li><b>2013</b><span>La Séléka, venue du nord-est, renverse François Bozizé et plonge le pays dans la guerre</span></li>
+        <li><b>2020-21</b><span>La CPC marche sur Bangui ; l'offensive est brisée avec l'appui militaire russe</span></li>
+        <li><b>Sept. 2025</b><span>Création d'une force mixte tchado-centrafricaine pour sécuriser la frontière</span></li>
+        <li><b>Jan. 2026</b><span>Touadéra réélu pour un 3ᵉ mandat, dès le 1ᵉʳ tour, après révision constitutionnelle</span></li>
+        <li><b>30 juin 2026</b><span>L'ASP frappe Am Dafock depuis le Soudan — même corridor, mêmes acteurs</span></li>
+      </ul>
+    </div>
+
+    <span class="sec-head">Des milliers de déplacés, une région paralysée</span>
+
+    <p>Sur le terrain, le prix est déjà humain. Selon des sources locales, des milliers d'habitants — plus de 10 000, avancent certaines — ont fui vers les campements de la MINUSCA, par peur de nouveaux affrontements ; les autorités, elles, n'ont livré aucun bilan officiel. Commerces, administrations, écoles : tout s'est figé d'un coup. Des checkpoints ont été dressés, tenus par l'armée et les paramilitaires russes.</p>
+
+    <p>Bangui, de son côté, a choisi le registre de la fermeté tranquille. « Grâce à la bravoure des forces de défense et de sécurité, appuyées par leurs alliés russes, les groupes armés ont été mis hors d'état de nuire », a assuré le porte-parole du gouvernement, <strong>Évariste Ngamana</strong>, affirmant que la ville était repassée sous contrôle de l'État. Une frappe aérienne russe aurait précipité le repli des assaillants vers le Soudan. Mais un verrou repris n'est pas une frontière pacifiée : la victoire a un goût de sursis, et la vraie question n'est pas celle d'hier, mais celle de demain.</p>
+
+    <span class="sec-head">Le grand jeu : quand les puissances s'invitent à la frontière</span>
+
+    <p>Am Dafock n'est pas qu'un champ de bataille : c'est un miroir. On y voit converger les appétits d'une demi-douzaine d'acteurs extérieurs. Au premier plan, le duel <strong>France–Russie</strong> : Paris, longtemps puissance de référence à Bangui, a cédé le terrain aux paramilitaires de l'ex-Wagner, devenus le bras armé du régime — pendant que l'armée française opère son retour au Tchad voisin. Un basculement que beaucoup de Centrafricains lisent comme une reconfiguration d'influence à leurs dépens.</p>
+
+    <p>En toile de fond, la guerre du Soudan irrigue tout. L'offensive est partie du Darfour du Sud, tenu par les FSR du général Hemedti — ces mêmes FSR que les <strong>Émirats arabes unis</strong> sont accusés de soutenir en armes et en financements. À l'autre bout de la chaîne, les services de renseignement <strong>ukrainiens</strong> ont, selon plusieurs enquêtes, cherché à porter des coups aux mercenaires russes jusque dans la bande sahélo-soudanaise. Autrement dit : la ligne de front Kiev–Moscou a désormais un prolongement africain, et la Vakaga en est l'un des points de contact les plus discrets.</p>
+
+    <div class="factbox">
+      <h4>Les ingérences en présence</h4>
+      <ul>
+        <li><b>Russie</b><span>Paramilitaires ex-Wagner en appui direct des FACA, frappes aériennes</span></li>
+        <li><b>France</b><span>Retrait de Bangui, retour militaire au Tchad ; accusée d'un jeu d'influence</span></li>
+        <li><b>Tchad</b><span>Base arrière historique des rébellions centrafricaines ; force mixte inactive</span></li>
+        <li><b>Soudan (FSR)</b><span>Sanctuaire et tremplin de l'offensive depuis le Darfour du Sud</span></li>
+        <li><b>Émirats</b><span>Soutien présumé aux FSR d'Hemedti dans la guerre soudanaise</span></li>
+        <li><b>Ukraine</b><span>Actions de renseignement visant les mercenaires russes dans la région</span></li>
+      </ul>
+    </div>
+
+    <span class="sec-head">Le Tchad dans le viseur de Bangui</span>
+
+    <p>Reste le voisin qui cristallise tous les soupçons : le Tchad. Cette fois, Bangui n'a pas manié l'allusion : le gouvernement centrafricain a <strong>directement accusé le régime tchadien</strong> de chercher à déstabiliser la RCA. Une mise en cause frontale, rare entre deux États voisins, qui fait franchir un cap à une défiance jusqu'ici murmurée dans les couloirs.</p>
+
+    <p>Ces accusations ne sortent pas de nulle part. Le territoire tchadien a de longue date servi de base arrière aux rébellions centrafricaines ; nombre de chefs rebelles y ont leurs origines, y ont été formés, y résident. Certains, arrêtés au Tchad, se sont « miraculeusement » évaporés des prisons pour réapparaître sur les champs de bataille. La prise de pouvoir de la Séléka, en 2013, reste dans les mémoires comme l'archétype de cet appui transfrontalier.</p>
+
+    <p>Face à la charge, N'Djamena a répondu — mais du bout des lèvres. Dans une note datée du 3 juillet, le <strong>ministère tchadien des Affaires étrangères</strong> dit avoir appris « avec surprise et indignation » ces accusations relayées par « certains médias et réseaux sociaux », et affirme n'avoir « jamais été, n'être pas et ne devoir jamais être partie à une quelconque entreprise subversive dirigée contre un État frère ». Le texte dénonce une « campagne de désinformation », invoque le principe de non-ingérence et balaie tout lien avec la relation entre N'Djamena et Paris.</p>
+
+    <p>Problème : ce démenti est loin de faire l'unanimité. Trop court, trop général, publié tardivement, il n'a convaincu ni l'opinion centrafricaine ni une partie de la presse tchadienne. Quand l'accusation est aussi lourde, une mise au point aussi timide finit par sonner, pour beaucoup, comme un aveu de gêne plutôt que comme une réfutation.</p>
+
+    <p>D'où le malaise autour de la <strong>force mixte tchado-centrafricaine</strong>, mise en place en septembre 2025 pour sécuriser la frontière. Au moment où le feu reprend à Am Dafock, cette force reste aux abonnés absents. Une inaction qui interroge : à quoi sert une force conjointe censée garantir la sécurité transfrontalière si elle disparaît précisément quand la frontière s'embrase ?</p>
+
+    <p>Quant à la France, elle demeure la cible d'une accusation devenue rituelle sur le continent — celle d'utiliser bases militaires et réseaux de renseignement pour peser sur les affaires intérieures. Le grief, formulé aussi par le Burkina Faso, le Mali et le Niger — qui ont rompu avec Paris —, prospère sur un terreau de défiance que ni les démentis ni les faits ne suffisent à éteindre.</p>
+
+    <span class="sec-head">La RCA risque-t-elle de rebasculer ?</span>
+
+    <p>L'offensive d'Am Dafock survient dans un contexte politique électrique : quelques mois à peine après la réélection contestée de <strong>Faustin-Archange Touadéra</strong> pour un troisième mandat, obtenu dès le premier tour en janvier 2026 après une révision constitutionnelle taillée sur mesure. Une pré-crise politique se superpose ainsi à la menace armée — le cocktail classique des rechutes centrafricaines.</p>
+
+    <p>Et l'onde ne s'arrêtera pas à la Vakaga. Si le corridor soudanais s'ouvre durablement, c'est tout le bassin qui vacille : le Tchad, déjà sous pression de la guerre voisine ; le Cameroun et son extrême-nord fragile ; les routes migratoires et de contrebande qui irriguent l'Afrique centrale. Am Dafock n'est pas une périphérie lointaine — c'est le thermomètre d'une région où les frontières ne protègent plus de grand-chose.</p>
+
+    <p>Alors oui, l'armée a repoussé l'assaut. Mais une position tenue n'est pas une frontière pacifiée, et une bataille gagnée n'est pas une guerre évitée. Entre un Soudan en flammes qui exporte ses combattants, un Tchad ambigu, des parrains russes et français qui s'observent, et des puissances lointaines qui jouent leur propre partie, la Centrafrique se retrouve, encore, au carrefour des convoitises. La vraie question n'est plus de savoir qui a gagné le 30 juin — mais combien de temps tiendra l'accalmie, et si Am Dafock n'aura pas été la première pierre d'un nouveau conflit.</p>
+
+  </div>
+
+  <div class="share-bar">
+    <span class="share-lbl">Partager :</span>
+    <a class="s-btn s-fb" href="#" target="_blank" rel="noopener">f Facebook</a>
+    <a class="s-btn s-tw" href="#" target="_blank" rel="noopener">𝕏 Twitter</a>
+    <a class="s-btn s-wa" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="s-btn s-lk" href="#" target="_blank" rel="noopener">in LinkedIn</a>
+  </div>
+
+  <div class="sources-box">
+    <h3>Sources &amp; repères</h3>
+    <ul>
+      <li>RFI / allAfrica — <a href="https://fr.allafrica.com/stories/202607020573.html" target="_blank" rel="noopener">« Les groupes armés mis hors d'état de nuire » : la réaction du gouvernement après l'attaque d'Am Dafok</a></li>
+      <li>Alwihda Info — <a href="https://www.alwihdainfo.com/le-tchad-dement-toute-implication-dans-un-projet-de-destabilisation-en-centrafrique/" target="_blank" rel="noopener">Le Tchad dément toute implication dans un projet de déstabilisation de la Centrafrique (note du MAE, 3 juillet 2026)</a></li>
+      <li>Jeune Afrique — <a href="https://www.jeuneafrique.com/1809206/politique/adam-hemetti-meckassoua-ce-que-lon-sait-de-lasp-la-nouvelle-rebellion-anti-touadera-en-centrafrique/" target="_blank" rel="noopener">Ce que l'on sait de l'ASP, la nouvelle rébellion anti-Touadéra</a></li>
+      <li>Sahel Intelligence — <a href="https://sahel-intelligence.com/43761-centrafrique-la-minusca-condamne-lattaque-a-am-dafock.html" target="_blank" rel="noopener">La MINUSCA condamne l'attaque d'Am Dafock</a></li>
+      <li>Bénin Web TV — <a href="https://beninwebtv.bj/centrafrique-reprises-des-hostilites-meurtrieres-aux-frontieres-avec-le-tchad-et-le-soudan/" target="_blank" rel="noopener">Reprise des hostilités aux frontières avec le Tchad et le Soudan</a></li>
+      <li>Wikipédia — <a href="https://fr.wikipedia.org/wiki/%C3%89lection_pr%C3%A9sidentielle_centrafricaine_de_2025" target="_blank" rel="noopener">Élection présidentielle centrafricaine de 2025 (réélection de Touadéra)</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">Afri<span>Politique</span></div>
+      <p style="margin-top:.4rem;">Média indépendant dédié à l'information politique africaine et mondiale.</p>
+    </div>
+    <p>✉️ redaction@afripolitique.com</p>
+  </div>
+  <div class="footer-bottom">© 2026 AfriPolitique. Tous droits réservés.</div>
+</footer>
+
+</body>
+</html>
