@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AfriPolitique</title>
+<meta name="description" content="Contactez la rédaction d'AfriPolitique : questions, propositions d'articles, presse et partenariats.">
+<style>
+  :root{--bg:#0f1419;--panel:#1a222c;--line:#2a3644;--text:#e8edf2;--muted:#9fb0c0;--accent:#c0392b;--gold:#e0a63c;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--line);}
+  .brand{font-weight:800;font-size:1.25rem;letter-spacing:.5px;text-decoration:none;color:var(--text);}
+  .brand span{color:var(--accent);}
+  .topbar nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:.95rem;}
+  .topbar nav a:hover{color:var(--text);}
+  .wrap{max-width:640px;margin:0 auto;padding:48px 24px 64px;}
+  h1{font-size:2rem;margin:0 0 8px;}
+  .lead{color:var(--muted);margin:0 0 32px;}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;}
+  .field{margin-bottom:18px;}
+  label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:6px;}
+  input,select,textarea{width:100%;padding:12px 14px;background:#0f1720;border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:1rem;font-family:inherit;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);}
+  textarea{min-height:140px;resize:vertical;}
+  button{margin-top:8px;width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;}
+  button:hover{filter:brightness(1.08);}
+  .success{display:none;margin-top:18px;padding:14px 16px;background:rgba(46,160,110,.15);border:1px solid #2ea06e;border-radius:8px;color:#a9e6c8;}
+  .foot{margin-top:36px;color:var(--muted);font-size:.9rem;text-align:center;}
+  .foot a{color:var(--gold);text-decoration:none;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">Afri<span>Politique</span></a>
+  <nav><a href="/">Accueil</a><a href="/abonner.html">Newsletter</a></nav>
+</header>
+<main class="wrap">
+  <h1>Nous contacter</h1>
+  <p class="lead">Une question, une proposition d'article ou de tribune, une demande presse ou un partenariat ? Écrivez-nous — la rédaction vous répondra.</p>
+
+  <form name="contact-afripolitique" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+    <input type="hidden" name="form-name" value="contact-afripolitique">
+    <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
+    <div class="field">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="field">
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="field">
+      <label for="subject">Sujet</label>
+      <select id="subject" name="subject">
+        <option>Question générale</option>
+        <option>Proposition d'article / tribune</option>
+        <option>Presse &amp; médias</option>
+        <option>Partenariat</option>
+        <option>Publicité</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Envoyer le message</button>
+    <div class="success" id="contactSuccess">Merci, votre message a bien été transmis à la rédaction. Nous vous répondrons sous quelques jours.</div>
+  </form>
+
+  <p class="foot">Ou directement par e-mail : <a href="mailto:contact@afripolitique.com">contact@afripolitique.com</a></p>
+</main>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var body = new URLSearchParams(new FormData(form)).toString();
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      .then(function () { form.reset(); document.getElementById('contactSuccess').style.display = 'block'; })
+      .catch(function () { alert("Erreur d'envoi, merci de réessayer dans un instant."); });
+  });
+</script>
+</body>
+</html>
