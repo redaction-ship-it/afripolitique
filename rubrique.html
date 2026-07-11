@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title id="pageTitle">Rubrique — AfriPolitique</title>
+<meta id="metaDesc" name="description" content="Retrouvez tous les articles d'AfriPolitique par rubrique : politique, monde, élections, diplomatie, économie, sécurité."/>
+<link rel="icon" href="logo-ap.png"/>
+<style>
+  :root{--bg:#0f1419;--panel:#1a222c;--line:#2a3644;--text:#e8edf2;--muted:#9fb0c0;--accent:#c0392b;--gold:#e0a63c;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:8px;}
+  .brand{font-weight:800;font-size:1.25rem;letter-spacing:.5px;}
+  .brand span{color:var(--accent);}
+  .topbar nav a{color:var(--muted);margin-left:18px;font-size:.95rem;}
+  .topbar nav a:hover{color:var(--text);}
+  .rubnav{display:flex;flex-wrap:wrap;gap:6px 4px;padding:12px 24px;border-bottom:1px solid var(--line);background:#131a22;}
+  .rubnav a{color:var(--muted);font-size:.85rem;padding:5px 11px;border-radius:20px;border:1px solid transparent;}
+  .rubnav a:hover{color:var(--text);border-color:var(--line);}
+  .rubnav a.active{color:#fff;background:var(--accent);}
+  .wrap{max-width:1100px;margin:0 auto;padding:36px 24px 72px;}
+  .crumb{color:var(--muted);font-size:.85rem;margin-bottom:6px;}
+  h1{font-size:2.1rem;margin:0 0 6px;}
+  .count{color:var(--muted);margin:0 0 28px;font-size:.95rem;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s,transform .15s;}
+  .card:hover{border-color:var(--gold);transform:translateY(-2px);}
+  .card .thumb{width:100%;height:170px;object-fit:cover;background:#0f1720;}
+  .card .body{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;}
+  .badge{align-self:flex-start;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.4px;padding:3px 9px;border-radius:5px;margin-bottom:10px;color:#fff;background:var(--accent);}
+  .cat-monde{background:#2d6cdf;} .cat-diplo{background:#2ea06e;} .cat-election{background:#8e44ad;}
+  .cat-economie{background:#d68910;} .cat-securite{background:#c0392b;} .cat-politique{background:#c0392b;}
+  .card h2{font-size:1.12rem;margin:0 0 8px;line-height:1.35;}
+  .card h2 a:hover{color:var(--gold);}
+  .card .exc{color:var(--muted);font-size:.92rem;flex:1;margin:0 0 12px;}
+  .card .meta{color:#7f93a6;font-size:.8rem;border-top:1px solid var(--line);padding-top:10px;}
+  .empty{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:40px;text-align:center;color:var(--muted);}
+  .foot{max-width:1100px;margin:0 auto;padding:22px 24px 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);}
+  .foot a{color:var(--gold);}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">Afri<span>Politique</span></a>
+  <nav><a href="/">Accueil</a><a href="/abonner.html">Newsletter</a><a href="/contact.html">Contact</a></nav>
+</header>
+<nav class="rubnav" id="rubnav"></nav>
+<main class="wrap">
+  <div class="crumb"><a href="/">Accueil</a> / <span id="crumbCat">Rubrique</span></div>
+  <h1 id="rubTitle">Rubrique</h1>
+  <p class="count" id="rubCount"></p>
+  <div id="grid" class="grid"></div>
+</main>
+<div class="foot">AfriPolitique — média indépendant. <a href="/">Accueil</a> · <a href="/contact.html">Contact</a> · <a href="/a-propos.html">À propos</a></div>
+
+<script src="articles-data.js"></script>
+<script src="articles-extra.js"></script>
+<script>
+  const RUBS = [
+    ["afrique","Afrique"],["monde","Monde"],["politique","Politique"],["election","Élections"],
+    ["diplo","Diplomatie"],["economie","Économie"],["securite","Sécurité"],
+    ["opinions","Opinions"],["videos","Vidéos"]
+  ];
+  const DEF = {
+    afrique:{title:"Afrique",match:a=>a.cat!=="cat-monde"},
+    monde:{title:"Monde",match:a=>a.cat==="cat-monde"},
+    politique:{title:"Politique",match:a=>a.cat==="cat-politique"},
+    election:{title:"Élections",match:a=>a.cat==="cat-election"},
+    diplo:{title:"Diplomatie",match:a=>a.cat==="cat-diplo"},
+    economie:{title:"Économie politique",match:a=>a.cat==="cat-economie"},
+    securite:{title:"Sécurité",match:a=>a.cat==="cat-securite"},
+    opinions:{title:"Opinions",match:()=>false},
+    videos:{title:"Vidéos",match:()=>false}
+  };
+  const MOIS={janvier:0,"février":1,fevrier:1,mars:2,avril:3,mai:4,juin:5,juillet:6,"août":7,aout:7,septembre:8,octobre:9,novembre:10,"décembre":11,decembre:11};
+  function tFr(d){const m=(d||"").toLowerCase().match(/(\d{1,2})\s+([a-zéûàinfo]+)\s+(\d{4})/);if(!m)return 0;return new Date(+m[3],MOIS[m[2]]??0,+m[1]).getTime();}
+  function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+
+  const params=new URLSearchParams(location.search);
+  const key=(params.get("cat")||"afrique").toLowerCase();
+  const def=DEF[key]||DEF.afrique;
+
+  // barre de rubriques
+  document.getElementById("rubnav").innerHTML=RUBS.map(([k,l])=>
+    `<a href="rubrique.html?cat=${k}" class="${k===key?'active':''}">${l}</a>`).join("");
+
+  document.getElementById("pageTitle").textContent=def.title+" — AfriPolitique";
+  document.getElementById("rubTitle").textContent=def.title;
+  document.getElementById("crumbCat").textContent=def.title;
+  document.getElementById("metaDesc").setAttribute("content",`Articles d'AfriPolitique dans la rubrique ${def.title}.`);
+
+  let list=[];
+  if(typeof ARTICLES!=="undefined"){
+    list=Object.entries(ARTICLES).filter(([id,a])=>def.match(a))
+      .map(([id,a])=>({id,...a})).sort((x,y)=>tFr(y.date)-tFr(x.date));
+  }
+  document.getElementById("rubCount").textContent=
+    list.length? `${list.length} article${list.length>1?"s":""}` : "";
+
+  const grid=document.getElementById("grid");
+  if(!list.length){
+    grid.outerHTML='<div class="empty">Aucun article dans cette rubrique pour le moment. <a href="/" style="color:var(--gold)">Retour à l\'accueil →</a></div>';
+  }else{
+    grid.innerHTML=list.map(a=>`
+      <article class="card">
+        <a href="article.html?id=${encodeURIComponent(a.id)}"><img class="thumb" src="${esc(a.img)}" alt="${esc(a.title)}" loading="lazy"/></a>
+        <div class="body">
+          <span class="badge ${esc(a.cat)}">${esc(a.catLabel||"")}</span>
+          <h2><a href="article.html?id=${encodeURIComponent(a.id)}">${esc(a.title)}</a></h2>
+          <p class="exc">${esc((a.excerpt||"").slice(0,160))}${(a.excerpt||"").length>160?"…":""}</p>
+          <div class="meta">${esc(a.author||"Rédaction AfriPolitique")} · ${esc(a.date||"")}${a.read?" · "+esc(a.read):""}</div>
+        </div>
+      </article>`).join("");
+  }
+</script>
+</body>
+</html>
