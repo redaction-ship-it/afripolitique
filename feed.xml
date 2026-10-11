@@ -12,7 +12,7 @@
     <copyright>© 2026 AfriPolitique. Tous droits réservés.</copyright>
     <managingEditor>redaction@afripolitique.com (Rédaction AfriPolitique)</managingEditor>
     <webMaster>contact@afripolitique.com (AfriPolitique)</webMaster>
-    <lastBuildDate>Sun, 20 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 21:30:00 +0000</lastBuildDate>
     <ttl>60</ttl>
     <image>
       <url>https://images.unsplash.com/photo-1626695436755-3e288720849c?w=144&amp;q=80&amp;auto=format&amp;fit=crop</url>
@@ -24,6 +24,16 @@
     <atom:link href="https://www.afripolitique.com/feed.xml" rel="self" type="application/rss+xml"/>
 
 
+    <item>
+      <title><![CDATA[Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena]]></title>
+      <link>https://www.afripolitique.com/article-rca-tchad-tissi.html</link>
+      <guid isPermaLink="true">https://www.afripolitique.com/article-rca-tchad-tissi.html</guid>
+      <pubDate>Sun, 11 Oct 2026 21:30:00 +0000</pubDate>
+      <dc:creator>Rédaction AfriPolitique</dc:creator>
+      <description><![CDATA[Le 10 octobre, l'armée centrafricaine et ses alliés russes ont frappé la zone des trois frontières. Chassés du Darfour par les FSR, les rebelles de Noureddine Adam n'ont plus que le Tchad comme arrière-pays. Diamants, or, uranium et un Tchad encerclé par ses voisins, à la veille d'un rendez-vous Déby-Macron.]]></description>
+      <category>Sécurité &amp; Défense</category>
+      <media:thumbnail url="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Former_combattants_of_the_Seleka_in_a_DDR-process%2C_Bria%2C_Central_African_Republic%2C_25_Feb_2017.jpg/1280px-Former_combattants_of_the_Seleka_in_a_DDR-process%2C_Bria%2C_Central_African_Republic%2C_25_Feb_2017.jpg"/>
+    </item>
     <item>
       <title><![CDATA[Un drone, un verset et le silence : le Tchad au bord de ses propres fractures]]></title>
       <link>https://www.afripolitique.com/article-tchad-drone-presidence.html</link>
