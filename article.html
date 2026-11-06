@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <link rel="icon" type="image/png" href="/logo-ap.png"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title id="page-title">AfriPolitique — Article</title>
-<meta id="meta-desc" name="description" content="AfriPolitique — Actualités politiques africaines et mondiales"/>
+<title id="page-title">AfriPolitique - Article</title>
+<meta id="meta-desc" name="description" content="AfriPolitique - Actualités politiques africaines et mondiales"/>
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -133,7 +133,7 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <span class="topbar-date">📅 Dimanche 7 juin 2026</span>
+    <span class="topbar-date">Dimanche 7 juin 2026</span>
     <div class="topbar-links">
       <a href="index.html">Accueil</a>
       <a href="index.html">Newsletter</a>
@@ -178,7 +178,7 @@
       <div class="f-logo">Afri<span>Politique</span></div>
       <p style="margin-top:.4rem;">Média indépendant dédié à l'information politique africaine et mondiale.</p>
     </div>
-    <p>✉️ redaction@afripolitique.com</p>
+    <p>redaction@afripolitique.com</p>
   </div>
   <div class="footer-bottom">© 2026 AfriPolitique. Tous droits réservés.</div>
 </footer>
@@ -207,7 +207,7 @@
     return;
   }
 
-  document.title = article.title + ' — AfriPolitique';
+  document.title = article.title + ' - AfriPolitique';
   document.getElementById('meta-desc').setAttribute('content', article.excerpt);
   (function(){
     var canon = document.createElement('link'); canon.rel = 'canonical'; canon.href = SITE + 'article.html?id=' + encodeURIComponent(id); document.head.appendChild(canon);
@@ -250,9 +250,9 @@
     <p class="article-excerpt">${article.excerpt}</p>
 
     <div class="article-meta">
-      <span>✍️ <b>${article.author}</b></span>
-      <span>🕐 ${article.date}</span>
-      <span>⏱ ${article.read} de lecture</span>
+      <span><b>${article.author}</b></span>
+      <span>${article.date}</span>
+      <span>${article.read} de lecture</span>
     </div>
 
     <div class="article-cover"><img src="${escAttr(article.img)}" alt="${escAttr(article.title)}"/></div>

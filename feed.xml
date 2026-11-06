@@ -5,9 +5,9 @@
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>AfriPolitique — Actualités politiques africaines et mondiales</title>
+    <title>AfriPolitique - Actualités politiques africaines et mondiales</title>
     <link>https://www.afripolitique.com/</link>
-    <description>Décryptez les enjeux de pouvoir, de gouvernance et de relations internationales en Afrique et dans le monde.</description>
+    <description>L'actualité politique africaine et mondiale : pouvoir, gouvernance, relations internationales.</description>
     <language>fr-FR</language>
     <copyright>© 2026 AfriPolitique. Tous droits réservés.</copyright>
     <managingEditor>redaction@afripolitique.com (Rédaction AfriPolitique)</managingEditor>
@@ -79,7 +79,7 @@
       <pubDate>Sun, 26 Jul 2026 09:00:00 +0000</pubDate>
       <dc:creator>Rédaction AfriPolitique</dc:creator>
       <category>Sécurité &amp; Défense</category>
-      <description><![CDATA[En recevant Saddam Haftar avec les honneurs d'un chef d'État, Mahamat Idriss Déby scelle l'alignement de N'Djamena sur le clan Haftar. Guerre du Fezzan, ravitaillement des FSR au Soudan via le bataillon Subul Al-Salam, pont aérien émirati d'Amdjarass : décryptage, chronologie et carte.]]></description>
+      <description><![CDATA[En recevant Saddam Haftar avec les honneurs d'un chef d'État, Mahamat Idriss Déby scelle l'alignement de N'Djamena sur le clan Haftar. Guerre du Fezzan, ravitaillement des FSR au Soudan via le bataillon Subul Al-Salam, pont aérien émirati d'Amdjarass : chronologie et carte.]]></description>
     </item>
 
     <item>
@@ -103,7 +103,7 @@
     </item>
 
     <item>
-      <title><![CDATA[L'Afrique à l'assaut du monde — Dix nations, un rêve continental (CdM 2026)]]></title>
+      <title><![CDATA[L'Afrique à l'assaut du monde - Dix nations, un rêve continental (CdM 2026)]]></title>
       <link>https://www.afripolitique.com/afrique_mondial_2026.html</link>
       <guid isPermaLink="true">https://www.afripolitique.com/afrique_mondial_2026.html</guid>
       <pubDate>Mon, 09 Jun 2026 08:00:00 +0000</pubDate>
