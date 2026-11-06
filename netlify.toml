@@ -1,4 +1,7 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Site statique : pas de réécriture globale.
+# Les pages inexistantes reçoivent 404.html avec un vrai code 404.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

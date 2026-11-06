@@ -201,7 +201,7 @@
       <div class="not-found">
         <h1>Article introuvable</h1>
         <p style="color:var(--gray); margin-bottom:1.2rem;">Cet article n'existe pas ou a été déplacé.</p>
-        <a href="index.html">← Retour à l'accueil</a>
+        <a href="/">← Retour à l'accueil</a>
       </div>`;
     document.getElementById('crumb-title').textContent = 'Introuvable';
     return;
@@ -209,10 +209,20 @@
 
   document.title = article.title + ' — AfriPolitique';
   document.getElementById('meta-desc').setAttribute('content', article.excerpt);
+  (function(){
+    var canon = document.createElement('link'); canon.rel = 'canonical'; canon.href = SITE + 'article.html?id=' + encodeURIComponent(id); document.head.appendChild(canon);
+    var ld = document.createElement('script'); ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({"@context":"https://schema.org","@type":"NewsArticle","headline":article.title,
+      "description":article.excerpt,"image":article.img?[article.img]:[],"inLanguage":"fr",
+      "author":{"@type":"Organization","name":article.author||"Rédaction AfriPolitique"},
+      "publisher":{"@type":"NewsMediaOrganization","name":"AfriPolitique","logo":{"@type":"ImageObject","url":SITE+"logo-ap.png"}},
+      "mainEntityOfPage":SITE + 'article.html?id=' + encodeURIComponent(id)});
+    document.head.appendChild(ld);
+  })();
   document.getElementById('crumb-cat').textContent = article.catLabel || 'Article';
   document.getElementById('crumb-title').textContent = article.title;
 
-  const shareUrl = SITE + id;
+  const shareUrl = SITE + 'article.html?id=' + encodeURIComponent(id);
   const shareText = encodeURIComponent(article.title);
 
   const bodyHtml = article.body.map(p => `<p>${p}</p>`).join('\n');

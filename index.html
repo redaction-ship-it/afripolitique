@@ -212,7 +212,7 @@
       color: var(--red);
       border-bottom-color: var(--red);
     }
-    .nav-link .arrow { font-size: .6rem; margin-top: .1rem; transition: transform .2s; }
+    .nav-link .arrow { font-size: .72rem; margin-top: .1rem; transition: transform .2s; }
     .nav-item:hover .arrow { transform: rotate(180deg); }
     .nav-link.breaking-link {
       color: var(--red);
@@ -279,7 +279,7 @@
       background: var(--white);
       color: var(--red);
       font-family: var(--sans);
-      font-size: .65rem;
+      font-size: .72rem;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: .1em;
@@ -410,7 +410,7 @@
     .cat-tag {
       display: inline-block;
       font-family: var(--sans);
-      font-size: .65rem;
+      font-size: .72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .1em;
@@ -513,7 +513,7 @@
       margin-top: .5rem;
     }
     .share-lbl {
-      font-family: var(--sans); font-size: .65rem;
+      font-family: var(--sans); font-size: .72rem;
       text-transform: uppercase; letter-spacing: .08em;
       color: #aaa; margin-right: .15rem;
     }
@@ -642,7 +642,7 @@
       margin-left: auto;
       background: var(--light);
       border: 1px solid var(--border);
-      font-size: .65rem; padding: .12rem .4rem;
+      font-size: .72rem; padding: .12rem .4rem;
       border-radius: 10px; font-family: var(--sans);
       color: var(--gray);
     }
@@ -818,7 +818,26 @@
       .nav-inner .nav-item { display: none; }
       .nav-mobile-btn { display: block; }
     }
+
+    /* ═══ Accessibilité ═══ */
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+    .nav-item:focus-within .mega-menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .logo-name a { color: inherit; }
+    .mobile-close { font-size: 1.2rem; color: inherit; padding: .25rem .5rem; }
+    a.opinion-card { display: block; color: inherit; }
+    a.opinion-card:hover .op-text { color: var(--red); }
+    a.ticker-item:hover { text-decoration: underline; }
+    .ticker-wrap:hover .ticker-inner { animation-play-state: paused; }
+    .main-layout > * { min-width: 0; }
+    .breaking-bar-inner { min-width: 0; width: 100%; }
+    .breaking-text { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    @media(max-width: 600px) { .breaking-tag { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-inner { animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
   </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NewsMediaOrganization", "@id": "https://www.afripolitique.com/#org", "name": "AfriPolitique", "url": "https://www.afripolitique.com/", "logo": {"@type": "ImageObject", "url": "https://www.afripolitique.com/logo-ap.png"}, "email": "contact@afripolitique.com", "sameAs": ["https://www.facebook.com/AfriPolitique", "https://www.instagram.com/afripolitique", "https://www.linkedin.com/company/afripolitique"]}, {"@type": "WebSite", "@id": "https://www.afripolitique.com/#site", "url": "https://www.afripolitique.com/", "name": "AfriPolitique", "inLanguage": "fr", "publisher": {"@id": "https://www.afripolitique.com/#org"}}]}</script>
 </head>
 <body>
 
@@ -826,40 +845,38 @@
 <div id="mobile-nav">
   <div class="mobile-nav-header">
     <span style="font-family:'Georgia',serif;font-size:1.3rem;font-weight:700">Afri<span style="color:var(--red)">Politique</span></span>
-    <span class="mobile-close" onclick="document.getElementById('mobile-nav').classList.remove('open')">✕</span>
+    <button type="button" class="mobile-close" aria-label="Fermer le menu" onclick="document.getElementById('mobile-nav').classList.remove('open')">✕</button>
   </div>
   <div class="mobile-nav-links">
-    <a href="#">Accueil</a>
-    <a href="#" style="color:var(--red)">🔴 Flash Info</a>
+    <a href="/">Accueil</a>
     <a href="rubrique.html?cat=afrique">Afrique</a>
     <a href="rubrique.html?cat=monde">Monde</a>
     <a href="rubrique.html?cat=election">Élections</a>
     <a href="rubrique.html?cat=diplo">Diplomatie</a>
     <a href="rubrique.html?cat=economie">Économie politique</a>
     <a href="rubrique.html?cat=securite">Sécurité</a>
-    <a href="rubrique.html?cat=opinions">Opinions</a>
-    <a href="rubrique.html?cat=videos">Vidéos</a>
+    <a href="abonner.html">Newsletter</a>
+    <a href="a-propos.html">À propos</a>
   </div>
 </div>
 
 <!-- ═══ TOP BAR ═══ -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span class="topbar-date">📅 Jeudi 4 juin 2026</span>
+    <span class="topbar-date"></span>
     <div class="topbar-ticker">
       <div class="ticker-wrap">
         <div class="ticker-inner">
-          <span class="ticker-item">Sommet UA : plan de sécurité commun pour le Sahel</span>
-          <span class="ticker-item">Mali : nouveau gouvernement de transition formé</span>
-          <span class="ticker-item">ONU : vote sur la réforme du Conseil de sécurité</span>
-          <span class="ticker-item">Nigeria : crise constitutionnelle au Parlement</span>
+          <a class="ticker-item" href="article-tchad-miski-or-bardai.html">Tchad : à Miski, la paix de Bardaï se brise sur l'or</a>
+          <a class="ticker-item" href="article-rca-tchad-tissi.html">Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena</a>
+          <a class="ticker-item" href="article-tchad-drone-presidence.html">Un drone, un verset et le silence : le Tchad au bord de ses propres fractures</a>
+          <a class="ticker-item" href="article-algerie-niger-tournant-sahel.html">Quatre Su-30 à Niamey : l'Algérie entre dans le marché sahélien de la protection</a>
         </div>
       </div>
     </div>
     <div class="topbar-links">
       <a href="abonner.html">Newsletter</a>
-      <a href="#">Podcasts</a>
-      <a href="rubrique.html?cat=videos">Vidéos</a>
+      <a href="a-propos.html">À propos</a>
       <a href="contact.html">Contact</a>
     </div>
   </div>
@@ -871,16 +888,11 @@
     <div class="logo-wrap">
       <img src="logo-ap.png" alt="AfriPolitique" class="logo-flag" style="object-fit:cover" />
       <div class="logo-text">
-        <div class="logo-name">Afri<span>Politique</span></div>
+        <h1 class="logo-name"><a href="/">Afri<span>Politique</span></a></h1>
         <div class="logo-tagline">L'actualité politique africaine &amp; mondiale</div>
       </div>
     </div>
-    <div class="header-search">
-      <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Rechercher un article, un pays, un thème…" />
-    </div>
     <div class="header-cta">
-      <a href="#" class="btn-secondary">Se connecter</a>
       <a href="abonner.html" class="btn-primary">S'abonner</a>
     </div>
   </div>
@@ -890,22 +902,18 @@
 <nav class="main-nav">
   <div class="nav-inner">
     <div class="nav-item">
-      <a class="nav-link active" href="#">Accueil</a>
+      <a class="nav-link active" href="/" aria-current="page">Accueil</a>
     </div>
     <div class="nav-item">
-      <a class="nav-link breaking-link" href="#">🔴 Flash</a>
-    </div>
-    <div class="nav-item">
-      <span class="nav-link">Afrique <span class="arrow">▾</span></span>
+      <a class="nav-link" href="rubrique.html?cat=afrique" aria-haspopup="true">Afrique <span class="arrow" aria-hidden="true">▾</span></a>
       <div class="mega-menu">
         <div class="mega-col">
-          <h4>Régions</h4>
+          <h4>Dernières analyses</h4>
           <ul>
-            <li><a href="#">Afrique de l'Ouest</a></li>
-            <li><a href="#">Afrique Centrale</a></li>
-            <li><a href="#">Afrique de l'Est</a></li>
-            <li><a href="#">Afrique du Nord</a></li>
-            <li><a href="#">Afrique Australe</a></li>
+            <li><a href="article-tchad-miski-or-bardai.html">Tchad : Miski et l'or du Tibesti</a></li>
+            <li><a href="article-rca-tchad-tissi.html">RCA-Tchad : le front de Tissi</a></li>
+            <li><a href="article-tchad-drone-presidence.html">Tchad : le drone de la présidence</a></li>
+            <li><a href="article-algerie-niger-tournant-sahel.html">Algérie-Niger : les Su-30 de Niamey</a></li>
           </ul>
         </div>
         <div class="mega-col">
@@ -918,43 +926,41 @@
           </ul>
         </div>
         <div class="mega-col">
-          <h4>Pays phares</h4>
+          <h4>Dossier Tchad</h4>
           <ul>
-            <li><a href="#">🇳🇬 Nigeria</a></li>
-            <li><a href="#">🇿🇦 Afrique du Sud</a></li>
-            <li><a href="#">🇸🇳 Sénégal</a></li>
-            <li><a href="#">🇪🇹 Éthiopie</a></li>
+            <li><a href="article-tchad-haftar-sud-libyen.html">Tchad et Sud libyen</a></li>
+            <li><a href="article-rca-am-dafock.html">Am Dafock et la Centrafrique</a></li>
+            <li><a href="article.html?id=france-tchad-retour">France-Tchad</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="nav-item">
-      <span class="nav-link">Monde <span class="arrow">▾</span></span>
+      <a class="nav-link" href="rubrique.html?cat=monde" aria-haspopup="true">Monde <span class="arrow" aria-hidden="true">▾</span></a>
       <div class="mega-menu">
         <div class="mega-col">
           <h4>International</h4>
           <ul>
-            <li><a href="#">Relations Afrique-Europe</a></li>
-            <li><a href="#">Afrique-Chine</a></li>
-            <li><a href="#">Afrique-USA</a></li>
-            <li><a href="#">Afrique-Russie</a></li>
+            <li><a href="article.html?id=burkina-france-rupture">Relations Afrique-Europe</a></li>
+            <li><a href="article.html?id=chine-afrique">Afrique-Chine</a></li>
+            <li><a href="article.html?id=usa-afrique">Afrique-USA</a></li>
+            <li><a href="article.html?id=russie-afrique">Afrique-Russie</a></li>
           </ul>
         </div>
         <div class="mega-col">
           <h4>Organisations</h4>
           <ul>
-            <li><a href="#">Union Africaine</a></li>
-            <li><a href="#">Nations Unies</a></li>
-            <li><a href="#">CEDEAO</a></li>
-            <li><a href="#">ZLECAF</a></li>
+            <li><a href="article.html?id=union-africaine-sahel">Union Africaine</a></li>
+            <li><a href="article.html?id=onu-reforme">Nations Unies</a></li>
+            <li><a href="article.html?id=zlecaf">ZLECAF</a></li>
           </ul>
         </div>
         <div class="mega-col">
           <h4>Dossiers</h4>
           <ul>
-            <li><a href="#">Sahel en crise</a></li>
-            <li><a href="#">Dette africaine</a></li>
-            <li><a href="#">Transition démocratique</a></li>
+            <li><a href="article.html?id=sahel-terrorisme-2026">Sahel en crise</a></li>
+            <li><a href="article.html?id=g7-dette-covid">Dette africaine</a></li>
+            <li><a href="article-cpi-retraits-afrique.html">CPI : les retraits africains</a></li>
           </ul>
         </div>
       </div>
@@ -963,18 +969,17 @@
     <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=diplo">Diplomatie</a></div>
     <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=economie">Économie</a></div>
     <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=securite">Sécurité</a></div>
-    <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=opinions">Opinions</a></div>
-    <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=videos">Vidéos</a></div>
-    <button class="nav-mobile-btn" onclick="document.getElementById('mobile-nav').classList.add('open')">☰</button>
+    <div class="nav-item"><a class="nav-link" href="rubrique.html?cat=analyses">Analyses</a></div>
+    <button type="button" class="nav-mobile-btn" aria-label="Ouvrir le menu" onclick="document.getElementById('mobile-nav').classList.add('open')">☰</button>
   </div>
 </nav>
 
 <!-- ═══ BREAKING ═══ -->
 <div class="breaking-bar">
   <div class="breaking-bar-inner">
-    <span class="breaking-tag">🔴 Flash</span>
-    <span class="breaking-text">L'UA convoque un sommet d'urgence ce week-end à Addis-Abeba sur la sécurité au Sahel — présence confirmée de 38 chefs d'État</span>
-    <a class="breaking-more" href="#">Lire →</a>
+    <span class="breaking-tag">Dernière analyse</span>
+    <span class="breaking-text">Tchad : à Miski, la paix de Bardaï se brise sur l'or</span>
+    <a class="breaking-more" href="article-tchad-miski-or-bardai.html">Lire →</a>
   </div>
 </div>
 
@@ -989,7 +994,7 @@
       <section class="une-section">
         <div class="section-head">
           <h2><span class="bar"></span>À la Une</h2>
-          <a href="#">Toutes les actualités →</a>
+          <a href="rubrique.html?cat=tout">Toutes les actualités →</a>
         </div>
         <div class="une-grid">
 
@@ -1054,7 +1059,7 @@
       <section>
         <div class="section-head">
           <h2><span class="bar"></span>Afrique</h2>
-          <a href="#">Voir tout →</a>
+          <a href="rubrique.html?cat=afrique">Voir tout →</a>
         </div>
         <div class="articles-3col">
 
@@ -1071,10 +1076,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/nigeria-parlement" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Nigeria+Parlement&url=https://www.afripolitique.com/nigeria-parlement&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Nigeria+Parlement+https://www.afripolitique.com/nigeria-parlement" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/nigeria-parlement" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dnigeria-parlement" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Nigeria+Parlement&url=https://www.afripolitique.com/article.html%3Fid%3Dnigeria-parlement&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Nigeria+Parlement+https://www.afripolitique.com/article.html?id=nigeria-parlement" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Dnigeria-parlement" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1092,10 +1097,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/maroc-algerie" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Maroc-Algérie+diplomatie&url=https://www.afripolitique.com/maroc-algerie&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Maroc-Algérie+https://www.afripolitique.com/maroc-algerie" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/maroc-algerie" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dmaroc-algerie" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Maroc-Algérie+diplomatie&url=https://www.afripolitique.com/article.html%3Fid%3Dmaroc-algerie&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Maroc-Algérie+https://www.afripolitique.com/article.html?id=maroc-algerie" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Dmaroc-algerie" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1113,10 +1118,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/burkina-securite" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Burkina+Faso+sécurité&url=https://www.afripolitique.com/burkina-securite&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Burkina+Faso+https://www.afripolitique.com/burkina-securite" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/burkina-securite" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dburkina-securite" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Burkina+Faso+sécurité&url=https://www.afripolitique.com/article.html%3Fid%3Dburkina-securite&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Burkina+Faso+https://www.afripolitique.com/article.html?id=burkina-securite" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Dburkina-securite" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1134,10 +1139,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/zlecaf" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ZLECAF+bilan&url=https://www.afripolitique.com/zlecaf&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=ZLECAF+https://www.afripolitique.com/zlecaf" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/zlecaf" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dzlecaf" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ZLECAF+bilan&url=https://www.afripolitique.com/article.html%3Fid%3Dzlecaf&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=ZLECAF+https://www.afripolitique.com/article.html?id=zlecaf" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Dzlecaf" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1155,10 +1160,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/rdc-paix" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=RDC+accord+de+paix&url=https://www.afripolitique.com/rdc-paix&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=RDC+paix+https://www.afripolitique.com/rdc-paix" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/rdc-paix" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Drdc-paix" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=RDC+accord+de+paix&url=https://www.afripolitique.com/article.html%3Fid%3Drdc-paix&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=RDC+paix+https://www.afripolitique.com/article.html?id=rdc-paix" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Drdc-paix" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1176,10 +1181,10 @@
               </div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/ethiopie-amhara" target="_blank">f</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Éthiopie+crise+Amhara&url=https://www.afripolitique.com/ethiopie-amhara&via=AfriPolitique" target="_blank">𝕏</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Éthiopie+https://www.afripolitique.com/ethiopie-amhara" target="_blank">💬</a>
-                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/ethiopie-amhara" target="_blank">in</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dethiopie-amhara" target="_blank">f</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Éthiopie+crise+Amhara&url=https://www.afripolitique.com/article.html%3Fid%3Dethiopie-amhara&via=AfriPolitique" target="_blank">𝕏</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Éthiopie+https://www.afripolitique.com/article.html?id=ethiopie-amhara" target="_blank">💬</a>
+                <a class="s-btn s-lk" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.afripolitique.com/article.html%3Fid%3Dethiopie-amhara" target="_blank">in</a>
               </div>
             </div>
           </div>
@@ -1193,7 +1198,7 @@
       <section>
         <div class="section-head">
           <h2><span class="bar"></span>Monde</h2>
-          <a href="#">Voir tout →</a>
+          <a href="rubrique.html?cat=monde">Voir tout →</a>
         </div>
         <div class="art-list">
 
@@ -1208,9 +1213,9 @@
               <div class="art-list-meta">Rédaction AfriPolitique · 4 juin 2026 · 6 min de lecture</div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/onu-reforme" target="_blank">f Facebook</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ONU+réforme+Afrique&url=https://www.afripolitique.com/onu-reforme&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=ONU+Afrique+https://www.afripolitique.com/onu-reforme" target="_blank">💬 WhatsApp</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Donu-reforme" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=ONU+réforme+Afrique&url=https://www.afripolitique.com/article.html%3Fid%3Donu-reforme&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=ONU+Afrique+https://www.afripolitique.com/article.html?id=onu-reforme" target="_blank">💬 WhatsApp</a>
               </div>
             </div>
           </div>
@@ -1226,9 +1231,9 @@
               <div class="art-list-meta">Rédaction AfriPolitique · 3 juin 2026 · 5 min de lecture</div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/russie-afrique" target="_blank">f Facebook</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Russie-Afrique+forum&url=https://www.afripolitique.com/russie-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Russie-Afrique+https://www.afripolitique.com/russie-afrique" target="_blank">💬 WhatsApp</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Drussie-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Russie-Afrique+forum&url=https://www.afripolitique.com/article.html%3Fid%3Drussie-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Russie-Afrique+https://www.afripolitique.com/article.html?id=russie-afrique" target="_blank">💬 WhatsApp</a>
               </div>
             </div>
           </div>
@@ -1244,9 +1249,9 @@
               <div class="art-list-meta">Rédaction AfriPolitique · 2 juin 2026 · 7 min de lecture</div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/chine-afrique" target="_blank">f Facebook</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Chine+Route+soie+Afrique&url=https://www.afripolitique.com/chine-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=Chine-Afrique+https://www.afripolitique.com/chine-afrique" target="_blank">💬 WhatsApp</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dchine-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=Chine+Route+soie+Afrique&url=https://www.afripolitique.com/article.html%3Fid%3Dchine-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=Chine-Afrique+https://www.afripolitique.com/article.html?id=chine-afrique" target="_blank">💬 WhatsApp</a>
               </div>
             </div>
           </div>
@@ -1262,9 +1267,9 @@
               <div class="art-list-meta">Rédaction AfriPolitique · 1 juin 2026 · 5 min de lecture</div>
               <div class="share-bar">
                 <span class="share-lbl">Partager</span>
-                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/usa-afrique" target="_blank">f Facebook</a>
-                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=USA+stratégie+Afrique&url=https://www.afripolitique.com/usa-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
-                <a class="s-btn s-wa" href="https://wa.me/?text=USA-Afrique+https://www.afripolitique.com/usa-afrique" target="_blank">💬 WhatsApp</a>
+                <a class="s-btn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://www.afripolitique.com/article.html%3Fid%3Dusa-afrique" target="_blank">f Facebook</a>
+                <a class="s-btn s-tw" href="https://twitter.com/intent/tweet?text=USA+stratégie+Afrique&url=https://www.afripolitique.com/article.html%3Fid%3Dusa-afrique&via=AfriPolitique" target="_blank">𝕏 Twitter</a>
+                <a class="s-btn s-wa" href="https://wa.me/?text=USA-Afrique+https://www.afripolitique.com/article.html?id=usa-afrique" target="_blank">💬 WhatsApp</a>
               </div>
             </div>
           </div>
@@ -1299,45 +1304,41 @@
 
       <hr class="divider" />
 
-      <!-- TRIBUNES & OPINIONS -->
+      <!-- ANALYSES -->
       <section>
         <div class="section-head">
-          <h2><span class="bar"></span>Tribunes &amp; Analyses</h2>
-          <a href="#">Voir tout →</a>
+          <h2><span class="bar"></span>Analyses</h2>
+          <a href="rubrique.html?cat=analyses">Voir tout →</a>
         </div>
         <div class="opinion-grid">
-          <div class="opinion-card">
-            <div class="op-quote">"</div>
-            <p class="op-text">Le panafricanisme ne peut se construire sur des souverainetés fragmentées. Il est temps de dépasser les frontières héritées de la colonisation pour imaginer une gouvernance continentale réelle.</p>
+          <a class="opinion-card" href="article-tchad-miski-or-bardai.html">
+            <div class="op-quote" aria-hidden="true">“</div>
+            <p class="op-text">Tchad : à Miski, la paix de Bardaï se brise sur l'or</p>
             <div class="op-author">
-              <div class="op-avatar">👤</div>
-              <div><div class="op-name">Prof. Ibrahima Sall</div><div class="op-role">Politologue, Université de Dakar</div></div>
+              <div><div class="op-name">Sécurité</div><div class="op-role">Rédaction AfriPolitique · 18 octobre 2026</div></div>
             </div>
-          </div>
-          <div class="opinion-card">
-            <div class="op-quote">"</div>
-            <p class="op-text">Les transitions militaires répétées au Sahel révèlent moins un échec de la démocratie qu'une incapacité des élites civiles à répondre aux urgences sociales de leurs populations.</p>
+          </a>
+          <a class="opinion-card" href="article-rca-tchad-tissi.html">
+            <div class="op-quote" aria-hidden="true">“</div>
+            <p class="op-text">Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena</p>
             <div class="op-author">
-              <div class="op-avatar">👤</div>
-              <div><div class="op-name">Dr. Aissatou Bah</div><div class="op-role">Chercheuse, Institut d'études africaines, Paris</div></div>
+              <div><div class="op-name">Sécurité</div><div class="op-role">Rédaction AfriPolitique · 11 octobre 2026</div></div>
             </div>
-          </div>
-          <div class="opinion-card">
-            <div class="op-quote">"</div>
-            <p class="op-text">La dette africaine envers les créanciers étrangers n'est pas qu'économique — elle est aussi politique. Refuser de la renégocier, c'est accepter une tutelle permanente sur nos politiques publiques.</p>
+          </a>
+          <a class="opinion-card" href="article-tchad-drone-presidence.html">
+            <div class="op-quote" aria-hidden="true">“</div>
+            <p class="op-text">Un drone, un verset et le silence : le Tchad au bord de ses propres fractures</p>
             <div class="op-author">
-              <div class="op-avatar">👤</div>
-              <div><div class="op-name">Chidi Nwosu</div><div class="op-role">Économiste, Lagos Business School</div></div>
+              <div><div class="op-name">Politique</div><div class="op-role">Rédaction AfriPolitique · 20 septembre 2026</div></div>
             </div>
-          </div>
-          <div class="opinion-card">
-            <div class="op-quote">"</div>
-            <p class="op-text">L'émergence des pays africains ne peut être portée que par leurs propres ressources humaines et naturelles. La coopération internationale doit cesser d'être un instrument de dépendance.</p>
+          </a>
+          <a class="opinion-card" href="article-algerie-niger-tournant-sahel.html">
+            <div class="op-quote" aria-hidden="true">“</div>
+            <p class="op-text">Quatre Su-30 à Niamey : l'Algérie entre dans le marché sahélien de la protection</p>
             <div class="op-author">
-              <div class="op-avatar">👤</div>
-              <div><div class="op-name">Mme. Naledi Dlamini</div><div class="op-role">Ancienne ministre des AE, Afrique du Sud</div></div>
+              <div><div class="op-name">Sahel</div><div class="op-role">Rédaction AfriPolitique · 6 septembre 2026</div></div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -1347,75 +1348,35 @@
     <aside class="sidebar">
 
       <div class="widget">
-        <div class="widget-head red">🔥 Les plus lus</div>
+        <div class="widget-head red">Dernières analyses</div>
         <div class="widget-body">
           <div class="trending-list">
             <div class="trend-item">
               <span class="trend-num">01</span>
-              <div><a class="trend-title" href="article.html?id=rdc-paix">RDC : l'accord de paix avec le M23 entre en vigueur</a><div class="trend-cat">Sécurité · 4 juin 2026</div></div>
+              <div><a class="trend-title" href="article-tchad-miski-or-bardai.html">Tchad : à Miski, la paix de Bardaï se brise sur l'or</a><div class="trend-cat">Sécurité · 18 octobre 2026</div></div>
             </div>
             <div class="trend-item">
               <span class="trend-num">02</span>
-              <div><a class="trend-title" href="article.html?id=ethiopie-amhara">Éthiopie : nouvelle crise dans la région Amhara</a><div class="trend-cat">Politique · 3 juin 2026</div></div>
+              <div><a class="trend-title" href="article-rca-tchad-tissi.html">Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena</a><div class="trend-cat">Sécurité · 11 octobre 2026</div></div>
             </div>
             <div class="trend-item">
               <span class="trend-num">03</span>
-              <div><a class="trend-title" href="article.html?id=g7-dette-covid">G7 : l'Afrique demande l'annulation de sa dette post-COVID</a><div class="trend-cat">International · 3 juin 2026</div></div>
+              <div><a class="trend-title" href="article-tchad-drone-presidence.html">Un drone, un verset et le silence : le Tchad au bord de ses propres fractures</a><div class="trend-cat">Politique · 20 septembre 2026</div></div>
             </div>
             <div class="trend-item">
               <span class="trend-num">04</span>
-              <div><a class="trend-title" href="article.html?id=tunisie-judiciaire">Tunisie : Saïed renforce son emprise sur le judiciaire</a><div class="trend-cat">Afrique du Nord · 2 juin 2026</div></div>
+              <div><a class="trend-title" href="article-algerie-niger-tournant-sahel.html">Quatre Su-30 à Niamey : l'Algérie entre dans le marché sahélien de la protection</a><div class="trend-cat">Sahel · 6 septembre 2026</div></div>
             </div>
             <div class="trend-item">
               <span class="trend-num">05</span>
-              <div><a class="trend-title" href="article.html?id=angola-corruption">Angola : scandale de corruption — procès en cours</a><div class="trend-cat">Justice · 1 juin 2026</div></div>
+              <div><a class="trend-title" href="article-cpi-retraits-afrique.html">Quand la CPI vise enfin les puissants, l'Afrique s'en va</a><div class="trend-cat">Justice internationale · 5 août 2026</div></div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="widget">
-        <div class="widget-head">🗺️ Par pays</div>
-        <div class="country-list">
-          <div class="country-item"><span class="country-flag">🇸🇳</span> Sénégal <span class="country-count">12</span></div>
-          <div class="country-item"><span class="country-flag">🇨🇩</span> RD Congo <span class="country-count">9</span></div>
-          <div class="country-item"><span class="country-flag">🇳🇬</span> Nigeria <span class="country-count">11</span></div>
-          <div class="country-item"><span class="country-flag">🇲🇦</span> Maroc <span class="country-count">7</span></div>
-          <div class="country-item"><span class="country-flag">🇪🇹</span> Éthiopie <span class="country-count">8</span></div>
-          <div class="country-item"><span class="country-flag">🇧🇫</span> Burkina Faso <span class="country-count">6</span></div>
-          <div class="country-item"><span class="country-flag">🇿🇦</span> Afrique du Sud <span class="country-count">10</span></div>
-          <div class="country-item"><span class="country-flag">🇰🇪</span> Kenya <span class="country-count">8</span></div>
-          <div class="country-item"><span class="country-flag">🇨🇲</span> Cameroun <span class="country-count">5</span></div>
-          <div class="country-item" style="color:var(--red);font-weight:700">🌍 Tous les pays →</div>
-        </div>
-      </div>
-
-      <div class="widget">
-        <div class="widget-head">📅 Agenda politique</div>
-        <div class="widget-body">
-          <div class="agenda-list">
-            <div class="agenda-item">
-              <div class="agenda-date">06<br>JUIN</div>
-              <div><div class="agenda-title">Sommet UA — Addis-Abeba</div><div class="agenda-lieu">Sécurité &amp; paix au Sahel</div></div>
-            </div>
-            <div class="agenda-item">
-              <div class="agenda-date" style="background:var(--black)">12<br>JUIN</div>
-              <div><div class="agenda-title">Élections — Mozambique</div><div class="agenda-lieu">Second tour présidentiel</div></div>
-            </div>
-            <div class="agenda-item">
-              <div class="agenda-date" style="background:var(--black)">18<br>JUIN</div>
-              <div><div class="agenda-title">Forum Paix — Nairobi</div><div class="agenda-lieu">IGAD &amp; partenaires</div></div>
-            </div>
-            <div class="agenda-item">
-              <div class="agenda-date" style="background:var(--black)">25<br>JUIN</div>
-              <div><div class="agenda-title">G20 Afrique — Johannesburg</div><div class="agenda-lieu">Économie &amp; investissement</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="widget">
-        <div class="widget-head red">📩 Newsletter</div>
+        <div class="widget-head red">Newsletter</div>
         <div class="widget-body">
           <p class="nl-desc">Recevez l'essentiel de l'actualité africaine chaque matin. Gratuit, sans spam.</p>
           <form class="nl-form" id="nl-sidebar-form"
@@ -1437,28 +1398,10 @@
         </div>
       </div>
 
-      <div class="pub-widget">
-        <p>📣 Publicité</p>
-        <h3>AfriPolitique+</h3>
-        <span>Accès illimité à tous nos articles,<br/>analyses et archives.</span>
-        <br/><br/>
-        <a href="#" style="background:#c9a84c;color:#000;font-family:var(--sans);font-weight:700;font-size:.8rem;padding:.55rem 1.2rem;border-radius:3px;display:inline-block">Découvrir l'offre →</a>
-      </div>
-
     </aside>
 
   </div><!-- /main-layout -->
 </div><!-- /page-wrap -->
-
-<!-- ═══ STATS ═══ -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div><div class="stat-num">54</div><div class="stat-lbl">Pays couverts</div></div>
-    <div><div class="stat-num">12</div><div class="stat-lbl">Correspondants</div></div>
-    <div><div class="stat-num">1 200+</div><div class="stat-lbl">Articles publiés</div></div>
-    <div><div class="stat-num">48h</div><div class="stat-lbl">Délai de vérification</div></div>
-  </div>
-</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
@@ -1468,12 +1411,10 @@
       <p>Média indépendant dédié à l'information politique africaine et mondiale. Notre mission : décrypter les enjeux de pouvoir et de gouvernance avec rigueur.</p>
       <div class="f-email">✉️ redaction@afripolitique.com</div>
       <div class="social-row">
-        <a class="soc-btn" href="https://twitter.com/AfriPolitique" target="_blank" rel="noopener" title="X/Twitter">𝕏</a>
-        <a class="soc-btn" href="https://www.facebook.com/AfriPolitique" target="_blank" rel="noopener" title="Facebook">f</a>
-        <a class="soc-btn" href="https://www.instagram.com/afripolitique" target="_blank" rel="noopener" title="Instagram">📷</a>
-        <a class="soc-btn" href="https://www.youtube.com/@AfriPolitique" target="_blank" rel="noopener" title="YouTube">▶</a>
-        <a class="soc-btn" href="https://whatsapp.com/channel/AfriPolitique" target="_blank" rel="noopener" title="WhatsApp">💬</a>
-        <a class="soc-btn" href="https://www.linkedin.com/company/afripolitique" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a class="soc-btn" href="https://twitter.com/AfriPolitique" target="_blank" rel="noopener" title="X/Twitter" aria-label="AfriPolitique sur X">𝕏</a>
+        <a class="soc-btn" href="https://www.facebook.com/AfriPolitique" target="_blank" rel="noopener" title="Facebook" aria-label="AfriPolitique sur Facebook">f</a>
+        <a class="soc-btn" href="https://www.instagram.com/afripolitique" target="_blank" rel="noopener" title="Instagram" aria-label="AfriPolitique sur Instagram">📷</a>
+        <a class="soc-btn" href="https://www.linkedin.com/company/afripolitique" target="_blank" rel="noopener" title="LinkedIn" aria-label="AfriPolitique sur LinkedIn">in</a>
       </div>
     </div>
     <div class="f-col">
@@ -1485,19 +1426,17 @@
         <li><a href="rubrique.html?cat=diplo">Diplomatie</a></li>
         <li><a href="rubrique.html?cat=economie">Économie politique</a></li>
         <li><a href="rubrique.html?cat=securite">Sécurité</a></li>
-        <li><a href="rubrique.html?cat=opinions">Opinions</a></li>
-        <li><a href="rubrique.html?cat=videos">Vidéos</a></li>
+        <li><a href="rubrique.html?cat=analyses">Analyses</a></li>
       </ul>
     </div>
     <div class="f-col">
-      <h4>Régions</h4>
+      <h4>Analyses récentes</h4>
       <ul>
-        <li><a href="#">Afrique de l'Ouest</a></li>
-        <li><a href="#">Afrique Centrale</a></li>
-        <li><a href="#">Afrique de l'Est</a></li>
-        <li><a href="#">Afrique du Nord</a></li>
-        <li><a href="#">Afrique Australe</a></li>
-        <li><a href="#">Diaspora</a></li>
+        <li><a href="article-tchad-miski-or-bardai.html">Tchad : Miski et l'or du Tibesti</a></li>
+        <li><a href="article-rca-tchad-tissi.html">RCA-Tchad : le front de Tissi</a></li>
+        <li><a href="article-tchad-drone-presidence.html">Tchad : le drone de la présidence</a></li>
+        <li><a href="article-algerie-niger-tournant-sahel.html">Algérie-Niger : les Su-30 de Niamey</a></li>
+        <li><a href="article-cpi-retraits-afrique.html">CPI : les retraits africains</a></li>
       </ul>
     </div>
     <div class="f-col">
@@ -1547,7 +1486,7 @@
     var d = new Date();
     var jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
     var mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-    el.textContent = '📅 ' + jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()] + ' ' + d.getFullYear();
+    el.textContent = jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()] + ' ' + d.getFullYear();
   })();
 
   // Partage social dynamique sur la page d'accueil (Web Share API si disponible)

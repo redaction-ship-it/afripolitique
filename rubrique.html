@@ -6,6 +6,7 @@
 <title id="pageTitle">Rubrique — AfriPolitique</title>
 <meta id="metaDesc" name="description" content="Retrouvez tous les articles d'AfriPolitique par rubrique : politique, monde, élections, diplomatie, économie, sécurité."/>
 <link rel="icon" href="logo-ap.png"/>
+<link id="canon" rel="canonical" href="https://www.afripolitique.com/rubrique.html?cat=afrique"/>
 <style>
   :root{--bg:#0f1419;--panel:#1a222c;--line:#2a3644;--text:#e8edf2;--muted:#9fb0c0;--accent:#c0392b;--gold:#e0a63c;}
   *{box-sizing:border-box;}
@@ -58,10 +59,89 @@
 <script src="articles-data.js"></script>
 <script src="articles-extra.js"></script>
 <script>
+  const STANDALONE = [
+ {
+  "url": "article-tchad-miski-or-bardai.html",
+  "title": "Tchad : à Miski, la paix de Bardaï se brise sur l'or",
+  "excerpt": "Depuis le 14 octobre, l'armée tchadienne et le Comité d'autodéfense de Miski s'affrontent de nouveau dans le Tibesti. Derrière la rupture : une brigade minière rattachée à la SONEMIC, des sites que l'accord de 2025 avait fermés, et une rente aurifère qu'aucun gouvernement n'a jamais partagée.",
+  "img": "https://www.afripolitique.com/afripolitique_miski_cover.jpg",
+  "cat": "cat-securite",
+  "catLabel": "Sécurité & Défense",
+  "date": "18 octobre 2026",
+  "read": "7 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-rca-tchad-tissi.html",
+  "title": "Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena",
+  "excerpt": "Le 10 octobre, l'armée centrafricaine et ses alliés russes ont frappé la zone des trois frontières. Chassés du Darfour par les FSR, les rebelles de Noureddine Adam n'ont plus que le Tchad comme arrière-pays. Diamants, or, uranium et un Tchad encerclé par ses voisins, à la veille d'un rendez-vous Déby-Macron.",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Former_combattants_of_the_Seleka_in_a_DDR-process%2C_Bria%2C_Central_African_Republic%2C_25_Feb_2017.jpg/1280px-Former_combattants_of_the_Seleka_in_a_DDR-process%2C_Bria%2C_Central_African_Republic%2C_25_Feb_2017.jpg",
+  "cat": "cat-securite",
+  "catLabel": "Sécurité & Défense",
+  "date": "11 octobre 2026",
+  "read": "14 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-tchad-drone-presidence.html",
+  "title": "Un drone, un verset et le silence : le Tchad au bord de ses propres fractures",
+  "excerpt": "Dans la nuit du 9 au 10 septembre 2026, un drone aurait survolé le palais présidentiel de N'Djamena. Verset coranique en guise de réponse, garde présidentielle sans commandant, circulaire sur les drones désavouée : analyse d'un régime tchadien fracturé par ses propres engagements au Soudan, au Niger et en Centrafrique.",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Palais_de_la_pr%C3%A9sidence_du_Tchad.jpg/1280px-Palais_de_la_pr%C3%A9sidence_du_Tchad.jpg",
+  "cat": "cat-politique",
+  "catLabel": "Politique",
+  "date": "20 septembre 2026",
+  "read": "14 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-algerie-niger-tournant-sahel.html",
+  "title": "Quatre Su-30 à Niamey : l'Algérie entre dans le marché sahélien de la protection",
+  "excerpt": "Après la mutinerie du 28-29 août 2026 à Niamey, l'Algérie déploie quatre Su-30 au Niger : première projection de moyens de combat hors frontières depuis 1973. Africa Corps russe, article 91 de la Constitution de 2020, accusations contre la France et des officiers tchadiens, enjeux énergétiques : anatomie du nouveau marché sahélien de la protection.",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Niger_Air_Base_101_%288580562%29.jpg/1280px-Niger_Air_Base_101_%288580562%29.jpg",
+  "cat": "cat-securite",
+  "catLabel": "Sahel — Sécurité",
+  "date": "6 septembre 2026",
+  "read": "13 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-cpi-retraits-afrique.html",
+  "title": "Quand la CPI vise enfin les puissants, l'Afrique s'en va",
+  "excerpt": "Après les juntes de l'AES, le Tchad et le Venezuela engagent leur retrait de la Cour pénale internationale à trois jours d'intervalle. Mêmes mots, motifs opposés : rupture souverainiste au Sahel, réflexe défensif là où pèse déjà une enquête. Analyse des procédures (article 127, compétence du Darfour), des risques pour les dirigeants, de l'argument néocolonial et de l'avenir de la CPI.",
+  "img": "https://www.afripolitique.com/afripolitique_cpi_cover.png",
+  "cat": "cat-diplo",
+  "catLabel": "Justice internationale",
+  "date": "5 août 2026",
+  "read": "13 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-tchad-haftar-sud-libyen.html",
+  "title": "Saddam Haftar à N'Djamena : le pacte du désert qui enfonce le Tchad dans la guerre du Sud libyen",
+  "excerpt": "En recevant Saddam Haftar avec les honneurs d'un chef d'État, Mahamat Idriss Déby affiche son alignement sur le clan de Benghazi. Derrière la poignée de main, la guerre du Fezzan, le pétrole détourné vers les FSR au Soudan et le pont aérien émirati d'Amdjarass. Décryptage et carte.",
+  "img": "https://www.afripolitique.com/afripolitique_haftar_cover.png",
+  "cat": "cat-securite",
+  "catLabel": "Sécurité & Défense",
+  "date": "26 juillet 2026",
+  "read": "9 min de lecture",
+  "analyse": true
+ },
+ {
+  "url": "article-rca-am-dafock.html",
+  "title": "Am Dafock, la porte du chaos : la Centrafrique au bord d'un nouveau conflit",
+  "excerpt": "Le 30 juin 2026, une coalition rebelle venue du Soudan a frappé Am Dafock, dans la Vakaga. Sur fond de guerre soudanaise, de retour militaire français au Tchad et de troisième mandat de Touadéra, la RCA menace de rebasculer dans la guerre. Décryptage et carte de la zone de conflit.",
+  "img": "https://www.afripolitique.com/afripolitique_rca_cover.png",
+  "cat": "cat-securite",
+  "catLabel": "Sécurité & Défense",
+  "date": "6 juillet 2026",
+  "read": "7 min de lecture",
+  "analyse": true
+ }
+];
   const RUBS = [
     ["afrique","Afrique"],["monde","Monde"],["politique","Politique"],["election","Élections"],
     ["diplo","Diplomatie"],["economie","Économie"],["securite","Sécurité"],
-    ["opinions","Opinions"],["videos","Vidéos"]
+    ["analyses","Analyses"],["tout","Tout"]
   ];
   const DEF = {
     afrique:{title:"Afrique",match:a=>a.cat!=="cat-monde"},
@@ -71,8 +151,8 @@
     diplo:{title:"Diplomatie",match:a=>a.cat==="cat-diplo"},
     economie:{title:"Économie politique",match:a=>a.cat==="cat-economie"},
     securite:{title:"Sécurité",match:a=>a.cat==="cat-securite"},
-    opinions:{title:"Opinions",match:()=>false},
-    videos:{title:"Vidéos",match:()=>false}
+    analyses:{title:"Analyses",match:a=>!!a.analyse},
+    tout:{title:"Toutes les actualités",match:()=>true}
   };
   const MOIS={janvier:0,"février":1,fevrier:1,mars:2,avril:3,mai:4,juin:5,juillet:6,"août":7,aout:7,septembre:8,octobre:9,novembre:10,"décembre":11,decembre:11};
   function tFr(d){const m=(d||"").toLowerCase().match(/(\d{1,2})\s+([a-zéûàinfo]+)\s+(\d{4})/);if(!m)return 0;return new Date(+m[3],MOIS[m[2]]??0,+m[1]).getTime();}
@@ -87,15 +167,16 @@
     `<a href="rubrique.html?cat=${k}" class="${k===key?'active':''}">${l}</a>`).join("");
 
   document.getElementById("pageTitle").textContent=def.title+" — AfriPolitique";
+  document.getElementById("canon").setAttribute("href","https://www.afripolitique.com/rubrique.html?cat="+(DEF[key]?key:"afrique"));
   document.getElementById("rubTitle").textContent=def.title;
   document.getElementById("crumbCat").textContent=def.title;
   document.getElementById("metaDesc").setAttribute("content",`Articles d'AfriPolitique dans la rubrique ${def.title}.`);
 
   let list=[];
   if(typeof ARTICLES!=="undefined"){
-    list=Object.entries(ARTICLES).filter(([id,a])=>def.match(a))
-      .map(([id,a])=>({id,...a})).sort((x,y)=>tFr(y.date)-tFr(x.date));
+    list=Object.entries(ARTICLES).map(([id,a])=>({id,...a}));
   }
+  list=list.concat(STANDALONE).filter(a=>def.match(a)).sort((x,y)=>tFr(y.date)-tFr(x.date));
   document.getElementById("rubCount").textContent=
     list.length? `${list.length} article${list.length>1?"s":""}` : "";
 
@@ -105,10 +186,10 @@
   }else{
     grid.innerHTML=list.map(a=>`
       <article class="card">
-        <a href="article.html?id=${encodeURIComponent(a.id)}"><img class="thumb" src="${esc(a.img)}" alt="${esc(a.title)}" loading="lazy"/></a>
+        <a href="${a.url?esc(a.url):'article.html?id='+encodeURIComponent(a.id)}"><img class="thumb" src="${esc(a.img)}" alt="${esc(a.title)}" loading="lazy"/></a>
         <div class="body">
           <span class="badge ${esc(a.cat)}">${esc(a.catLabel||"")}</span>
-          <h2><a href="article.html?id=${encodeURIComponent(a.id)}">${esc(a.title)}</a></h2>
+          <h2><a href="${a.url?esc(a.url):'article.html?id='+encodeURIComponent(a.id)}">${esc(a.title)}</a></h2>
           <p class="exc">${esc((a.excerpt||"").slice(0,160))}${(a.excerpt||"").length>160?"…":""}</p>
           <div class="meta">${esc(a.author||"Rédaction AfriPolitique")} · ${esc(a.date||"")}${a.read?" · "+esc(a.read):""}</div>
         </div>

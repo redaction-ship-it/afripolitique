@@ -2,31 +2,41 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/png" href="/logo-ap.png"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirection — AfriPolitique</title>
+<meta name="robots" content="noindex">
+<title>Page introuvable — AfriPolitique</title>
+<link rel="icon" type="image/png" href="/logo-ap.png">
 <style>
-  body { font-family: -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #faf8f4; }
-  .box { text-align: center; color: #666; }
-  .logo { font-size: 28px; font-weight: 900; color: #8B2635; margin-bottom: 12px; }
-  p { font-size: 14px; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:#f5f5f0;color:#1a1a1a;line-height:1.6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
+  .box{max-width:640px;width:100%;background:#fff;border-top:4px solid #c8102e;padding:2.5rem 2rem}
+  .logo{font-size:1.6rem;font-weight:700;text-decoration:none;color:#1a1a1a}
+  .logo span{color:#c8102e}
+  h1{font-size:1.6rem;margin:1.5rem 0 .5rem}
+  p{color:#4a4a4a;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:.95rem}
+  h2{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#c8102e;margin:2rem 0 .75rem}
+  ul{list-style:none}
+  li{border-bottom:1px solid #e0e0d8}
+  li a{display:block;padding:.6rem 0;color:#1a1a1a;text-decoration:none}
+  li a:hover,li a:focus-visible{color:#c8102e}
+  .btn{display:inline-block;margin-top:1.5rem;background:#c8102e;color:#fff;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-weight:700;font-size:.85rem;padding:.65rem 1.3rem;text-decoration:none;border-radius:3px}
+  a:focus-visible{outline:2px solid #c8102e;outline-offset:2px}
 </style>
 </head>
 <body>
-<div class="box">
-  <div class="logo">AfriPolitique</div>
-  <p>Redirection en cours…</p>
-</div>
-<script>
-  // Récupère le paramètre "id" de l'URL (ex: article.html?id=cdm2026)
-  var id = new URLSearchParams(window.location.search).get('id');
-  if (id) {
-    // Redirige vers la page principale avec le paramètre id
-    window.location.replace('/?id=' + encodeURIComponent(id));
-  } else {
-    // Pas d'id → retour à l'accueil
-    window.location.replace('/');
-  }
-</script>
+<main class="box">
+  <a class="logo" href="/">Afri<span>Politique</span></a>
+  <h1>Cette page n'existe pas</h1>
+  <p>L'adresse est peut-être mal saisie, ou l'article a changé d'emplacement.</p>
+  <h2>Nos dernières analyses</h2>
+  <ul>
+    <li><a href="/article-tchad-miski-or-bardai.html">Tchad : à Miski, la paix de Bardaï se brise sur l'or</a></li>
+    <li><a href="/article-rca-tchad-tissi.html">Lâchés par Hemedti, adossés au Tchad : la rébellion de Noureddine Adam rallume le front Bangui-N'Djamena</a></li>
+    <li><a href="/article-tchad-drone-presidence.html">Un drone, un verset et le silence : le Tchad au bord de ses propres fractures</a></li>
+    <li><a href="/article-algerie-niger-tournant-sahel.html">Quatre Su-30 à Niamey : l'Algérie entre dans le marché sahélien de la protection</a></li>
+    <li><a href="/article-cpi-retraits-afrique.html">Quand la CPI vise enfin les puissants, l'Afrique s'en va</a></li>
+  </ul>
+  <a class="btn" href="/">Retour à l'accueil</a>
+</main>
 </body>
 </html>
